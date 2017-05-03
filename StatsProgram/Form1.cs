@@ -64,9 +64,21 @@ namespace StatsProgram
                             rd.WebDesign = false;
                         }
 
-                        rd.LogInFind = r.LogInFind;
-                        rd.LogInClick = r.LogInClick;
-                        rd.Qstart = r.QStart;
+                        rd.LogInFind = 0;
+                        rd.LogInClick = 0;
+                        rd.Qstart = 0;
+                        if(r.LogInFind != null)
+                        {
+                            rd.LogInFind = r.LogInFind;
+                        }
+                        if (r.LogInClick != null)
+                        {
+                            rd.LogInClick = r.LogInClick;
+                        }
+                        if (r.QStart != null)
+                        {
+                            rd.Qstart = r.QStart;
+                        }
                         rd.TimeFirstQ = ad.GetTime(13);
                         rd.RQRTime2 = ad.GetTime(14);
                         rd.RQRTime3 = ad.GetTime(15);
@@ -101,10 +113,21 @@ namespace StatsProgram
                         {
                             rd.WebDesign = false;
                         }
-
-                        rd.LogInFind = r.LogInFind;
-                        rd.LogInClick = r.LogInClick;
-                        rd.Qstart = r.QStart;
+                        rd.LogInFind = 0;
+                        rd.LogInClick = 0;
+                        rd.Qstart = 0;
+                        if (r.LogInFind != null)
+                        {
+                            rd.LogInFind = r.LogInFind;
+                        }
+                        if (r.LogInClick != null)
+                        {
+                            rd.LogInClick = r.LogInClick;
+                        }
+                        if (r.QStart != null)
+                        {
+                            rd.Qstart = r.QStart;
+                        }
                         rd.TimeFirstQ = ad.GetTime(13);
                         rd.RQRTime2 = ad.GetTime(14);
                         rd.RQRTime3 = ad.GetTime(15);
@@ -123,16 +146,19 @@ namespace StatsProgram
                 DataTable dtGood = new DataTable();
                 DataTable dtBad = new DataTable();
 
-                dtGood = ToDataTable(RDGood);
-                dtBad = ToDataTable(RDBad);
 
+                dtGood = ToDataTable(DeleteGoodNulls(RDGood));
+                dtBad = ToDataTable(DeleteBadNulls(RDBad));
 
                 dgvGood.DataSource = dtGood;
                 dgvBad.DataSource = dtBad;
 
                 MessageBox.Show("GOOD " + RDGood.Count.ToString());
+                MessageBox.Show("NEW GOOD " + dtGood.Rows.Count);
+
 
                 MessageBox.Show("BAD " + RDBad.Count.ToString());
+                MessageBox.Show("NEW BAD " + dtBad.Rows.Count);
 
             }
         }
@@ -164,6 +190,77 @@ namespace StatsProgram
             return dataTable;
         }
 
+
+        public List<RespondentDataGood> DeleteGoodNulls(List<RespondentDataGood> goodData)
+        {
+            List<RespondentDataGood> rg = new List<RespondentDataGood>();
+
+            decimal LfGood = 0;
+
+            foreach (RespondentDataGood rdg in goodData)
+            {
+                //if (!(rdg.LogInClick == 0 && rdg.LogInFind == 0 && rdg.Qstart == 0 && 
+                //    rdg.TimeFirstQ == 0  && rdg.RQRTime2 == 0 && rdg.RQRTime3 == 0 && rdg.RQRTime4 == 0 && rdg.RQRTime5 == 0 && rdg.RQRTime6 == 0 && 
+                //    rdg.TimeLastRQR == 0 && rdg.RQTTime1 == 0 && rdg.RQTTime2 == 0 && rdg.RQTTime3 == 0))
+                //{
+                //    rg.Add(rdg);
+                //}
+                if (!(rdg.LogInClick == 0 || rdg.LogInFind == 0 || rdg.Qstart == 0 ||
+                    rdg.TimeFirstQ == 0 || rdg.RQRTime2 == 0 || rdg.RQRTime3 == 0 || rdg.RQRTime4 == 0 || rdg.RQRTime5 == 0 || rdg.RQRTime6 == 0 ||
+                    rdg.TimeLastRQR == 0 || rdg.RQTTime1 == 0 || rdg.RQTTime2 == 0 || rdg.RQTTime3 == 0))
+                {
+                    rg.Add(rdg);
+                }
+            }
+            List<RespondentDataGood> sortedList = rg.OrderBy(x => x.LogInFind).ToList();
+
+            sortedList.RemoveRange(0, 6);
+            sortedList.RemoveRange(sortedList.Count - 6, 6);
+
+            foreach (RespondentDataGood r in sortedList)
+            {
+                LfGood += Convert.ToDecimal(r.LogInFind);
+            }
+
+            MessageBox.Show("GOOD Snitt: " + Convert.ToString(LfGood / sortedList.Count));
+            return sortedList;
+        }
+
+        public List<RespondentDataBad> DeleteBadNulls(List<RespondentDataBad> badData)
+        {
+            List<RespondentDataBad> rb = new List<RespondentDataBad>();
+
+            decimal LfBad = 0;
+
+            foreach (RespondentDataBad rdb in badData)
+            {
+                //if (!(rdb.LogInClick == 0 && rdb.LogInFind == 0 && rdb.Qstart == 0 &&
+                //    rdb.TimeFirstQ == 0 && rdb.RQRTime2 == 0 && rdb.RQRTime3 == 0 && rdb.RQRTime4 == 0 && rdb.RQRTime5 == 0 && rdb.RQRTime6 == 0 &&
+                //    rdb.TimeLastRQR == 0 && rdb.RQTTime1 == 0 && rdb.RQTTime2 == 0 && rdb.RQTTime3 == 0))
+                //{
+                //    rb.Add(rdb);
+                //}
+                if (!(rdb.LogInClick == 0 || rdb.LogInFind == 0 || rdb.Qstart == 0 ||
+                    rdb.TimeFirstQ == 0 || rdb.RQRTime2 == 0 || rdb.RQRTime3 == 0 || rdb.RQRTime4 == 0 || rdb.RQRTime5 == 0 || rdb.RQRTime6 == 0 ||
+                    rdb.TimeLastRQR == 0 || rdb.RQTTime1 == 0 || rdb.RQTTime2 == 0 || rdb.RQTTime3 == 0))
+                {
+                    rb.Add(rdb);
+                }
+            }
+            //rb.Sort((x, y) => x.LogInFind.CompareTo(y.LogInFind));
+            List<RespondentDataBad> sortedList = rb.OrderBy(x => x.LogInFind).ToList();
+
+            sortedList.RemoveRange(0, 6);
+            sortedList.RemoveRange(sortedList.Count - 6, 6);
+
+            foreach(RespondentDataBad r in sortedList)
+            {
+                LfBad += Convert.ToDecimal(r.LogInFind);
+            }
+
+            MessageBox.Show("BAD Snitt: " + Convert.ToString(LfBad / sortedList.Count));
+            return sortedList;
+        }
     }
 }
 
