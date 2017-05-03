@@ -25,6 +25,7 @@ namespace StatsProgram.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<RespondentData> RespondentData { get; set; }
+        public virtual DbSet<RespondentDataBad> RespondentDataBad { get; set; }
+        public virtual DbSet<RespondentDataGood> RespondentDataGood { get; set; }
     }
 }

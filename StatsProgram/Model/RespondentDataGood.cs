@@ -12,7 +12,7 @@ namespace StatsProgram.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class RespondentData
+    public partial class RespondentDataGood
     {
         public int RespondentId { get; set; }
         public string Age { get; set; }

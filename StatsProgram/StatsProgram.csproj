@@ -105,7 +105,10 @@
     <Compile Include="Model\Respondent.cs">
       <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\RespondentData.cs">
+    <Compile Include="Model\RespondentDataBad.cs">
+      <DependentUpon>CollectionDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RespondentDataGood.cs">
       <DependentUpon>CollectionDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Response.cs">

@@ -28,47 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.dgvGood = new System.Windows.Forms.DataGridView();
+            this.dgvBad = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBad)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvGood
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(487, 357);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvGood.AllowUserToOrderColumns = true;
+            this.dgvGood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGood.Location = new System.Drawing.Point(10, 0);
+            this.dgvGood.Name = "dgvGood";
+            this.dgvGood.Size = new System.Drawing.Size(1900, 490);
+            this.dgvGood.TabIndex = 0;
             // 
-            // dataGridView2
+            // dgvBad
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(559, 13);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(500, 357);
-            this.dataGridView2.TabIndex = 1;
+            this.dgvBad.AllowUserToOrderColumns = true;
+            this.dgvBad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBad.Location = new System.Drawing.Point(10, 495);
+            this.dgvBad.Name = "dgvBad";
+            this.dgvBad.Size = new System.Drawing.Size(1900, 490);
+            this.dgvBad.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 530);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1904, 1021);
+            this.Controls.Add(this.dgvBad);
+            this.Controls.Add(this.dgvGood);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBad)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvGood;
+        private System.Windows.Forms.DataGridView dgvBad;
     }
 }
 
