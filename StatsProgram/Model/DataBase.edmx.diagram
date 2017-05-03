@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e01fb386690c48afa654bde22760d6fb" Name="Diagram1">
+        <EntityTypeShape EntityType="informatikexamenModel.Email" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="informatikexamenModel.Question" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="informatikexamenModel.QuestionResponse" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="informatikexamenModel.Respondent" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="informatikexamenModel.Response" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="informatikexamenModel.RQR" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="informatikexamenModel.RQT" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="informatikexamenModel.UIType" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="informatikexamenModel.FK_QuestionId" ManuallyRouted="false" />
+        <AssociationConnector Association="informatikexamenModel.FK_QuestionId_" ManuallyRouted="false" />
+        <AssociationConnector Association="informatikexamenModel.FK_QRID" ManuallyRouted="false" />
+        <AssociationConnector Association="informatikexamenModel.FK_ResponseId" ManuallyRouted="false" />
+        <AssociationConnector Association="informatikexamenModel.FK_Respondent_ToUIType" ManuallyRouted="false" />
+        <AssociationConnector Association="informatikexamenModel.FK_RespondentId" ManuallyRouted="false" />
+        <AssociationConnector Association="informatikexamenModel.FK_RespondentId_" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
