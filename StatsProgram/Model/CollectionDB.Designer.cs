@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\Users\Andreas\MIUN\Examensarbete IK100G\StatsProgram\StatsProgram\Model\CollectionDB.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Administratör\Documents\MIUN\020 Examensarbete\c#\ExamenStats\StatsProgram\Model\CollectionDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

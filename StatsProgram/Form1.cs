@@ -33,17 +33,8 @@ namespace StatsProgram
                 {
 
                     AllData ad = new AllData(r, AllData);
-                    //RQR rqr = new RQR();
-                    //int rID = rqr.RespondentID;
-                    //int qrID = rqr.QuestionResponseID;
 
-
-                    //QuestionResponse rq = new QuestionResponse();
-
-
-                    //List<RQR> rqrList = db.RQR.Where(x => x.RespondentID == r.Id).ToList();
-
-                    if (r.UITypeID == 8)
+                    if (r.UITypeID == 8 && ad.GetAnswer(15) != "Annat")
                     {
                         RespondentDataGood rd = new RespondentDataGood();
                         rd.RespondentId = r.Id;
@@ -53,6 +44,7 @@ namespace StatsProgram
                         rd.InternetUse = ad.GetAnswer(17);
                         rd.InternetUseComp = ad.GetAnswer(18);
                         rd.InternetUseSmart = ad.GetAnswer(19);
+                        rd.BrowserType = r.BrowserType;
 
                         var webDesignAnswer = ad.GetAnswer(16);
                         if (webDesignAnswer == "Ja")
@@ -93,7 +85,7 @@ namespace StatsProgram
                         RDGood.Add(rd);
                     }
 
-                    else if (r.UITypeID == 9)
+                    else if (r.UITypeID == 9 && ad.GetAnswer(15) != "Annat")
                     {
                         RespondentDataBad rd = new RespondentDataBad();
                         rd.RespondentId = r.Id;
@@ -103,6 +95,7 @@ namespace StatsProgram
                         rd.InternetUse = ad.GetAnswer(17);
                         rd.InternetUseComp = ad.GetAnswer(18);
                         rd.InternetUseSmart = ad.GetAnswer(19);
+                        rd.BrowserType = r.BrowserType;
 
                         var webDesignAnswer = ad.GetAnswer(16);
                         if (webDesignAnswer == "Ja")
@@ -153,12 +146,6 @@ namespace StatsProgram
                 dgvGood.DataSource = dtGood;
                 dgvBad.DataSource = dtBad;
 
-                //MessageBox.Show("GOOD " + RDGood.Count.ToString());
-                //MessageBox.Show("NEW GOOD " + dtGood.Rows.Count);
-
-
-                //MessageBox.Show("BAD " + RDBad.Count.ToString());
-                //MessageBox.Show("NEW BAD " + dtBad.Rows.Count);
 
             }
         }
@@ -205,26 +192,10 @@ namespace StatsProgram
                 {
                     rg.Add(rdg);
                 }
-                //if (!(rdg.LogInClick == 0 || rdg.LogInFind == 0 || rdg.Qstart == 0 ||
-                //    rdg.TimeFirstQ == 0 || rdg.RQRTime2 == 0 || rdg.RQRTime3 == 0 || rdg.RQRTime4 == 0 || rdg.RQRTime5 == 0 || rdg.RQRTime6 == 0 ||
-                //    rdg.TimeLastRQR == 0 || rdg.RQTTime1 == 0 || rdg.RQTTime2 == 0 || rdg.RQTTime3 == 0))
-                //{
-                //    rg.Add(rdg);
-                //}
             }
-            List<RespondentDataGood> sortedList = rg.OrderBy(x => x.LogInFind).ToList();
-
-            sortedList.RemoveRange(0, 6);
-            sortedList.RemoveRange(sortedList.Count - 6, 6);
-
-            foreach (RespondentDataGood r in sortedList)
-            {
-                LfGood += Convert.ToDecimal(r.LogInFind);
-            }
-
-            //MessageBox.Show("GOOD Snitt: " + Convert.ToString(LfGood / sortedList.Count));
-            VariableDataGood(goodData);
-            return goodData;
+            
+            VariableDataGood(rg);
+            return rg;
         }
 
         public List<RespondentDataBad> DeleteBadNulls(List<RespondentDataBad> badData)
@@ -241,27 +212,10 @@ namespace StatsProgram
                 {
                     rb.Add(rdb);
                 }
-                //if (!(rdb.LogInClick == 0 || rdb.LogInFind == 0 || rdb.Qstart == 0 ||
-                //    rdb.TimeFirstQ == 0 || rdb.RQRTime2 == 0 || rdb.RQRTime3 == 0 || rdb.RQRTime4 == 0 || rdb.RQRTime5 == 0 || rdb.RQRTime6 == 0 ||
-                //    rdb.TimeLastRQR == 0 || rdb.RQTTime1 == 0 || rdb.RQTTime2 == 0 || rdb.RQTTime3 == 0))
-                //{
-                //    rb.Add(rdb);
-                //}
             }
-            //rb.Sort((x, y) => x.LogInFind.CompareTo(y.LogInFind));
-            List<RespondentDataBad> sortedList = rb.OrderBy(x => x.LogInFind).ToList();
-
-            sortedList.RemoveRange(0, 6);
-            sortedList.RemoveRange(sortedList.Count - 6, 6);
-
-            foreach(RespondentDataBad r in sortedList)
-            {
-                LfBad += Convert.ToDecimal(r.LogInFind);
-            }
-
-            //MessageBox.Show("BAD Snitt: " + Convert.ToString(LfBad / sortedList.Count));
-            VariableDataBad(badData);
-            return badData;
+            
+            VariableDataBad(rb);
+            return rb;
         }
 
         public decimal getStats(List<decimal> theList, out decimal count)
@@ -299,80 +253,54 @@ namespace StatsProgram
                 if (rd.LogInFind != 0)
                 {
                     loginFindList.Add(Convert.ToDecimal(rd.LogInFind));
-                    //countLoginFind++;
-                    //totalLoginFind += Convert.ToDecimal(rd.LogInFind);
                 }
                 if (rd.LogInClick != 0)
                 {
                     loginClickList.Add(Convert.ToDecimal(rd.LogInClick));
-                    //countLoginClick++;
-                    //totalLoginClick += Convert.ToDecimal(rd.LogInClick);
                 }
                 if (rd.Qstart != 0)
                 {
                     QstartList.Add(Convert.ToDecimal(rd.Qstart));
-                    //countQstart++;
-                    //totalQstart += Convert.ToDecimal(rd.Qstart);
                 }
                 if (rd.TimeFirstQ != 0)
                 {
                     TimeFirstQList.Add(Convert.ToDecimal(rd.TimeFirstQ));
-                    //countTimeFirstQ++;
-                    //totalTimeFirstQ += Convert.ToDecimal(rd.TimeFirstQ);
                 }
                 if (rd.RQRTime2 != 0)
                 {
                     RQRTime2List.Add(Convert.ToDecimal(rd.RQRTime2));
-                    //countRQRTime2++;
-                    //totalRQRTime2 += Convert.ToDecimal(rd.RQRTime2);
                 }
                 if (rd.RQRTime3 != 0)
                 {
                     RQRTime3List.Add(Convert.ToDecimal(rd.RQRTime3));
-                    //countRQRTime3++;
-                    //totalRQRTime3 += Convert.ToDecimal(rd.RQRTime3);
                 }
                 if (rd.RQRTime4 != 0)
                 {
                     RQRTime4List.Add(Convert.ToDecimal(rd.RQRTime4));
-                    //countRQRTime4++;
-                    //totalRQRTime4 += Convert.ToDecimal(rd.RQRTime4);
                 }
                 if (rd.RQRTime5 != 0)
                 {
                     RQRTime5List.Add(Convert.ToDecimal(rd.RQRTime5));
-                    //countRQRTime5++;
-                    //totalRQRTime5 += Convert.ToDecimal(rd.RQRTime5);
                 }
                 if (rd.RQRTime6 != 0)
                 {
                     RQRTime6List.Add(Convert.ToDecimal(rd.RQRTime6));
-                    //countRQRTime6++;
-                    //totalRQRTime6 += Convert.ToDecimal(rd.RQRTime6);
                 }
                 if (rd.TimeLastRQR != 0)
                 {
                     TimeLastRQRList.Add(Convert.ToDecimal(rd.TimeLastRQR));
-                    //countTimeLastRQR++;
-                    //totalTimeLastRQR += Convert.ToDecimal(rd.TimeLastRQR);
                 }
                 if (rd.RQTTime1 != 0)
                 {
                     RQTTime1List.Add(Convert.ToDecimal(rd.RQTTime1));
-                    //countRQTTime1++;
-                    //totalRQTTime1 += Convert.ToDecimal(rd.RQTTime1);
                 }
                 if (rd.RQTTime2 != 0)
                 {
                     RQTTime2List.Add(Convert.ToDecimal(rd.RQTTime2));
-                    //countRQTTime2++;
-                    //totalRQTTime2 += Convert.ToDecimal(rd.RQTTime2);
                 }
                 if (rd.RQTTime3 != 0)
                 {
                     RQTTime3List.Add(Convert.ToDecimal(rd.RQTTime3));
-                    //countRQTTime3++;
-                    //totalRQTTime3 += Convert.ToDecimal(rd.RQTTime3);
                 }
             }
 
@@ -402,16 +330,7 @@ namespace StatsProgram
             decimal totalRQTTime2 = getStats(RQTTime2List, out countRQTTime2);
             decimal countRQTTime3 = 0;
             decimal totalRQTTime3 = getStats(RQTTime3List, out countRQTTime3);
-
-            //loginFindList.Sort();
-            //int noToRemove = Convert.ToInt16(loginFindList.Count * 0.05);
-
-            //loginFindList.RemoveRange(0, noToRemove);
-            //loginFindList.RemoveRange(loginFindList.Count - noToRemove, noToRemove);
-
-            //decimal test = loginFindList.Sum();
-            //countLoginFind = loginFindList.Count;
-
+            
             lblLogInFindCountG.Text = Convert.ToInt64(countLoginFind).ToString();
             lblLogInFindTotalG.Text = Convert.ToInt64(totalLoginFind).ToString();
             lblLogInFindAvgG.Text = Convert.ToInt64((totalLoginFind / countLoginFind)).ToString();
@@ -486,80 +405,54 @@ namespace StatsProgram
                 if (rd.LogInFind != 0)
                 {
                     loginFindList.Add(Convert.ToDecimal(rd.LogInFind));
-                    //countLoginFind++;
-                    //totalLoginFind += Convert.ToDecimal(rd.LogInFind);
                 }
                 if (rd.LogInClick != 0)
                 {
                     loginClickList.Add(Convert.ToDecimal(rd.LogInClick));
-                    //countLoginClick++;
-                    //totalLoginClick += Convert.ToDecimal(rd.LogInClick);
                 }
                 if (rd.Qstart != 0)
                 {
                     QstartList.Add(Convert.ToDecimal(rd.Qstart));
-                    //countQstart++;
-                    //totalQstart += Convert.ToDecimal(rd.Qstart);
                 }
                 if (rd.TimeFirstQ != 0)
                 {
                     TimeFirstQList.Add(Convert.ToDecimal(rd.TimeFirstQ));
-                    //countTimeFirstQ++;
-                    //totalTimeFirstQ += Convert.ToDecimal(rd.TimeFirstQ);
                 }
                 if (rd.RQRTime2 != 0)
                 {
                     RQRTime2List.Add(Convert.ToDecimal(rd.RQRTime2));
-                    //countRQRTime2++;
-                    //totalRQRTime2 += Convert.ToDecimal(rd.RQRTime2);
                 }
                 if (rd.RQRTime3 != 0)
                 {
                     RQRTime3List.Add(Convert.ToDecimal(rd.RQRTime3));
-                    //countRQRTime3++;
-                    //totalRQRTime3 += Convert.ToDecimal(rd.RQRTime3);
                 }
                 if (rd.RQRTime4 != 0)
                 {
                     RQRTime4List.Add(Convert.ToDecimal(rd.RQRTime4));
-                    //countRQRTime4++;
-                    //totalRQRTime4 += Convert.ToDecimal(rd.RQRTime4);
                 }
                 if (rd.RQRTime5 != 0)
                 {
                     RQRTime5List.Add(Convert.ToDecimal(rd.RQRTime5));
-                    //countRQRTime5++;
-                    //totalRQRTime5 += Convert.ToDecimal(rd.RQRTime5);
                 }
                 if (rd.RQRTime6 != 0)
                 {
                     RQRTime6List.Add(Convert.ToDecimal(rd.RQRTime6));
-                    //countRQRTime6++;
-                    //totalRQRTime6 += Convert.ToDecimal(rd.RQRTime6);
                 }
                 if (rd.TimeLastRQR != 0)
                 {
                     TimeLastRQRList.Add(Convert.ToDecimal(rd.TimeLastRQR));
-                    //countTimeLastRQR++;
-                    //totalTimeLastRQR += Convert.ToDecimal(rd.TimeLastRQR);
                 }
                 if (rd.RQTTime1 != 0)
                 {
                     RQTTime1List.Add(Convert.ToDecimal(rd.RQTTime1));
-                    //countRQTTime1++;
-                    //totalRQTTime1 += Convert.ToDecimal(rd.RQTTime1);
                 }
                 if (rd.RQTTime2 != 0)
                 {
                     RQTTime2List.Add(Convert.ToDecimal(rd.RQTTime2));
-                    //countRQTTime2++;
-                    //totalRQTTime2 += Convert.ToDecimal(rd.RQTTime2);
                 }
                 if (rd.RQTTime3 != 0)
                 {
                     RQTTime3List.Add(Convert.ToDecimal(rd.RQTTime3));
-                    //countRQTTime3++;
-                    //totalRQTTime3 += Convert.ToDecimal(rd.RQTTime3);
                 }
             }
 
