@@ -153,12 +153,12 @@ namespace StatsProgram
                 dgvGood.DataSource = dtGood;
                 dgvBad.DataSource = dtBad;
 
-                MessageBox.Show("GOOD " + RDGood.Count.ToString());
-                MessageBox.Show("NEW GOOD " + dtGood.Rows.Count);
+                //MessageBox.Show("GOOD " + RDGood.Count.ToString());
+                //MessageBox.Show("NEW GOOD " + dtGood.Rows.Count);
 
 
-                MessageBox.Show("BAD " + RDBad.Count.ToString());
-                MessageBox.Show("NEW BAD " + dtBad.Rows.Count);
+                //MessageBox.Show("BAD " + RDBad.Count.ToString());
+                //MessageBox.Show("NEW BAD " + dtBad.Rows.Count);
 
             }
         }
@@ -222,9 +222,9 @@ namespace StatsProgram
                 LfGood += Convert.ToDecimal(r.LogInFind);
             }
 
-            MessageBox.Show("GOOD Snitt: " + Convert.ToString(LfGood / sortedList.Count));
-            VariableDataGood(sortedList);
-            return sortedList;
+            //MessageBox.Show("GOOD Snitt: " + Convert.ToString(LfGood / sortedList.Count));
+            VariableDataGood(goodData);
+            return goodData;
         }
 
         public List<RespondentDataBad> DeleteBadNulls(List<RespondentDataBad> badData)
@@ -259,158 +259,391 @@ namespace StatsProgram
                 LfBad += Convert.ToDecimal(r.LogInFind);
             }
 
-            MessageBox.Show("BAD Snitt: " + Convert.ToString(LfBad / sortedList.Count));
-            return sortedList;
+            //MessageBox.Show("BAD Snitt: " + Convert.ToString(LfBad / sortedList.Count));
+            VariableDataBad(badData);
+            return badData;
+        }
+
+        public decimal getStats(List<decimal> theList, out decimal count)
+        {
+            theList.Sort();
+            int noToRemove = Convert.ToInt16(theList.Count * 0.05);
+
+            theList.RemoveRange(0, noToRemove);
+            theList.RemoveRange(theList.Count - noToRemove, noToRemove);
+
+            decimal total = theList.Sum();
+            count = theList.Count;
+
+            return total;
         }
 
         public void VariableDataGood(List<RespondentDataGood> fullList)
         {
-            decimal countLoginFind = 0;
-            decimal totalLoginFind = 0;
-            decimal countLoginClick = 0;
-            decimal totalLoginClick = 0;
-            decimal countQstart = 0;
-            decimal totalQstart = 0;
-            decimal countTimeFirstQ = 0;
-            decimal totalTimeFirstQ = 0;
-            decimal countRQRTime2 = 0;
-            decimal totalRQRTime2 = 0;
-            decimal countRQRTime3 = 0;
-            decimal totalRQRTime3 = 0;
-            decimal countRQRTime4 = 0;
-            decimal totalRQRTime4 = 0;
-            decimal countRQRTime5 = 0;
-            decimal totalRQRTime5 = 0;
-            decimal countRQRTime6 = 0;
-            decimal totalRQRTime6 = 0;
-            decimal countTimeLastRQR = 0;
-            decimal totalTimeLastRQR = 0;
-            decimal countRQTTime1 = 0;
-            decimal totalRQTTime1 = 0;
-            decimal countRQTTime2 = 0;
-            decimal totalRQTTime2 = 0;
-            decimal countRQTTime3 = 0;
-            decimal totalRQTTime3 = 0;
+            
+            List<decimal> loginFindList = new List<decimal>();
+            List<decimal> loginClickList = new List<decimal>();
+            List<decimal> QstartList = new List<decimal>();
+            List<decimal> TimeFirstQList = new List<decimal>();
+            List<decimal> RQRTime2List = new List<decimal>();
+            List<decimal> RQRTime3List = new List<decimal>();
+            List<decimal> RQRTime4List = new List<decimal>();
+            List<decimal> RQRTime5List = new List<decimal>();
+            List<decimal> RQRTime6List = new List<decimal>();
+            List<decimal> TimeLastRQRList = new List<decimal>();
+            List<decimal> RQTTime1List = new List<decimal>();
+            List<decimal> RQTTime2List = new List<decimal>();
+            List<decimal> RQTTime3List = new List<decimal>();
 
             foreach(RespondentDataGood rd in fullList){
                 if (rd.LogInFind != 0)
                 {
-                    countLoginFind++;
-                    totalLoginFind += Convert.ToDecimal(rd.LogInFind);
+                    loginFindList.Add(Convert.ToDecimal(rd.LogInFind));
+                    //countLoginFind++;
+                    //totalLoginFind += Convert.ToDecimal(rd.LogInFind);
                 }
                 if (rd.LogInClick != 0)
                 {
-                    countLoginClick++;
-                    totalLoginClick += Convert.ToDecimal(rd.LogInClick);
+                    loginClickList.Add(Convert.ToDecimal(rd.LogInClick));
+                    //countLoginClick++;
+                    //totalLoginClick += Convert.ToDecimal(rd.LogInClick);
                 }
                 if (rd.Qstart != 0)
                 {
-                    countQstart++;
-                    totalQstart += Convert.ToDecimal(rd.Qstart);
+                    QstartList.Add(Convert.ToDecimal(rd.Qstart));
+                    //countQstart++;
+                    //totalQstart += Convert.ToDecimal(rd.Qstart);
                 }
                 if (rd.TimeFirstQ != 0)
                 {
-                    countTimeFirstQ++;
-                    totalTimeFirstQ += Convert.ToDecimal(rd.TimeFirstQ);
+                    TimeFirstQList.Add(Convert.ToDecimal(rd.TimeFirstQ));
+                    //countTimeFirstQ++;
+                    //totalTimeFirstQ += Convert.ToDecimal(rd.TimeFirstQ);
                 }
                 if (rd.RQRTime2 != 0)
                 {
-                    countRQRTime2++;
-                    totalRQRTime2 += Convert.ToDecimal(rd.RQRTime2);
+                    RQRTime2List.Add(Convert.ToDecimal(rd.RQRTime2));
+                    //countRQRTime2++;
+                    //totalRQRTime2 += Convert.ToDecimal(rd.RQRTime2);
                 }
                 if (rd.RQRTime3 != 0)
                 {
-                    countRQRTime3++;
-                    totalRQRTime3 += Convert.ToDecimal(rd.RQRTime3);
+                    RQRTime3List.Add(Convert.ToDecimal(rd.RQRTime3));
+                    //countRQRTime3++;
+                    //totalRQRTime3 += Convert.ToDecimal(rd.RQRTime3);
                 }
                 if (rd.RQRTime4 != 0)
                 {
-                    countRQRTime4++;
-                    totalRQRTime4 += Convert.ToDecimal(rd.RQRTime4);
+                    RQRTime4List.Add(Convert.ToDecimal(rd.RQRTime4));
+                    //countRQRTime4++;
+                    //totalRQRTime4 += Convert.ToDecimal(rd.RQRTime4);
                 }
                 if (rd.RQRTime5 != 0)
                 {
-                    countRQRTime5++;
-                    totalRQRTime5 += Convert.ToDecimal(rd.RQRTime5);
+                    RQRTime5List.Add(Convert.ToDecimal(rd.RQRTime5));
+                    //countRQRTime5++;
+                    //totalRQRTime5 += Convert.ToDecimal(rd.RQRTime5);
                 }
                 if (rd.RQRTime6 != 0)
                 {
-                    countRQRTime6++;
-                    totalRQRTime6 += Convert.ToDecimal(rd.RQRTime6);
+                    RQRTime6List.Add(Convert.ToDecimal(rd.RQRTime6));
+                    //countRQRTime6++;
+                    //totalRQRTime6 += Convert.ToDecimal(rd.RQRTime6);
                 }
                 if (rd.TimeLastRQR != 0)
                 {
-                    countTimeLastRQR++;
-                    totalTimeLastRQR += Convert.ToDecimal(rd.TimeLastRQR);
+                    TimeLastRQRList.Add(Convert.ToDecimal(rd.TimeLastRQR));
+                    //countTimeLastRQR++;
+                    //totalTimeLastRQR += Convert.ToDecimal(rd.TimeLastRQR);
                 }
                 if (rd.RQTTime1 != 0)
                 {
-                    countRQTTime1++;
-                    totalRQTTime1 += Convert.ToDecimal(rd.RQTTime1);
+                    RQTTime1List.Add(Convert.ToDecimal(rd.RQTTime1));
+                    //countRQTTime1++;
+                    //totalRQTTime1 += Convert.ToDecimal(rd.RQTTime1);
                 }
                 if (rd.RQTTime2 != 0)
                 {
-                    countRQTTime2++;
-                    totalRQTTime2 += Convert.ToDecimal(rd.RQTTime2);
+                    RQTTime2List.Add(Convert.ToDecimal(rd.RQTTime2));
+                    //countRQTTime2++;
+                    //totalRQTTime2 += Convert.ToDecimal(rd.RQTTime2);
                 }
                 if (rd.RQTTime3 != 0)
                 {
-                    countRQTTime3++;
-                    totalRQTTime3 += Convert.ToDecimal(rd.RQTTime3);
+                    RQTTime3List.Add(Convert.ToDecimal(rd.RQTTime3));
+                    //countRQTTime3++;
+                    //totalRQTTime3 += Convert.ToDecimal(rd.RQTTime3);
                 }
             }
-            lblLogInFindCountG.Text = Convert.ToInt32(countLoginFind).ToString();
-            lblLogInFindTotalG.Text = Convert.ToInt32(totalLoginFind).ToString();
-            lblLogInFindAvgG.Text = Convert.ToInt32((totalLoginFind / countLoginFind)).ToString();
 
-            lblLogInClickCountG.Text = Convert.ToInt32(countLoginClick).ToString();
-            lblLogInClickTotalG.Text = Convert.ToInt32(totalLoginClick).ToString();
-            lblLogInClickAvgG.Text = Convert.ToInt32((totalLoginClick / countLoginClick)).ToString();
+            decimal countLoginFind = 0;
+            decimal totalLoginFind = getStats(loginFindList, out countLoginFind);
+            decimal countLoginClick = 0;
+            decimal totalLoginClick = getStats(loginClickList, out countLoginClick);
+            decimal countQstart = 0;
+            decimal totalQstart = getStats(QstartList, out countQstart);
+            decimal countTimeFirstQ = 0;
+            decimal totalTimeFirstQ = getStats(TimeFirstQList, out countTimeFirstQ);
+            decimal countRQRTime2 = 0;
+            decimal totalRQRTime2 = getStats(RQRTime2List, out countRQRTime2);
+            decimal countRQRTime3 = 0;
+            decimal totalRQRTime3 = getStats(RQRTime3List, out countRQRTime3);
+            decimal countRQRTime4 = 0;
+            decimal totalRQRTime4 = getStats(RQRTime4List, out countRQRTime4);
+            decimal countRQRTime5 = 0;
+            decimal totalRQRTime5 = getStats(RQRTime5List, out countRQRTime5);
+            decimal countRQRTime6 = 0;
+            decimal totalRQRTime6 = getStats(RQRTime6List, out countRQRTime6);
+            decimal countTimeLastRQR = 0;
+            decimal totalTimeLastRQR = getStats(TimeLastRQRList, out countTimeLastRQR);
+            decimal countRQTTime1 = 0;
+            decimal totalRQTTime1 = getStats(RQTTime1List, out countRQTTime1);
+            decimal countRQTTime2 = 0;
+            decimal totalRQTTime2 = getStats(RQTTime2List, out countRQTTime2);
+            decimal countRQTTime3 = 0;
+            decimal totalRQTTime3 = getStats(RQTTime3List, out countRQTTime3);
 
-            lblQstartCountG.Text = Convert.ToInt32(countQstart).ToString();
-            lblQstartTotalG.Text = Convert.ToInt32(totalQstart).ToString();
-            lblQstartAvgG.Text = Convert.ToInt32((totalQstart / countQstart)).ToString();
+            //loginFindList.Sort();
+            //int noToRemove = Convert.ToInt16(loginFindList.Count * 0.05);
 
-            lblFirstTimeQCountG.Text = Convert.ToInt32(countTimeFirstQ).ToString();
-            lblFirstTimeQTotalG.Text = Convert.ToInt32(totalTimeFirstQ).ToString();
-            lblFirstTimeQAvgG.Text = Convert.ToInt32((totalTimeFirstQ / countTimeFirstQ)).ToString();
+            //loginFindList.RemoveRange(0, noToRemove);
+            //loginFindList.RemoveRange(loginFindList.Count - noToRemove, noToRemove);
 
-            lblRQRTime2CountG.Text = Convert.ToInt32(countRQRTime2).ToString();
-            lblRQRTime2TotalG.Text = Convert.ToInt32(totalRQRTime2).ToString();
-            lblRQRTime2AvgG.Text = Convert.ToInt32((totalRQRTime2 / countRQRTime2)).ToString();
+            //decimal test = loginFindList.Sum();
+            //countLoginFind = loginFindList.Count;
 
-            lblRQRTime3CountG.Text = Convert.ToInt32(countRQRTime3).ToString();
-            lblRQRTime3TotalG.Text = Convert.ToInt32(totalRQRTime3).ToString();
-            lblRQRTime3AvgG.Text = Convert.ToInt32((totalRQRTime3 / countRQRTime3)).ToString();
+            lblLogInFindCountG.Text = Convert.ToInt64(countLoginFind).ToString();
+            lblLogInFindTotalG.Text = Convert.ToInt64(totalLoginFind).ToString();
+            lblLogInFindAvgG.Text = Convert.ToInt64((totalLoginFind / countLoginFind)).ToString();
 
-            lblRQRTime4CountG.Text = Convert.ToInt32(countRQRTime4).ToString();
-            lblRQRTime4TotalG.Text = Convert.ToInt32(totalRQRTime4).ToString();
-            lblRQRTime4AvgG.Text = Convert.ToInt32((totalRQRTime4 / countRQRTime4)).ToString();
+            lblLogInClickCountG.Text = Convert.ToInt64(countLoginClick).ToString();
+            lblLogInClickTotalG.Text = Convert.ToInt64(totalLoginClick).ToString();
+            lblLogInClickAvgG.Text = Convert.ToInt64((totalLoginClick / countLoginClick)).ToString();
 
-            lblRQRTime5CountG.Text = Convert.ToInt32(countRQRTime5).ToString();
-            lblRQRTime5TotalG.Text = Convert.ToInt32(totalRQRTime5).ToString();
-            lblRQRTime5AvgG.Text = Convert.ToInt32((totalRQRTime5 / countRQRTime5)).ToString();
+            lblQstartCountG.Text = Convert.ToInt64(countQstart).ToString();
+            lblQstartTotalG.Text = Convert.ToInt64(totalQstart).ToString();
+            lblQstartAvgG.Text = Convert.ToInt64((totalQstart / countQstart)).ToString();
 
-            lblRQRTime6CountG.Text = Convert.ToInt32(countRQRTime6).ToString();
-            lblRQRTime6TotalG.Text = Convert.ToInt32(totalRQRTime6).ToString();
-            lblRQRTime6AvgG.Text = Convert.ToInt32((totalRQRTime6 / countRQRTime6)).ToString();
+            lblFirstTimeQCountG.Text = Convert.ToInt64(countTimeFirstQ).ToString();
+            lblFirstTimeQTotalG.Text = Convert.ToInt64(totalTimeFirstQ).ToString();
+            lblFirstTimeQAvgG.Text = Convert.ToInt64((totalTimeFirstQ / countTimeFirstQ)).ToString();
 
-            lblTimeLastRQRCountG.Text = Convert.ToInt32(countTimeLastRQR).ToString();
-            lblTimeLastRQRTotalG.Text = Convert.ToInt32(totalTimeLastRQR).ToString();
-            lblTimeLastRQRAvgG.Text = Convert.ToInt32((totalTimeLastRQR / countTimeLastRQR)).ToString();
+            lblRQRTime2CountG.Text = Convert.ToInt64(countRQRTime2).ToString();
+            lblRQRTime2TotalG.Text = Convert.ToInt64(totalRQRTime2).ToString();
+            lblRQRTime2AvgG.Text = Convert.ToInt64((totalRQRTime2 / countRQRTime2)).ToString();
 
-            lblRQTTime1CountG.Text = Convert.ToInt32(countRQTTime1).ToString();
-            lblRQTTime1TotalG.Text = Convert.ToInt32(totalRQTTime1).ToString();
-            lblRQTTime1AvgG.Text = Convert.ToInt32((totalRQTTime1 / countRQTTime1)).ToString();
+            lblRQRTime3CountG.Text = Convert.ToInt64(countRQRTime3).ToString();
+            lblRQRTime3TotalG.Text = Convert.ToInt64(totalRQRTime3).ToString();
+            lblRQRTime3AvgG.Text = Convert.ToInt64((totalRQRTime3 / countRQRTime3)).ToString();
 
-            lblRQTTime2CountG.Text = Convert.ToInt32(countRQTTime2).ToString();
-            lblRQTTime2TotalG.Text = Convert.ToInt32(totalRQTTime2).ToString();
-            lblRQTTime2AvgG.Text = Convert.ToInt32((totalRQTTime2 / countRQTTime2)).ToString();
+            lblRQRTime4CountG.Text = Convert.ToInt64(countRQRTime4).ToString();
+            lblRQRTime4TotalG.Text = Convert.ToInt64(totalRQRTime4).ToString();
+            lblRQRTime4AvgG.Text = Convert.ToInt64((totalRQRTime4 / countRQRTime4)).ToString();
 
-            lblRQTTime3CountG.Text = Convert.ToInt32(countRQTTime3).ToString();
-            lblRQTTime3TotalG.Text = Convert.ToInt32(totalRQTTime3).ToString();
-            lblRQTTime3AvgG.Text = Convert.ToInt32((totalRQTTime3 / countRQTTime3)).ToString();
+            lblRQRTime5CountG.Text = Convert.ToInt64(countRQRTime5).ToString();
+            lblRQRTime5TotalG.Text = Convert.ToInt64(totalRQRTime5).ToString();
+            lblRQRTime5AvgG.Text = Convert.ToInt64((totalRQRTime5 / countRQRTime5)).ToString();
+
+            lblRQRTime6CountG.Text = Convert.ToInt64(countRQRTime6).ToString();
+            lblRQRTime6TotalG.Text = Convert.ToInt64(totalRQRTime6).ToString();
+            lblRQRTime6AvgG.Text = Convert.ToInt64((totalRQRTime6 / countRQRTime6)).ToString();
+
+            lblTimeLastRQRCountG.Text = Convert.ToInt64(countTimeLastRQR).ToString();
+            lblTimeLastRQRTotalG.Text = Convert.ToInt64(totalTimeLastRQR).ToString();
+            lblTimeLastRQRAvgG.Text = Convert.ToInt64((totalTimeLastRQR / countTimeLastRQR)).ToString();
+
+            lblRQTTime1CountG.Text = Convert.ToInt64(countRQTTime1).ToString();
+            lblRQTTime1TotalG.Text = Convert.ToInt64(totalRQTTime1).ToString();
+            lblRQTTime1AvgG.Text = Convert.ToInt64((totalRQTTime1 / countRQTTime1)).ToString();
+
+            lblRQTTime2CountG.Text = Convert.ToInt64(countRQTTime2).ToString();
+            lblRQTTime2TotalG.Text = Convert.ToInt64(totalRQTTime2).ToString();
+            lblRQTTime2AvgG.Text = Convert.ToInt64((totalRQTTime2 / countRQTTime2)).ToString();
+
+            lblRQTTime3CountG.Text = Convert.ToInt64(countRQTTime3).ToString();
+            lblRQTTime3TotalG.Text = Convert.ToInt64(totalRQTTime3).ToString();
+            lblRQTTime3AvgG.Text = Convert.ToInt64((totalRQTTime3 / countRQTTime3)).ToString();
         }
+
+        public void VariableDataBad(List<RespondentDataBad> fullList)
+        {
+            List<decimal> loginFindList = new List<decimal>();
+            List<decimal> loginClickList = new List<decimal>();
+            List<decimal> QstartList = new List<decimal>();
+            List<decimal> TimeFirstQList = new List<decimal>();
+            List<decimal> RQRTime2List = new List<decimal>();
+            List<decimal> RQRTime3List = new List<decimal>();
+            List<decimal> RQRTime4List = new List<decimal>();
+            List<decimal> RQRTime5List = new List<decimal>();
+            List<decimal> RQRTime6List = new List<decimal>();
+            List<decimal> TimeLastRQRList = new List<decimal>();
+            List<decimal> RQTTime1List = new List<decimal>();
+            List<decimal> RQTTime2List = new List<decimal>();
+            List<decimal> RQTTime3List = new List<decimal>();
+
+            foreach (RespondentDataBad rd in fullList)
+            {
+                if (rd.LogInFind != 0)
+                {
+                    loginFindList.Add(Convert.ToDecimal(rd.LogInFind));
+                    //countLoginFind++;
+                    //totalLoginFind += Convert.ToDecimal(rd.LogInFind);
+                }
+                if (rd.LogInClick != 0)
+                {
+                    loginClickList.Add(Convert.ToDecimal(rd.LogInClick));
+                    //countLoginClick++;
+                    //totalLoginClick += Convert.ToDecimal(rd.LogInClick);
+                }
+                if (rd.Qstart != 0)
+                {
+                    QstartList.Add(Convert.ToDecimal(rd.Qstart));
+                    //countQstart++;
+                    //totalQstart += Convert.ToDecimal(rd.Qstart);
+                }
+                if (rd.TimeFirstQ != 0)
+                {
+                    TimeFirstQList.Add(Convert.ToDecimal(rd.TimeFirstQ));
+                    //countTimeFirstQ++;
+                    //totalTimeFirstQ += Convert.ToDecimal(rd.TimeFirstQ);
+                }
+                if (rd.RQRTime2 != 0)
+                {
+                    RQRTime2List.Add(Convert.ToDecimal(rd.RQRTime2));
+                    //countRQRTime2++;
+                    //totalRQRTime2 += Convert.ToDecimal(rd.RQRTime2);
+                }
+                if (rd.RQRTime3 != 0)
+                {
+                    RQRTime3List.Add(Convert.ToDecimal(rd.RQRTime3));
+                    //countRQRTime3++;
+                    //totalRQRTime3 += Convert.ToDecimal(rd.RQRTime3);
+                }
+                if (rd.RQRTime4 != 0)
+                {
+                    RQRTime4List.Add(Convert.ToDecimal(rd.RQRTime4));
+                    //countRQRTime4++;
+                    //totalRQRTime4 += Convert.ToDecimal(rd.RQRTime4);
+                }
+                if (rd.RQRTime5 != 0)
+                {
+                    RQRTime5List.Add(Convert.ToDecimal(rd.RQRTime5));
+                    //countRQRTime5++;
+                    //totalRQRTime5 += Convert.ToDecimal(rd.RQRTime5);
+                }
+                if (rd.RQRTime6 != 0)
+                {
+                    RQRTime6List.Add(Convert.ToDecimal(rd.RQRTime6));
+                    //countRQRTime6++;
+                    //totalRQRTime6 += Convert.ToDecimal(rd.RQRTime6);
+                }
+                if (rd.TimeLastRQR != 0)
+                {
+                    TimeLastRQRList.Add(Convert.ToDecimal(rd.TimeLastRQR));
+                    //countTimeLastRQR++;
+                    //totalTimeLastRQR += Convert.ToDecimal(rd.TimeLastRQR);
+                }
+                if (rd.RQTTime1 != 0)
+                {
+                    RQTTime1List.Add(Convert.ToDecimal(rd.RQTTime1));
+                    //countRQTTime1++;
+                    //totalRQTTime1 += Convert.ToDecimal(rd.RQTTime1);
+                }
+                if (rd.RQTTime2 != 0)
+                {
+                    RQTTime2List.Add(Convert.ToDecimal(rd.RQTTime2));
+                    //countRQTTime2++;
+                    //totalRQTTime2 += Convert.ToDecimal(rd.RQTTime2);
+                }
+                if (rd.RQTTime3 != 0)
+                {
+                    RQTTime3List.Add(Convert.ToDecimal(rd.RQTTime3));
+                    //countRQTTime3++;
+                    //totalRQTTime3 += Convert.ToDecimal(rd.RQTTime3);
+                }
+            }
+
+            decimal countLoginFind = 0;
+            decimal totalLoginFind = getStats(loginFindList, out countLoginFind);
+            decimal countLoginClick = 0;
+            decimal totalLoginClick = getStats(loginClickList, out countLoginClick);
+            decimal countQstart = 0;
+            decimal totalQstart = getStats(QstartList, out countQstart);
+            decimal countTimeFirstQ = 0;
+            decimal totalTimeFirstQ = getStats(TimeFirstQList, out countTimeFirstQ);
+            decimal countRQRTime2 = 0;
+            decimal totalRQRTime2 = getStats(RQRTime2List, out countRQRTime2);
+            decimal countRQRTime3 = 0;
+            decimal totalRQRTime3 = getStats(RQRTime3List, out countRQRTime3);
+            decimal countRQRTime4 = 0;
+            decimal totalRQRTime4 = getStats(RQRTime4List, out countRQRTime4);
+            decimal countRQRTime5 = 0;
+            decimal totalRQRTime5 = getStats(RQRTime5List, out countRQRTime5);
+            decimal countRQRTime6 = 0;
+            decimal totalRQRTime6 = getStats(RQRTime6List, out countRQRTime6);
+            decimal countTimeLastRQR = 0;
+            decimal totalTimeLastRQR = getStats(TimeLastRQRList, out countTimeLastRQR);
+            decimal countRQTTime1 = 0;
+            decimal totalRQTTime1 = getStats(RQTTime1List, out countRQTTime1);
+            decimal countRQTTime2 = 0;
+            decimal totalRQTTime2 = getStats(RQTTime2List, out countRQTTime2);
+            decimal countRQTTime3 = 0;
+            decimal totalRQTTime3 = getStats(RQTTime3List, out countRQTTime3);
+
+            lblLogInFindCountB.Text = Convert.ToInt64(countLoginFind).ToString();
+            lblLogInFindTotalB.Text = Convert.ToInt64(totalLoginFind).ToString();
+            lblLogInFindAvgB.Text = Convert.ToInt64((totalLoginFind / countLoginFind)).ToString();
+
+            lblLogInClickCountB.Text = Convert.ToInt64(countLoginClick).ToString();
+            lblLogInClickTotalB.Text = Convert.ToInt64(totalLoginClick).ToString();
+            lblLogInClickAvgB.Text = Convert.ToInt64((totalLoginClick / countLoginClick)).ToString();
+
+            lblQstartCountB.Text = Convert.ToInt64(countQstart).ToString();
+            lblQstartTotalB.Text = Convert.ToInt64(totalQstart).ToString();
+            lblQstartAvgB.Text = Convert.ToInt64((totalQstart / countQstart)).ToString();
+
+            lblFirstTimeQCountB.Text = Convert.ToInt64(countTimeFirstQ).ToString();
+            lblFirstTimeQTotalB.Text = Convert.ToInt64(totalTimeFirstQ).ToString();
+            lblFirstTimeQAvgB.Text = Convert.ToInt64((totalTimeFirstQ / countTimeFirstQ)).ToString();
+
+            lblRQRTime2CountB.Text = Convert.ToInt64(countRQRTime2).ToString();
+            lblRQRTime2TotalB.Text = Convert.ToInt64(totalRQRTime2).ToString();
+            lblRQRTime2AvgB.Text = Convert.ToInt64((totalRQRTime2 / countRQRTime2)).ToString();
+
+            lblRQRTime3CountB.Text = Convert.ToInt64(countRQRTime3).ToString();
+            lblRQRTime3TotalB.Text = Convert.ToInt64(totalRQRTime3).ToString();
+            lblRQRTime3AvgB.Text = Convert.ToInt64((totalRQRTime3 / countRQRTime3)).ToString();
+
+            lblRQRTime4CountB.Text = Convert.ToInt64(countRQRTime4).ToString();
+            lblRQRTime4TotalB.Text = Convert.ToInt64(totalRQRTime4).ToString();
+            lblRQRTime4AvgB.Text = Convert.ToInt64((totalRQRTime4 / countRQRTime4)).ToString();
+
+            lblRQRTime5CountB.Text = Convert.ToInt64(countRQRTime5).ToString();
+            lblRQRTime5TotalB.Text = Convert.ToInt64(totalRQRTime5).ToString();
+            lblRQRTime5AvgB.Text = Convert.ToInt64((totalRQRTime5 / countRQRTime5)).ToString();
+
+            lblRQRTime6CountB.Text = Convert.ToInt64(countRQRTime6).ToString();
+            lblRQRTime6TotalB.Text = Convert.ToInt64(totalRQRTime6).ToString();
+            lblRQRTime6AvgB.Text = Convert.ToInt64((totalRQRTime6 / countRQRTime6)).ToString();
+
+            lblTimeLastRQRCountB.Text = Convert.ToInt64(countTimeLastRQR).ToString();
+            lblTimeLastRQRTotalB.Text = Convert.ToInt64(totalTimeLastRQR).ToString();
+            lblTimeLastRQRAvgB.Text = Convert.ToInt64((totalTimeLastRQR / countTimeLastRQR)).ToString();
+
+            lblRQTTime1CountB.Text = Convert.ToInt64(countRQTTime1).ToString();
+            lblRQTTime1TotalB.Text = Convert.ToInt64(totalRQTTime1).ToString();
+            lblRQTTime1AvgB.Text = Convert.ToInt64((totalRQTTime1 / countRQTTime1)).ToString();
+
+            lblRQTTime2CountB.Text = Convert.ToInt64(countRQTTime2).ToString();
+            lblRQTTime2TotalB.Text = Convert.ToInt64(totalRQTTime2).ToString();
+            lblRQTTime2AvgB.Text = Convert.ToInt64((totalRQTTime2 / countRQTTime2)).ToString();
+
+            lblRQTTime3CountB.Text = Convert.ToInt64(countRQTTime3).ToString();
+            lblRQTTime3TotalB.Text = Convert.ToInt64(totalRQTTime3).ToString();
+            lblRQTTime3AvgB.Text = Convert.ToInt64((totalRQTTime3 / countRQTTime3)).ToString();
+        }
+
+
 
     }
 }
