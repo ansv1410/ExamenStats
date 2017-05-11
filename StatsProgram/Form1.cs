@@ -267,11 +267,96 @@ namespace StatsProgram
         {
             decimal countLoginFind = 0;
             decimal totalLoginFind = 0;
+            decimal countLoginClick = 0;
+            decimal totalLoginClick = 0;
+            decimal countQstart = 0;
+            decimal totalQstart = 0;
+            decimal countTimeFirstQ = 0;
+            decimal totalTimeFirstQ = 0;
+            decimal countRQRTime2 = 0;
+            decimal totalRQRTime2 = 0;
+            decimal countRQRTime3 = 0;
+            decimal totalRQRTime3 = 0;
+            decimal countRQRTime4 = 0;
+            decimal totalRQRTime4 = 0;
+            decimal countRQRTime5 = 0;
+            decimal totalRQRTime5 = 0;
+            decimal countRQRTime6 = 0;
+            decimal totalRQRTime6 = 0;
+            decimal countTimeLastRQR = 0;
+            decimal totalTimeLastRQR = 0;
+            decimal countRQTTime1 = 0;
+            decimal totalRQTTime1 = 0;
+            decimal countRQTTime2 = 0;
+            decimal totalRQTTime2 = 0;
+            decimal countRQTTime3 = 0;
+            decimal totalRQTTime3 = 0;
+
             foreach(RespondentDataGood rd in fullList){
                 if (rd.LogInFind != 0)
                 {
                     countLoginFind++;
                     totalLoginFind += Convert.ToDecimal(rd.LogInFind);
+                }
+                if (rd.LogInClick != 0)
+                {
+                    countLoginClick++;
+                    totalLoginClick += Convert.ToDecimal(rd.LogInClick);
+                }
+                if (rd.Qstart != 0)
+                {
+                    countQstart++;
+                    totalQstart += Convert.ToDecimal(rd.Qstart);
+                }
+                if (rd.TimeFirstQ != 0)
+                {
+                    countTimeFirstQ++;
+                    totalTimeFirstQ += Convert.ToDecimal(rd.TimeFirstQ);
+                }
+                if (rd.RQRTime2 != 0)
+                {
+                    countRQRTime2++;
+                    totalRQRTime2 += Convert.ToDecimal(rd.RQRTime2);
+                }
+                if (rd.RQRTime3 != 0)
+                {
+                    countRQRTime3++;
+                    totalRQRTime3 += Convert.ToDecimal(rd.RQRTime3);
+                }
+                if (rd.RQRTime4 != 0)
+                {
+                    countRQRTime4++;
+                    totalRQRTime4 += Convert.ToDecimal(rd.RQRTime4);
+                }
+                if (rd.RQRTime5 != 0)
+                {
+                    countRQRTime5++;
+                    totalRQRTime5 += Convert.ToDecimal(rd.RQRTime5);
+                }
+                if (rd.RQRTime6 != 0)
+                {
+                    countRQRTime6++;
+                    totalRQRTime6 += Convert.ToDecimal(rd.RQRTime6);
+                }
+                if (rd.TimeLastRQR != 0)
+                {
+                    countTimeLastRQR++;
+                    totalTimeLastRQR += Convert.ToDecimal(rd.TimeLastRQR);
+                }
+                if (rd.RQTTime1 != 0)
+                {
+                    countRQTTime1++;
+                    totalRQTTime1 += Convert.ToDecimal(rd.RQTTime1);
+                }
+                if (rd.RQTTime2 != 0)
+                {
+                    countRQTTime2++;
+                    totalRQTTime2 += Convert.ToDecimal(rd.RQTTime2);
+                }
+                if (rd.RQTTime3 != 0)
+                {
+                    countRQTTime3++;
+                    totalRQTTime3 += Convert.ToDecimal(rd.RQTTime3);
                 }
             }
             lblLogInFindCountG.Text = countLoginFind.ToString();
