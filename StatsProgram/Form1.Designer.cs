@@ -38,6 +38,26 @@
             this.lblLogInClickAvgG = new System.Windows.Forms.Label();
             this.lblLogInClickTotalG = new System.Windows.Forms.Label();
             this.lblLogInClickCountG = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblQstartAvgG = new System.Windows.Forms.Label();
+            this.lblQstartTotalG = new System.Windows.Forms.Label();
+            this.lblQstartCountG = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblFirstTimeQAvgG = new System.Windows.Forms.Label();
+            this.lblFirstTimeQTotalG = new System.Windows.Forms.Label();
+            this.lblFirstTimeQCountG = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblRQRTime2AvgG = new System.Windows.Forms.Label();
+            this.lblRQRTime2TotalG = new System.Windows.Forms.Label();
+            this.lblRQRTime2CountG = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblRQRTime3AvgG = new System.Windows.Forms.Label();
+            this.lblRQRTime3TotalG = new System.Windows.Forms.Label();
+            this.lblRQRTime3CountG = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblRQRTime4AvgG = new System.Windows.Forms.Label();
+            this.lblRQRTime4TotalG = new System.Windows.Forms.Label();
+            this.lblRQRTime4CountG = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBad)).BeginInit();
             this.SuspendLayout();
@@ -132,11 +152,211 @@
             this.lblLogInClickCountG.TabIndex = 6;
             this.lblLogInClickCountG.Text = "label1";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(414, 347);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Qstart";
+            // 
+            // lblQstartAvgG
+            // 
+            this.lblQstartAvgG.AutoSize = true;
+            this.lblQstartAvgG.Location = new System.Drawing.Point(414, 386);
+            this.lblQstartAvgG.Name = "lblQstartAvgG";
+            this.lblQstartAvgG.Size = new System.Drawing.Size(35, 13);
+            this.lblQstartAvgG.TabIndex = 12;
+            this.lblQstartAvgG.Text = "label3";
+            // 
+            // lblQstartTotalG
+            // 
+            this.lblQstartTotalG.AutoSize = true;
+            this.lblQstartTotalG.Location = new System.Drawing.Point(414, 373);
+            this.lblQstartTotalG.Name = "lblQstartTotalG";
+            this.lblQstartTotalG.Size = new System.Drawing.Size(35, 13);
+            this.lblQstartTotalG.TabIndex = 11;
+            this.lblQstartTotalG.Text = "label2";
+            // 
+            // lblQstartCountG
+            // 
+            this.lblQstartCountG.AutoSize = true;
+            this.lblQstartCountG.Location = new System.Drawing.Point(414, 360);
+            this.lblQstartCountG.Name = "lblQstartCountG";
+            this.lblQstartCountG.Size = new System.Drawing.Size(35, 13);
+            this.lblQstartCountG.TabIndex = 10;
+            this.lblQstartCountG.Text = "label1";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(465, 347);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "FirstTimeQ";
+            // 
+            // lblFirstTimeQAvgG
+            // 
+            this.lblFirstTimeQAvgG.AutoSize = true;
+            this.lblFirstTimeQAvgG.Location = new System.Drawing.Point(465, 386);
+            this.lblFirstTimeQAvgG.Name = "lblFirstTimeQAvgG";
+            this.lblFirstTimeQAvgG.Size = new System.Drawing.Size(35, 13);
+            this.lblFirstTimeQAvgG.TabIndex = 16;
+            this.lblFirstTimeQAvgG.Text = "label3";
+            // 
+            // lblFirstTimeQTotalG
+            // 
+            this.lblFirstTimeQTotalG.AutoSize = true;
+            this.lblFirstTimeQTotalG.Location = new System.Drawing.Point(465, 373);
+            this.lblFirstTimeQTotalG.Name = "lblFirstTimeQTotalG";
+            this.lblFirstTimeQTotalG.Size = new System.Drawing.Size(35, 13);
+            this.lblFirstTimeQTotalG.TabIndex = 15;
+            this.lblFirstTimeQTotalG.Text = "label2";
+            // 
+            // lblFirstTimeQCountG
+            // 
+            this.lblFirstTimeQCountG.AutoSize = true;
+            this.lblFirstTimeQCountG.Location = new System.Drawing.Point(465, 360);
+            this.lblFirstTimeQCountG.Name = "lblFirstTimeQCountG";
+            this.lblFirstTimeQCountG.Size = new System.Drawing.Size(35, 13);
+            this.lblFirstTimeQCountG.TabIndex = 14;
+            this.lblFirstTimeQCountG.Text = "label1";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(528, 347);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "RQRTime2";
+            // 
+            // lblRQRTime2AvgG
+            // 
+            this.lblRQRTime2AvgG.AutoSize = true;
+            this.lblRQRTime2AvgG.Location = new System.Drawing.Point(528, 386);
+            this.lblRQRTime2AvgG.Name = "lblRQRTime2AvgG";
+            this.lblRQRTime2AvgG.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime2AvgG.TabIndex = 20;
+            this.lblRQRTime2AvgG.Text = "label3";
+            // 
+            // lblRQRTime2TotalG
+            // 
+            this.lblRQRTime2TotalG.AutoSize = true;
+            this.lblRQRTime2TotalG.Location = new System.Drawing.Point(528, 373);
+            this.lblRQRTime2TotalG.Name = "lblRQRTime2TotalG";
+            this.lblRQRTime2TotalG.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime2TotalG.TabIndex = 19;
+            this.lblRQRTime2TotalG.Text = "label2";
+            // 
+            // lblRQRTime2CountG
+            // 
+            this.lblRQRTime2CountG.AutoSize = true;
+            this.lblRQRTime2CountG.Location = new System.Drawing.Point(528, 360);
+            this.lblRQRTime2CountG.Name = "lblRQRTime2CountG";
+            this.lblRQRTime2CountG.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime2CountG.TabIndex = 18;
+            this.lblRQRTime2CountG.Text = "label1";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(594, 347);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "RQRTime3";
+            // 
+            // lblRQRTime3AvgG
+            // 
+            this.lblRQRTime3AvgG.AutoSize = true;
+            this.lblRQRTime3AvgG.Location = new System.Drawing.Point(594, 386);
+            this.lblRQRTime3AvgG.Name = "lblRQRTime3AvgG";
+            this.lblRQRTime3AvgG.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime3AvgG.TabIndex = 24;
+            this.lblRQRTime3AvgG.Text = "label3";
+            // 
+            // lblRQRTime3TotalG
+            // 
+            this.lblRQRTime3TotalG.AutoSize = true;
+            this.lblRQRTime3TotalG.Location = new System.Drawing.Point(594, 373);
+            this.lblRQRTime3TotalG.Name = "lblRQRTime3TotalG";
+            this.lblRQRTime3TotalG.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime3TotalG.TabIndex = 23;
+            this.lblRQRTime3TotalG.Text = "label2";
+            // 
+            // lblRQRTime3CountG
+            // 
+            this.lblRQRTime3CountG.AutoSize = true;
+            this.lblRQRTime3CountG.Location = new System.Drawing.Point(594, 360);
+            this.lblRQRTime3CountG.Name = "lblRQRTime3CountG";
+            this.lblRQRTime3CountG.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime3CountG.TabIndex = 22;
+            this.lblRQRTime3CountG.Text = "label1";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(660, 347);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 13);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "RQRTime4";
+            // 
+            // lblRQRTime4AvgG
+            // 
+            this.lblRQRTime4AvgG.AutoSize = true;
+            this.lblRQRTime4AvgG.Location = new System.Drawing.Point(660, 386);
+            this.lblRQRTime4AvgG.Name = "lblRQRTime4AvgG";
+            this.lblRQRTime4AvgG.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime4AvgG.TabIndex = 28;
+            this.lblRQRTime4AvgG.Text = "label3";
+            // 
+            // lblRQRTime4TotalG
+            // 
+            this.lblRQRTime4TotalG.AutoSize = true;
+            this.lblRQRTime4TotalG.Location = new System.Drawing.Point(660, 373);
+            this.lblRQRTime4TotalG.Name = "lblRQRTime4TotalG";
+            this.lblRQRTime4TotalG.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime4TotalG.TabIndex = 27;
+            this.lblRQRTime4TotalG.Text = "label2";
+            // 
+            // lblRQRTime4CountG
+            // 
+            this.lblRQRTime4CountG.AutoSize = true;
+            this.lblRQRTime4CountG.Location = new System.Drawing.Point(660, 360);
+            this.lblRQRTime4CountG.Name = "lblRQRTime4CountG";
+            this.lblRQRTime4CountG.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime4CountG.TabIndex = 26;
+            this.lblRQRTime4CountG.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1021);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblRQRTime4AvgG);
+            this.Controls.Add(this.lblRQRTime4TotalG);
+            this.Controls.Add(this.lblRQRTime4CountG);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblRQRTime3AvgG);
+            this.Controls.Add(this.lblRQRTime3TotalG);
+            this.Controls.Add(this.lblRQRTime3CountG);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblRQRTime2AvgG);
+            this.Controls.Add(this.lblRQRTime2TotalG);
+            this.Controls.Add(this.lblRQRTime2CountG);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblFirstTimeQAvgG);
+            this.Controls.Add(this.lblFirstTimeQTotalG);
+            this.Controls.Add(this.lblFirstTimeQCountG);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblQstartAvgG);
+            this.Controls.Add(this.lblQstartTotalG);
+            this.Controls.Add(this.lblQstartCountG);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblLogInClickAvgG);
             this.Controls.Add(this.lblLogInClickTotalG);
@@ -168,6 +388,26 @@
         private System.Windows.Forms.Label lblLogInClickAvgG;
         private System.Windows.Forms.Label lblLogInClickTotalG;
         private System.Windows.Forms.Label lblLogInClickCountG;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblQstartAvgG;
+        private System.Windows.Forms.Label lblQstartTotalG;
+        private System.Windows.Forms.Label lblQstartCountG;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblFirstTimeQAvgG;
+        private System.Windows.Forms.Label lblFirstTimeQTotalG;
+        private System.Windows.Forms.Label lblFirstTimeQCountG;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblRQRTime2AvgG;
+        private System.Windows.Forms.Label lblRQRTime2TotalG;
+        private System.Windows.Forms.Label lblRQRTime2CountG;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblRQRTime3AvgG;
+        private System.Windows.Forms.Label lblRQRTime3TotalG;
+        private System.Windows.Forms.Label lblRQRTime3CountG;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblRQRTime4AvgG;
+        private System.Windows.Forms.Label lblRQRTime4TotalG;
+        private System.Windows.Forms.Label lblRQRTime4CountG;
     }
 }
 
