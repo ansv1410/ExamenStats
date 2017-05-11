@@ -30,10 +30,14 @@
         {
             this.dgvGood = new System.Windows.Forms.DataGridView();
             this.dgvBad = new System.Windows.Forms.DataGridView();
-            this.lblLogInFindCount = new System.Windows.Forms.Label();
-            this.lblLogInFindTotal = new System.Windows.Forms.Label();
-            this.lblLogInFindAvg = new System.Windows.Forms.Label();
+            this.lblLogInFindCountG = new System.Windows.Forms.Label();
+            this.lblLogInFindTotalG = new System.Windows.Forms.Label();
+            this.lblLogInFindAvgG = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblLogInClickAvgG = new System.Windows.Forms.Label();
+            this.lblLogInClickTotalG = new System.Windows.Forms.Label();
+            this.lblLogInClickCountG = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBad)).BeginInit();
             this.SuspendLayout();
@@ -56,32 +60,32 @@
             this.dgvBad.Size = new System.Drawing.Size(1900, 490);
             this.dgvBad.TabIndex = 1;
             // 
-            // lblLogInFindCount
+            // lblLogInFindCountG
             // 
-            this.lblLogInFindCount.AutoSize = true;
-            this.lblLogInFindCount.Location = new System.Drawing.Point(278, 360);
-            this.lblLogInFindCount.Name = "lblLogInFindCount";
-            this.lblLogInFindCount.Size = new System.Drawing.Size(35, 13);
-            this.lblLogInFindCount.TabIndex = 2;
-            this.lblLogInFindCount.Text = "label1";
+            this.lblLogInFindCountG.AutoSize = true;
+            this.lblLogInFindCountG.Location = new System.Drawing.Point(278, 360);
+            this.lblLogInFindCountG.Name = "lblLogInFindCountG";
+            this.lblLogInFindCountG.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInFindCountG.TabIndex = 2;
+            this.lblLogInFindCountG.Text = "label1";
             // 
-            // lblLogInFindTotal
+            // lblLogInFindTotalG
             // 
-            this.lblLogInFindTotal.AutoSize = true;
-            this.lblLogInFindTotal.Location = new System.Drawing.Point(278, 373);
-            this.lblLogInFindTotal.Name = "lblLogInFindTotal";
-            this.lblLogInFindTotal.Size = new System.Drawing.Size(35, 13);
-            this.lblLogInFindTotal.TabIndex = 3;
-            this.lblLogInFindTotal.Text = "label2";
+            this.lblLogInFindTotalG.AutoSize = true;
+            this.lblLogInFindTotalG.Location = new System.Drawing.Point(278, 373);
+            this.lblLogInFindTotalG.Name = "lblLogInFindTotalG";
+            this.lblLogInFindTotalG.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInFindTotalG.TabIndex = 3;
+            this.lblLogInFindTotalG.Text = "label2";
             // 
-            // lblLogInFindAvg
+            // lblLogInFindAvgG
             // 
-            this.lblLogInFindAvg.AutoSize = true;
-            this.lblLogInFindAvg.Location = new System.Drawing.Point(278, 386);
-            this.lblLogInFindAvg.Name = "lblLogInFindAvg";
-            this.lblLogInFindAvg.Size = new System.Drawing.Size(35, 13);
-            this.lblLogInFindAvg.TabIndex = 4;
-            this.lblLogInFindAvg.Text = "label3";
+            this.lblLogInFindAvgG.AutoSize = true;
+            this.lblLogInFindAvgG.Location = new System.Drawing.Point(278, 386);
+            this.lblLogInFindAvgG.Name = "lblLogInFindAvgG";
+            this.lblLogInFindAvgG.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInFindAvgG.TabIndex = 4;
+            this.lblLogInFindAvgG.Text = "label3";
             // 
             // label4
             // 
@@ -92,15 +96,55 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "LogInFind";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(347, 347);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "LogInClick";
+            // 
+            // lblLogInClickAvgG
+            // 
+            this.lblLogInClickAvgG.AutoSize = true;
+            this.lblLogInClickAvgG.Location = new System.Drawing.Point(347, 386);
+            this.lblLogInClickAvgG.Name = "lblLogInClickAvgG";
+            this.lblLogInClickAvgG.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInClickAvgG.TabIndex = 8;
+            this.lblLogInClickAvgG.Text = "label3";
+            // 
+            // lblLogInClickTotalG
+            // 
+            this.lblLogInClickTotalG.AutoSize = true;
+            this.lblLogInClickTotalG.Location = new System.Drawing.Point(347, 373);
+            this.lblLogInClickTotalG.Name = "lblLogInClickTotalG";
+            this.lblLogInClickTotalG.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInClickTotalG.TabIndex = 7;
+            this.lblLogInClickTotalG.Text = "label2";
+            // 
+            // lblLogInClickCountG
+            // 
+            this.lblLogInClickCountG.AutoSize = true;
+            this.lblLogInClickCountG.Location = new System.Drawing.Point(347, 360);
+            this.lblLogInClickCountG.Name = "lblLogInClickCountG";
+            this.lblLogInClickCountG.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInClickCountG.TabIndex = 6;
+            this.lblLogInClickCountG.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1021);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblLogInClickAvgG);
+            this.Controls.Add(this.lblLogInClickTotalG);
+            this.Controls.Add(this.lblLogInClickCountG);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblLogInFindAvg);
-            this.Controls.Add(this.lblLogInFindTotal);
-            this.Controls.Add(this.lblLogInFindCount);
+            this.Controls.Add(this.lblLogInFindAvgG);
+            this.Controls.Add(this.lblLogInFindTotalG);
+            this.Controls.Add(this.lblLogInFindCountG);
             this.Controls.Add(this.dgvBad);
             this.Controls.Add(this.dgvGood);
             this.Name = "Form1";
@@ -116,10 +160,14 @@
 
         private System.Windows.Forms.DataGridView dgvGood;
         private System.Windows.Forms.DataGridView dgvBad;
-        private System.Windows.Forms.Label lblLogInFindCount;
-        private System.Windows.Forms.Label lblLogInFindTotal;
-        private System.Windows.Forms.Label lblLogInFindAvg;
+        private System.Windows.Forms.Label lblLogInFindCountG;
+        private System.Windows.Forms.Label lblLogInFindTotalG;
+        private System.Windows.Forms.Label lblLogInFindAvgG;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblLogInClickAvgG;
+        private System.Windows.Forms.Label lblLogInClickTotalG;
+        private System.Windows.Forms.Label lblLogInClickCountG;
     }
 }
 

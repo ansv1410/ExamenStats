@@ -274,9 +274,9 @@ namespace StatsProgram
                     totalLoginFind += Convert.ToDecimal(rd.LogInFind);
                 }
             }
-            lblLogInFindCount.Text = countLoginFind.ToString();
-            lblLogInFindTotal.Text = totalLoginFind.ToString();
-            lblLogInFindAvg.Text = (totalLoginFind / countLoginFind).ToString();
+            lblLogInFindCountG.Text = countLoginFind.ToString();
+            lblLogInFindTotalG.Text = totalLoginFind.ToString();
+            lblLogInFindAvgG.Text = (totalLoginFind / countLoginFind).ToString();
         }
 
     }
