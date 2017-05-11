@@ -199,18 +199,18 @@ namespace StatsProgram
 
             foreach (RespondentDataGood rdg in goodData)
             {
-                //if (!(rdg.LogInClick == 0 && rdg.LogInFind == 0 && rdg.Qstart == 0 && 
-                //    rdg.TimeFirstQ == 0  && rdg.RQRTime2 == 0 && rdg.RQRTime3 == 0 && rdg.RQRTime4 == 0 && rdg.RQRTime5 == 0 && rdg.RQRTime6 == 0 && 
-                //    rdg.TimeLastRQR == 0 && rdg.RQTTime1 == 0 && rdg.RQTTime2 == 0 && rdg.RQTTime3 == 0))
-                //{
-                //    rg.Add(rdg);
-                //}
-                if (!(rdg.LogInClick == 0 || rdg.LogInFind == 0 || rdg.Qstart == 0 ||
-                    rdg.TimeFirstQ == 0 || rdg.RQRTime2 == 0 || rdg.RQRTime3 == 0 || rdg.RQRTime4 == 0 || rdg.RQRTime5 == 0 || rdg.RQRTime6 == 0 ||
-                    rdg.TimeLastRQR == 0 || rdg.RQTTime1 == 0 || rdg.RQTTime2 == 0 || rdg.RQTTime3 == 0))
+                if (!(rdg.LogInClick == 0 && rdg.LogInFind == 0 && rdg.Qstart == 0 &&
+                    rdg.TimeFirstQ == 0 && rdg.RQRTime2 == 0 && rdg.RQRTime3 == 0 && rdg.RQRTime4 == 0 && rdg.RQRTime5 == 0 && rdg.RQRTime6 == 0 &&
+                    rdg.TimeLastRQR == 0 && rdg.RQTTime1 == 0 && rdg.RQTTime2 == 0 && rdg.RQTTime3 == 0))
                 {
                     rg.Add(rdg);
                 }
+                //if (!(rdg.LogInClick == 0 || rdg.LogInFind == 0 || rdg.Qstart == 0 ||
+                //    rdg.TimeFirstQ == 0 || rdg.RQRTime2 == 0 || rdg.RQRTime3 == 0 || rdg.RQRTime4 == 0 || rdg.RQRTime5 == 0 || rdg.RQRTime6 == 0 ||
+                //    rdg.TimeLastRQR == 0 || rdg.RQTTime1 == 0 || rdg.RQTTime2 == 0 || rdg.RQTTime3 == 0))
+                //{
+                //    rg.Add(rdg);
+                //}
             }
             List<RespondentDataGood> sortedList = rg.OrderBy(x => x.LogInFind).ToList();
 
@@ -223,6 +223,7 @@ namespace StatsProgram
             }
 
             MessageBox.Show("GOOD Snitt: " + Convert.ToString(LfGood / sortedList.Count));
+            VariableDataGood(sortedList);
             return sortedList;
         }
 
@@ -234,18 +235,18 @@ namespace StatsProgram
 
             foreach (RespondentDataBad rdb in badData)
             {
-                //if (!(rdb.LogInClick == 0 && rdb.LogInFind == 0 && rdb.Qstart == 0 &&
-                //    rdb.TimeFirstQ == 0 && rdb.RQRTime2 == 0 && rdb.RQRTime3 == 0 && rdb.RQRTime4 == 0 && rdb.RQRTime5 == 0 && rdb.RQRTime6 == 0 &&
-                //    rdb.TimeLastRQR == 0 && rdb.RQTTime1 == 0 && rdb.RQTTime2 == 0 && rdb.RQTTime3 == 0))
-                //{
-                //    rb.Add(rdb);
-                //}
-                if (!(rdb.LogInClick == 0 || rdb.LogInFind == 0 || rdb.Qstart == 0 ||
-                    rdb.TimeFirstQ == 0 || rdb.RQRTime2 == 0 || rdb.RQRTime3 == 0 || rdb.RQRTime4 == 0 || rdb.RQRTime5 == 0 || rdb.RQRTime6 == 0 ||
-                    rdb.TimeLastRQR == 0 || rdb.RQTTime1 == 0 || rdb.RQTTime2 == 0 || rdb.RQTTime3 == 0))
+                if (!(rdb.LogInClick == 0 && rdb.LogInFind == 0 && rdb.Qstart == 0 &&
+                    rdb.TimeFirstQ == 0 && rdb.RQRTime2 == 0 && rdb.RQRTime3 == 0 && rdb.RQRTime4 == 0 && rdb.RQRTime5 == 0 && rdb.RQRTime6 == 0 &&
+                    rdb.TimeLastRQR == 0 && rdb.RQTTime1 == 0 && rdb.RQTTime2 == 0 && rdb.RQTTime3 == 0))
                 {
                     rb.Add(rdb);
                 }
+                //if (!(rdb.LogInClick == 0 || rdb.LogInFind == 0 || rdb.Qstart == 0 ||
+                //    rdb.TimeFirstQ == 0 || rdb.RQRTime2 == 0 || rdb.RQRTime3 == 0 || rdb.RQRTime4 == 0 || rdb.RQRTime5 == 0 || rdb.RQRTime6 == 0 ||
+                //    rdb.TimeLastRQR == 0 || rdb.RQTTime1 == 0 || rdb.RQTTime2 == 0 || rdb.RQTTime3 == 0))
+                //{
+                //    rb.Add(rdb);
+                //}
             }
             //rb.Sort((x, y) => x.LogInFind.CompareTo(y.LogInFind));
             List<RespondentDataBad> sortedList = rb.OrderBy(x => x.LogInFind).ToList();
@@ -261,6 +262,23 @@ namespace StatsProgram
             MessageBox.Show("BAD Snitt: " + Convert.ToString(LfBad / sortedList.Count));
             return sortedList;
         }
+
+        public void VariableDataGood(List<RespondentDataGood> fullList)
+        {
+            decimal countLoginFind = 0;
+            decimal totalLoginFind = 0;
+            foreach(RespondentDataGood rd in fullList){
+                if (rd.LogInFind != 0)
+                {
+                    countLoginFind++;
+                    totalLoginFind += Convert.ToDecimal(rd.LogInFind);
+                }
+            }
+            lblLogInFindCount.Text = countLoginFind.ToString();
+            lblLogInFindTotal.Text = totalLoginFind.ToString();
+            lblLogInFindAvg.Text = (totalLoginFind / countLoginFind).ToString();
+        }
+
     }
 }
 
