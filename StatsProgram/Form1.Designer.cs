@@ -82,6 +82,58 @@
             this.lblRQTTime3AvgG = new System.Windows.Forms.Label();
             this.lblRQTTime3TotalG = new System.Windows.Forms.Label();
             this.lblRQTTime3CountG = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblRQTTime3AvgB = new System.Windows.Forms.Label();
+            this.lblRQTTime3TotalB = new System.Windows.Forms.Label();
+            this.lblRQTTime3CountB = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lblRQTTime2AvgB = new System.Windows.Forms.Label();
+            this.lblRQTTime2TotalB = new System.Windows.Forms.Label();
+            this.lblRQTTime2CountB = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.lblRQTTime1AvgB = new System.Windows.Forms.Label();
+            this.lblRQTTime1TotalB = new System.Windows.Forms.Label();
+            this.lblRQTTime1CountB = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.lblTimeLastRQRAvgB = new System.Windows.Forms.Label();
+            this.lblTimeLastRQRTotalB = new System.Windows.Forms.Label();
+            this.lblTimeLastRQRCountB = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.lblRQRTime6AvgB = new System.Windows.Forms.Label();
+            this.lblRQRTime6TotalB = new System.Windows.Forms.Label();
+            this.lblRQRTime6CountB = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.lblRQRTime5AvgB = new System.Windows.Forms.Label();
+            this.lblRQRTime5TotalB = new System.Windows.Forms.Label();
+            this.lblRQRTime5CountB = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.lblRQRTime4AvgB = new System.Windows.Forms.Label();
+            this.lblRQRTime4TotalB = new System.Windows.Forms.Label();
+            this.lblRQRTime4CountB = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.lblRQRTime3AvgB = new System.Windows.Forms.Label();
+            this.lblRQRTime3TotalB = new System.Windows.Forms.Label();
+            this.lblRQRTime3CountB = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.lblRQRTime2AvgB = new System.Windows.Forms.Label();
+            this.lblRQRTime2TotalB = new System.Windows.Forms.Label();
+            this.lblRQRTime2CountB = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.lblFirstTimeQAvgB = new System.Windows.Forms.Label();
+            this.lblFirstTimeQTotalB = new System.Windows.Forms.Label();
+            this.lblFirstTimeQCountB = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.lblQstartAvgB = new System.Windows.Forms.Label();
+            this.lblQstartTotalB = new System.Windows.Forms.Label();
+            this.lblQstartCountB = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.lblLogInClickAvgB = new System.Windows.Forms.Label();
+            this.lblLogInClickTotalB = new System.Windows.Forms.Label();
+            this.lblLogInClickCountB = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.lblLogInFindAvgB = new System.Windows.Forms.Label();
+            this.lblLogInFindTotalB = new System.Windows.Forms.Label();
+            this.lblLogInFindCountB = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBad)).BeginInit();
             this.SuspendLayout();
@@ -101,7 +153,7 @@
             this.dgvBad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBad.Location = new System.Drawing.Point(10, 495);
             this.dgvBad.Name = "dgvBad";
-            this.dgvBad.Size = new System.Drawing.Size(1900, 490);
+            this.dgvBad.Size = new System.Drawing.Size(1900, 357);
             this.dgvBad.TabIndex = 1;
             // 
             // lblLogInFindCountG
@@ -572,11 +624,531 @@
             this.lblRQTTime3CountG.TabIndex = 50;
             this.lblRQTTime3CountG.Text = "label1";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(1097, 879);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 13);
+            this.label14.TabIndex = 105;
+            this.label14.Text = "RQTTime3";
+            // 
+            // lblRQTTime3AvgB
+            // 
+            this.lblRQTTime3AvgB.AutoSize = true;
+            this.lblRQTTime3AvgB.Location = new System.Drawing.Point(1097, 918);
+            this.lblRQTTime3AvgB.Name = "lblRQTTime3AvgB";
+            this.lblRQTTime3AvgB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQTTime3AvgB.TabIndex = 104;
+            this.lblRQTTime3AvgB.Text = "label3";
+            // 
+            // lblRQTTime3TotalB
+            // 
+            this.lblRQTTime3TotalB.AutoSize = true;
+            this.lblRQTTime3TotalB.Location = new System.Drawing.Point(1097, 905);
+            this.lblRQTTime3TotalB.Name = "lblRQTTime3TotalB";
+            this.lblRQTTime3TotalB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQTTime3TotalB.TabIndex = 103;
+            this.lblRQTTime3TotalB.Text = "label2";
+            // 
+            // lblRQTTime3CountB
+            // 
+            this.lblRQTTime3CountB.AutoSize = true;
+            this.lblRQTTime3CountB.Location = new System.Drawing.Point(1097, 892);
+            this.lblRQTTime3CountB.Name = "lblRQTTime3CountB";
+            this.lblRQTTime3CountB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQTTime3CountB.TabIndex = 102;
+            this.lblRQTTime3CountB.Text = "label1";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(1032, 879);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(59, 13);
+            this.label18.TabIndex = 101;
+            this.label18.Text = "RQTTime2";
+            // 
+            // lblRQTTime2AvgB
+            // 
+            this.lblRQTTime2AvgB.AutoSize = true;
+            this.lblRQTTime2AvgB.Location = new System.Drawing.Point(1032, 918);
+            this.lblRQTTime2AvgB.Name = "lblRQTTime2AvgB";
+            this.lblRQTTime2AvgB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQTTime2AvgB.TabIndex = 100;
+            this.lblRQTTime2AvgB.Text = "label3";
+            // 
+            // lblRQTTime2TotalB
+            // 
+            this.lblRQTTime2TotalB.AutoSize = true;
+            this.lblRQTTime2TotalB.Location = new System.Drawing.Point(1032, 905);
+            this.lblRQTTime2TotalB.Name = "lblRQTTime2TotalB";
+            this.lblRQTTime2TotalB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQTTime2TotalB.TabIndex = 99;
+            this.lblRQTTime2TotalB.Text = "label2";
+            // 
+            // lblRQTTime2CountB
+            // 
+            this.lblRQTTime2CountB.AutoSize = true;
+            this.lblRQTTime2CountB.Location = new System.Drawing.Point(1032, 892);
+            this.lblRQTTime2CountB.Name = "lblRQTTime2CountB";
+            this.lblRQTTime2CountB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQTTime2CountB.TabIndex = 98;
+            this.lblRQTTime2CountB.Text = "label1";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(958, 879);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(59, 13);
+            this.label22.TabIndex = 97;
+            this.label22.Text = "RQTTime1";
+            // 
+            // lblRQTTime1AvgB
+            // 
+            this.lblRQTTime1AvgB.AutoSize = true;
+            this.lblRQTTime1AvgB.Location = new System.Drawing.Point(958, 918);
+            this.lblRQTTime1AvgB.Name = "lblRQTTime1AvgB";
+            this.lblRQTTime1AvgB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQTTime1AvgB.TabIndex = 96;
+            this.lblRQTTime1AvgB.Text = "label3";
+            // 
+            // lblRQTTime1TotalB
+            // 
+            this.lblRQTTime1TotalB.AutoSize = true;
+            this.lblRQTTime1TotalB.Location = new System.Drawing.Point(958, 905);
+            this.lblRQTTime1TotalB.Name = "lblRQTTime1TotalB";
+            this.lblRQTTime1TotalB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQTTime1TotalB.TabIndex = 95;
+            this.lblRQTTime1TotalB.Text = "label2";
+            // 
+            // lblRQTTime1CountB
+            // 
+            this.lblRQTTime1CountB.AutoSize = true;
+            this.lblRQTTime1CountB.Location = new System.Drawing.Point(958, 892);
+            this.lblRQTTime1CountB.Name = "lblRQTTime1CountB";
+            this.lblRQTTime1CountB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQTTime1CountB.TabIndex = 94;
+            this.lblRQTTime1CountB.Text = "label1";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(874, 879);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(74, 13);
+            this.label26.TabIndex = 93;
+            this.label26.Text = "TimeLastRQR";
+            // 
+            // lblTimeLastRQRAvgB
+            // 
+            this.lblTimeLastRQRAvgB.AutoSize = true;
+            this.lblTimeLastRQRAvgB.Location = new System.Drawing.Point(874, 918);
+            this.lblTimeLastRQRAvgB.Name = "lblTimeLastRQRAvgB";
+            this.lblTimeLastRQRAvgB.Size = new System.Drawing.Size(35, 13);
+            this.lblTimeLastRQRAvgB.TabIndex = 92;
+            this.lblTimeLastRQRAvgB.Text = "label3";
+            // 
+            // lblTimeLastRQRTotalB
+            // 
+            this.lblTimeLastRQRTotalB.AutoSize = true;
+            this.lblTimeLastRQRTotalB.Location = new System.Drawing.Point(874, 905);
+            this.lblTimeLastRQRTotalB.Name = "lblTimeLastRQRTotalB";
+            this.lblTimeLastRQRTotalB.Size = new System.Drawing.Size(35, 13);
+            this.lblTimeLastRQRTotalB.TabIndex = 91;
+            this.lblTimeLastRQRTotalB.Text = "label2";
+            // 
+            // lblTimeLastRQRCountB
+            // 
+            this.lblTimeLastRQRCountB.AutoSize = true;
+            this.lblTimeLastRQRCountB.Location = new System.Drawing.Point(874, 892);
+            this.lblTimeLastRQRCountB.Name = "lblTimeLastRQRCountB";
+            this.lblTimeLastRQRCountB.Size = new System.Drawing.Size(35, 13);
+            this.lblTimeLastRQRCountB.TabIndex = 90;
+            this.lblTimeLastRQRCountB.Text = "label1";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(799, 879);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(60, 13);
+            this.label30.TabIndex = 89;
+            this.label30.Text = "RQRTime6";
+            // 
+            // lblRQRTime6AvgB
+            // 
+            this.lblRQRTime6AvgB.AutoSize = true;
+            this.lblRQRTime6AvgB.Location = new System.Drawing.Point(799, 918);
+            this.lblRQRTime6AvgB.Name = "lblRQRTime6AvgB";
+            this.lblRQRTime6AvgB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime6AvgB.TabIndex = 88;
+            this.lblRQRTime6AvgB.Text = "label3";
+            // 
+            // lblRQRTime6TotalB
+            // 
+            this.lblRQRTime6TotalB.AutoSize = true;
+            this.lblRQRTime6TotalB.Location = new System.Drawing.Point(799, 905);
+            this.lblRQRTime6TotalB.Name = "lblRQRTime6TotalB";
+            this.lblRQRTime6TotalB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime6TotalB.TabIndex = 87;
+            this.lblRQRTime6TotalB.Text = "label2";
+            // 
+            // lblRQRTime6CountB
+            // 
+            this.lblRQRTime6CountB.AutoSize = true;
+            this.lblRQRTime6CountB.Location = new System.Drawing.Point(799, 892);
+            this.lblRQRTime6CountB.Name = "lblRQRTime6CountB";
+            this.lblRQRTime6CountB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime6CountB.TabIndex = 86;
+            this.lblRQRTime6CountB.Text = "label1";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(726, 879);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(60, 13);
+            this.label34.TabIndex = 85;
+            this.label34.Text = "RQRTime5";
+            // 
+            // lblRQRTime5AvgB
+            // 
+            this.lblRQRTime5AvgB.AutoSize = true;
+            this.lblRQRTime5AvgB.Location = new System.Drawing.Point(726, 918);
+            this.lblRQRTime5AvgB.Name = "lblRQRTime5AvgB";
+            this.lblRQRTime5AvgB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime5AvgB.TabIndex = 84;
+            this.lblRQRTime5AvgB.Text = "label3";
+            // 
+            // lblRQRTime5TotalB
+            // 
+            this.lblRQRTime5TotalB.AutoSize = true;
+            this.lblRQRTime5TotalB.Location = new System.Drawing.Point(726, 905);
+            this.lblRQRTime5TotalB.Name = "lblRQRTime5TotalB";
+            this.lblRQRTime5TotalB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime5TotalB.TabIndex = 83;
+            this.lblRQRTime5TotalB.Text = "label2";
+            // 
+            // lblRQRTime5CountB
+            // 
+            this.lblRQRTime5CountB.AutoSize = true;
+            this.lblRQRTime5CountB.Location = new System.Drawing.Point(726, 892);
+            this.lblRQRTime5CountB.Name = "lblRQRTime5CountB";
+            this.lblRQRTime5CountB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime5CountB.TabIndex = 82;
+            this.lblRQRTime5CountB.Text = "label1";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(660, 879);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(60, 13);
+            this.label38.TabIndex = 81;
+            this.label38.Text = "RQRTime4";
+            // 
+            // lblRQRTime4AvgB
+            // 
+            this.lblRQRTime4AvgB.AutoSize = true;
+            this.lblRQRTime4AvgB.Location = new System.Drawing.Point(660, 918);
+            this.lblRQRTime4AvgB.Name = "lblRQRTime4AvgB";
+            this.lblRQRTime4AvgB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime4AvgB.TabIndex = 80;
+            this.lblRQRTime4AvgB.Text = "label3";
+            // 
+            // lblRQRTime4TotalB
+            // 
+            this.lblRQRTime4TotalB.AutoSize = true;
+            this.lblRQRTime4TotalB.Location = new System.Drawing.Point(660, 905);
+            this.lblRQRTime4TotalB.Name = "lblRQRTime4TotalB";
+            this.lblRQRTime4TotalB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime4TotalB.TabIndex = 79;
+            this.lblRQRTime4TotalB.Text = "label2";
+            // 
+            // lblRQRTime4CountB
+            // 
+            this.lblRQRTime4CountB.AutoSize = true;
+            this.lblRQRTime4CountB.Location = new System.Drawing.Point(660, 892);
+            this.lblRQRTime4CountB.Name = "lblRQRTime4CountB";
+            this.lblRQRTime4CountB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime4CountB.TabIndex = 78;
+            this.lblRQRTime4CountB.Text = "label1";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(594, 879);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(60, 13);
+            this.label42.TabIndex = 77;
+            this.label42.Text = "RQRTime3";
+            // 
+            // lblRQRTime3AvgB
+            // 
+            this.lblRQRTime3AvgB.AutoSize = true;
+            this.lblRQRTime3AvgB.Location = new System.Drawing.Point(594, 918);
+            this.lblRQRTime3AvgB.Name = "lblRQRTime3AvgB";
+            this.lblRQRTime3AvgB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime3AvgB.TabIndex = 76;
+            this.lblRQRTime3AvgB.Text = "label3";
+            // 
+            // lblRQRTime3TotalB
+            // 
+            this.lblRQRTime3TotalB.AutoSize = true;
+            this.lblRQRTime3TotalB.Location = new System.Drawing.Point(594, 905);
+            this.lblRQRTime3TotalB.Name = "lblRQRTime3TotalB";
+            this.lblRQRTime3TotalB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime3TotalB.TabIndex = 75;
+            this.lblRQRTime3TotalB.Text = "label2";
+            // 
+            // lblRQRTime3CountB
+            // 
+            this.lblRQRTime3CountB.AutoSize = true;
+            this.lblRQRTime3CountB.Location = new System.Drawing.Point(594, 892);
+            this.lblRQRTime3CountB.Name = "lblRQRTime3CountB";
+            this.lblRQRTime3CountB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime3CountB.TabIndex = 74;
+            this.lblRQRTime3CountB.Text = "label1";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(528, 879);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(60, 13);
+            this.label46.TabIndex = 73;
+            this.label46.Text = "RQRTime2";
+            // 
+            // lblRQRTime2AvgB
+            // 
+            this.lblRQRTime2AvgB.AutoSize = true;
+            this.lblRQRTime2AvgB.Location = new System.Drawing.Point(528, 918);
+            this.lblRQRTime2AvgB.Name = "lblRQRTime2AvgB";
+            this.lblRQRTime2AvgB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime2AvgB.TabIndex = 72;
+            this.lblRQRTime2AvgB.Text = "label3";
+            // 
+            // lblRQRTime2TotalB
+            // 
+            this.lblRQRTime2TotalB.AutoSize = true;
+            this.lblRQRTime2TotalB.Location = new System.Drawing.Point(528, 905);
+            this.lblRQRTime2TotalB.Name = "lblRQRTime2TotalB";
+            this.lblRQRTime2TotalB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime2TotalB.TabIndex = 71;
+            this.lblRQRTime2TotalB.Text = "label2";
+            // 
+            // lblRQRTime2CountB
+            // 
+            this.lblRQRTime2CountB.AutoSize = true;
+            this.lblRQRTime2CountB.Location = new System.Drawing.Point(528, 892);
+            this.lblRQRTime2CountB.Name = "lblRQRTime2CountB";
+            this.lblRQRTime2CountB.Size = new System.Drawing.Size(35, 13);
+            this.lblRQRTime2CountB.TabIndex = 70;
+            this.lblRQRTime2CountB.Text = "label1";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(465, 879);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(57, 13);
+            this.label50.TabIndex = 69;
+            this.label50.Text = "FirstTimeQ";
+            // 
+            // lblFirstTimeQAvgB
+            // 
+            this.lblFirstTimeQAvgB.AutoSize = true;
+            this.lblFirstTimeQAvgB.Location = new System.Drawing.Point(465, 918);
+            this.lblFirstTimeQAvgB.Name = "lblFirstTimeQAvgB";
+            this.lblFirstTimeQAvgB.Size = new System.Drawing.Size(35, 13);
+            this.lblFirstTimeQAvgB.TabIndex = 68;
+            this.lblFirstTimeQAvgB.Text = "label3";
+            // 
+            // lblFirstTimeQTotalB
+            // 
+            this.lblFirstTimeQTotalB.AutoSize = true;
+            this.lblFirstTimeQTotalB.Location = new System.Drawing.Point(465, 905);
+            this.lblFirstTimeQTotalB.Name = "lblFirstTimeQTotalB";
+            this.lblFirstTimeQTotalB.Size = new System.Drawing.Size(35, 13);
+            this.lblFirstTimeQTotalB.TabIndex = 67;
+            this.lblFirstTimeQTotalB.Text = "label2";
+            // 
+            // lblFirstTimeQCountB
+            // 
+            this.lblFirstTimeQCountB.AutoSize = true;
+            this.lblFirstTimeQCountB.Location = new System.Drawing.Point(465, 892);
+            this.lblFirstTimeQCountB.Name = "lblFirstTimeQCountB";
+            this.lblFirstTimeQCountB.Size = new System.Drawing.Size(35, 13);
+            this.lblFirstTimeQCountB.TabIndex = 66;
+            this.lblFirstTimeQCountB.Text = "label1";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(414, 879);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(35, 13);
+            this.label54.TabIndex = 65;
+            this.label54.Text = "Qstart";
+            // 
+            // lblQstartAvgB
+            // 
+            this.lblQstartAvgB.AutoSize = true;
+            this.lblQstartAvgB.Location = new System.Drawing.Point(414, 918);
+            this.lblQstartAvgB.Name = "lblQstartAvgB";
+            this.lblQstartAvgB.Size = new System.Drawing.Size(35, 13);
+            this.lblQstartAvgB.TabIndex = 64;
+            this.lblQstartAvgB.Text = "label3";
+            // 
+            // lblQstartTotalB
+            // 
+            this.lblQstartTotalB.AutoSize = true;
+            this.lblQstartTotalB.Location = new System.Drawing.Point(414, 905);
+            this.lblQstartTotalB.Name = "lblQstartTotalB";
+            this.lblQstartTotalB.Size = new System.Drawing.Size(35, 13);
+            this.lblQstartTotalB.TabIndex = 63;
+            this.lblQstartTotalB.Text = "label2";
+            // 
+            // lblQstartCountB
+            // 
+            this.lblQstartCountB.AutoSize = true;
+            this.lblQstartCountB.Location = new System.Drawing.Point(414, 892);
+            this.lblQstartCountB.Name = "lblQstartCountB";
+            this.lblQstartCountB.Size = new System.Drawing.Size(35, 13);
+            this.lblQstartCountB.TabIndex = 62;
+            this.lblQstartCountB.Text = "label1";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(347, 879);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(57, 13);
+            this.label58.TabIndex = 61;
+            this.label58.Text = "LogInClick";
+            // 
+            // lblLogInClickAvgB
+            // 
+            this.lblLogInClickAvgB.AutoSize = true;
+            this.lblLogInClickAvgB.Location = new System.Drawing.Point(347, 918);
+            this.lblLogInClickAvgB.Name = "lblLogInClickAvgB";
+            this.lblLogInClickAvgB.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInClickAvgB.TabIndex = 60;
+            this.lblLogInClickAvgB.Text = "label3";
+            // 
+            // lblLogInClickTotalB
+            // 
+            this.lblLogInClickTotalB.AutoSize = true;
+            this.lblLogInClickTotalB.Location = new System.Drawing.Point(347, 905);
+            this.lblLogInClickTotalB.Name = "lblLogInClickTotalB";
+            this.lblLogInClickTotalB.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInClickTotalB.TabIndex = 59;
+            this.lblLogInClickTotalB.Text = "label2";
+            // 
+            // lblLogInClickCountB
+            // 
+            this.lblLogInClickCountB.AutoSize = true;
+            this.lblLogInClickCountB.Location = new System.Drawing.Point(347, 892);
+            this.lblLogInClickCountB.Name = "lblLogInClickCountB";
+            this.lblLogInClickCountB.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInClickCountB.TabIndex = 58;
+            this.lblLogInClickCountB.Text = "label1";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(278, 879);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(54, 13);
+            this.label62.TabIndex = 57;
+            this.label62.Text = "LogInFind";
+            // 
+            // lblLogInFindAvgB
+            // 
+            this.lblLogInFindAvgB.AutoSize = true;
+            this.lblLogInFindAvgB.Location = new System.Drawing.Point(278, 918);
+            this.lblLogInFindAvgB.Name = "lblLogInFindAvgB";
+            this.lblLogInFindAvgB.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInFindAvgB.TabIndex = 56;
+            this.lblLogInFindAvgB.Text = "label3";
+            // 
+            // lblLogInFindTotalB
+            // 
+            this.lblLogInFindTotalB.AutoSize = true;
+            this.lblLogInFindTotalB.Location = new System.Drawing.Point(278, 905);
+            this.lblLogInFindTotalB.Name = "lblLogInFindTotalB";
+            this.lblLogInFindTotalB.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInFindTotalB.TabIndex = 55;
+            this.lblLogInFindTotalB.Text = "label2";
+            // 
+            // lblLogInFindCountB
+            // 
+            this.lblLogInFindCountB.AutoSize = true;
+            this.lblLogInFindCountB.Location = new System.Drawing.Point(278, 892);
+            this.lblLogInFindCountB.Name = "lblLogInFindCountB";
+            this.lblLogInFindCountB.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInFindCountB.TabIndex = 54;
+            this.lblLogInFindCountB.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1021);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.lblRQTTime3AvgB);
+            this.Controls.Add(this.lblRQTTime3TotalB);
+            this.Controls.Add(this.lblRQTTime3CountB);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.lblRQTTime2AvgB);
+            this.Controls.Add(this.lblRQTTime2TotalB);
+            this.Controls.Add(this.lblRQTTime2CountB);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.lblRQTTime1AvgB);
+            this.Controls.Add(this.lblRQTTime1TotalB);
+            this.Controls.Add(this.lblRQTTime1CountB);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.lblTimeLastRQRAvgB);
+            this.Controls.Add(this.lblTimeLastRQRTotalB);
+            this.Controls.Add(this.lblTimeLastRQRCountB);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.lblRQRTime6AvgB);
+            this.Controls.Add(this.lblRQRTime6TotalB);
+            this.Controls.Add(this.lblRQRTime6CountB);
+            this.Controls.Add(this.label34);
+            this.Controls.Add(this.lblRQRTime5AvgB);
+            this.Controls.Add(this.lblRQRTime5TotalB);
+            this.Controls.Add(this.lblRQRTime5CountB);
+            this.Controls.Add(this.label38);
+            this.Controls.Add(this.lblRQRTime4AvgB);
+            this.Controls.Add(this.lblRQRTime4TotalB);
+            this.Controls.Add(this.lblRQRTime4CountB);
+            this.Controls.Add(this.label42);
+            this.Controls.Add(this.lblRQRTime3AvgB);
+            this.Controls.Add(this.lblRQRTime3TotalB);
+            this.Controls.Add(this.lblRQRTime3CountB);
+            this.Controls.Add(this.label46);
+            this.Controls.Add(this.lblRQRTime2AvgB);
+            this.Controls.Add(this.lblRQRTime2TotalB);
+            this.Controls.Add(this.lblRQRTime2CountB);
+            this.Controls.Add(this.label50);
+            this.Controls.Add(this.lblFirstTimeQAvgB);
+            this.Controls.Add(this.lblFirstTimeQTotalB);
+            this.Controls.Add(this.lblFirstTimeQCountB);
+            this.Controls.Add(this.label54);
+            this.Controls.Add(this.lblQstartAvgB);
+            this.Controls.Add(this.lblQstartTotalB);
+            this.Controls.Add(this.lblQstartCountB);
+            this.Controls.Add(this.label58);
+            this.Controls.Add(this.lblLogInClickAvgB);
+            this.Controls.Add(this.lblLogInClickTotalB);
+            this.Controls.Add(this.lblLogInClickCountB);
+            this.Controls.Add(this.label62);
+            this.Controls.Add(this.lblLogInFindAvgB);
+            this.Controls.Add(this.lblLogInFindTotalB);
+            this.Controls.Add(this.lblLogInFindCountB);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.lblRQTTime3AvgG);
             this.Controls.Add(this.lblRQTTime3TotalG);
@@ -696,6 +1268,58 @@
         private System.Windows.Forms.Label lblRQTTime3AvgG;
         private System.Windows.Forms.Label lblRQTTime3TotalG;
         private System.Windows.Forms.Label lblRQTTime3CountG;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblRQTTime3AvgB;
+        private System.Windows.Forms.Label lblRQTTime3TotalB;
+        private System.Windows.Forms.Label lblRQTTime3CountB;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblRQTTime2AvgB;
+        private System.Windows.Forms.Label lblRQTTime2TotalB;
+        private System.Windows.Forms.Label lblRQTTime2CountB;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblRQTTime1AvgB;
+        private System.Windows.Forms.Label lblRQTTime1TotalB;
+        private System.Windows.Forms.Label lblRQTTime1CountB;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lblTimeLastRQRAvgB;
+        private System.Windows.Forms.Label lblTimeLastRQRTotalB;
+        private System.Windows.Forms.Label lblTimeLastRQRCountB;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lblRQRTime6AvgB;
+        private System.Windows.Forms.Label lblRQRTime6TotalB;
+        private System.Windows.Forms.Label lblRQRTime6CountB;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label lblRQRTime5AvgB;
+        private System.Windows.Forms.Label lblRQRTime5TotalB;
+        private System.Windows.Forms.Label lblRQRTime5CountB;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label lblRQRTime4AvgB;
+        private System.Windows.Forms.Label lblRQRTime4TotalB;
+        private System.Windows.Forms.Label lblRQRTime4CountB;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label lblRQRTime3AvgB;
+        private System.Windows.Forms.Label lblRQRTime3TotalB;
+        private System.Windows.Forms.Label lblRQRTime3CountB;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label lblRQRTime2AvgB;
+        private System.Windows.Forms.Label lblRQRTime2TotalB;
+        private System.Windows.Forms.Label lblRQRTime2CountB;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label lblFirstTimeQAvgB;
+        private System.Windows.Forms.Label lblFirstTimeQTotalB;
+        private System.Windows.Forms.Label lblFirstTimeQCountB;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label lblQstartAvgB;
+        private System.Windows.Forms.Label lblQstartTotalB;
+        private System.Windows.Forms.Label lblQstartCountB;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label lblLogInClickAvgB;
+        private System.Windows.Forms.Label lblLogInClickTotalB;
+        private System.Windows.Forms.Label lblLogInClickCountB;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label lblLogInFindAvgB;
+        private System.Windows.Forms.Label lblLogInFindTotalB;
+        private System.Windows.Forms.Label lblLogInFindCountB;
     }
 }
 
