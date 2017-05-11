@@ -14,12 +14,12 @@ namespace StatsProgram
 {
     public partial class Form1 : Form
     {
+        List<RespondentDataGood> RDGood = new List<RespondentDataGood>();
+        List<RespondentDataBad> RDBad = new List<RespondentDataBad>();
         public Form1()
         {
             InitializeComponent();
 
-            List<RespondentDataGood> RDGood = new List<RespondentDataGood>();
-            List<RespondentDataBad> RDBad = new List<RespondentDataBad>();
 
             using (informatikexamenEntities db = new informatikexamenEntities())
             {
@@ -178,7 +178,7 @@ namespace StatsProgram
         }
 
 
-        public List<RespondentDataGood> DeleteGoodNulls(List<RespondentDataGood> goodData)
+        public List<RespondentDataGood> DeleteGoodNulls(List<RespondentDataGood> goodData) ///INPUT TILL DENNA FRÅN FILTERKNAPPAR
         {
             List<RespondentDataGood> rg = new List<RespondentDataGood>();
 
@@ -198,7 +198,7 @@ namespace StatsProgram
             return rg;
         }
 
-        public List<RespondentDataBad> DeleteBadNulls(List<RespondentDataBad> badData)
+        public List<RespondentDataBad> DeleteBadNulls(List<RespondentDataBad> badData)  ///INPUT TILL DENNA FRÅN FILTERKNAPPAR
         {
             List<RespondentDataBad> rb = new List<RespondentDataBad>();
 
