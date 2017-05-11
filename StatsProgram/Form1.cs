@@ -359,9 +359,57 @@ namespace StatsProgram
                     totalRQTTime3 += Convert.ToDecimal(rd.RQTTime3);
                 }
             }
-            lblLogInFindCountG.Text = countLoginFind.ToString();
-            lblLogInFindTotalG.Text = totalLoginFind.ToString();
-            lblLogInFindAvgG.Text = (totalLoginFind / countLoginFind).ToString();
+            lblLogInFindCountG.Text = Convert.ToInt32(countLoginFind).ToString();
+            lblLogInFindTotalG.Text = Convert.ToInt32(totalLoginFind).ToString();
+            lblLogInFindAvgG.Text = Convert.ToInt32((totalLoginFind / countLoginFind)).ToString();
+
+            lblLogInClickCountG.Text = Convert.ToInt32(countLoginClick).ToString();
+            lblLogInClickTotalG.Text = Convert.ToInt32(totalLoginClick).ToString();
+            lblLogInClickAvgG.Text = Convert.ToInt32((totalLoginClick / countLoginClick)).ToString();
+
+            lblQstartCountG.Text = Convert.ToInt32(countQstart).ToString();
+            lblQstartTotalG.Text = Convert.ToInt32(totalQstart).ToString();
+            lblQstartAvgG.Text = Convert.ToInt32((totalQstart / countQstart)).ToString();
+
+            lblFirstTimeQCountG.Text = Convert.ToInt32(countTimeFirstQ).ToString();
+            lblFirstTimeQTotalG.Text = Convert.ToInt32(totalTimeFirstQ).ToString();
+            lblFirstTimeQAvgG.Text = Convert.ToInt32((totalTimeFirstQ / countTimeFirstQ)).ToString();
+
+            lblRQRTime2CountG.Text = Convert.ToInt32(countRQRTime2).ToString();
+            lblRQRTime2TotalG.Text = Convert.ToInt32(totalRQRTime2).ToString();
+            lblRQRTime2AvgG.Text = Convert.ToInt32((totalRQRTime2 / countRQRTime2)).ToString();
+
+            lblRQRTime3CountG.Text = Convert.ToInt32(countRQRTime3).ToString();
+            lblRQRTime3TotalG.Text = Convert.ToInt32(totalRQRTime3).ToString();
+            lblRQRTime3AvgG.Text = Convert.ToInt32((totalRQRTime3 / countRQRTime3)).ToString();
+
+            lblRQRTime4CountG.Text = Convert.ToInt32(countRQRTime4).ToString();
+            lblRQRTime4TotalG.Text = Convert.ToInt32(totalRQRTime4).ToString();
+            lblRQRTime4AvgG.Text = Convert.ToInt32((totalRQRTime4 / countRQRTime4)).ToString();
+
+            lblRQRTime5CountG.Text = Convert.ToInt32(countRQRTime5).ToString();
+            lblRQRTime5TotalG.Text = Convert.ToInt32(totalRQRTime5).ToString();
+            lblRQRTime5AvgG.Text = Convert.ToInt32((totalRQRTime5 / countRQRTime5)).ToString();
+
+            lblRQRTime6CountG.Text = Convert.ToInt32(countRQRTime6).ToString();
+            lblRQRTime6TotalG.Text = Convert.ToInt32(totalRQRTime6).ToString();
+            lblRQRTime6AvgG.Text = Convert.ToInt32((totalRQRTime6 / countRQRTime6)).ToString();
+
+            lblTimeLastRQRCountG.Text = Convert.ToInt32(countTimeLastRQR).ToString();
+            lblTimeLastRQRTotalG.Text = Convert.ToInt32(totalTimeLastRQR).ToString();
+            lblTimeLastRQRAvgG.Text = Convert.ToInt32((totalTimeLastRQR / countTimeLastRQR)).ToString();
+
+            lblRQTTime1CountG.Text = Convert.ToInt32(countRQTTime1).ToString();
+            lblRQTTime1TotalG.Text = Convert.ToInt32(totalRQTTime1).ToString();
+            lblRQTTime1AvgG.Text = Convert.ToInt32((totalRQTTime1 / countRQTTime1)).ToString();
+
+            lblRQTTime2CountG.Text = Convert.ToInt32(countRQTTime2).ToString();
+            lblRQTTime2TotalG.Text = Convert.ToInt32(totalRQTTime2).ToString();
+            lblRQTTime2AvgG.Text = Convert.ToInt32((totalRQTTime2 / countRQTTime2)).ToString();
+
+            lblRQTTime3CountG.Text = Convert.ToInt32(countRQTTime3).ToString();
+            lblRQTTime3TotalG.Text = Convert.ToInt32(totalRQTTime3).ToString();
+            lblRQTTime3AvgG.Text = Convert.ToInt32((totalRQTTime3 / countRQTTime3)).ToString();
         }
 
     }
