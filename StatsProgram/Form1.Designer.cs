@@ -28,47 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.dgvGood = new System.Windows.Forms.DataGridView();
+            this.dgvBad = new System.Windows.Forms.DataGridView();
+            this.lblLogInFindCount = new System.Windows.Forms.Label();
+            this.lblLogInFindTotal = new System.Windows.Forms.Label();
+            this.lblLogInFindAvg = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBad)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvGood
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(487, 357);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvGood.AllowUserToOrderColumns = true;
+            this.dgvGood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGood.Location = new System.Drawing.Point(10, 0);
+            this.dgvGood.Name = "dgvGood";
+            this.dgvGood.Size = new System.Drawing.Size(1900, 335);
+            this.dgvGood.TabIndex = 0;
             // 
-            // dataGridView2
+            // dgvBad
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(559, 13);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(500, 357);
-            this.dataGridView2.TabIndex = 1;
+            this.dgvBad.AllowUserToOrderColumns = true;
+            this.dgvBad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBad.Location = new System.Drawing.Point(10, 495);
+            this.dgvBad.Name = "dgvBad";
+            this.dgvBad.Size = new System.Drawing.Size(1900, 490);
+            this.dgvBad.TabIndex = 1;
+            // 
+            // lblLogInFindCount
+            // 
+            this.lblLogInFindCount.AutoSize = true;
+            this.lblLogInFindCount.Location = new System.Drawing.Point(278, 360);
+            this.lblLogInFindCount.Name = "lblLogInFindCount";
+            this.lblLogInFindCount.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInFindCount.TabIndex = 2;
+            this.lblLogInFindCount.Text = "label1";
+            // 
+            // lblLogInFindTotal
+            // 
+            this.lblLogInFindTotal.AutoSize = true;
+            this.lblLogInFindTotal.Location = new System.Drawing.Point(278, 373);
+            this.lblLogInFindTotal.Name = "lblLogInFindTotal";
+            this.lblLogInFindTotal.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInFindTotal.TabIndex = 3;
+            this.lblLogInFindTotal.Text = "label2";
+            // 
+            // lblLogInFindAvg
+            // 
+            this.lblLogInFindAvg.AutoSize = true;
+            this.lblLogInFindAvg.Location = new System.Drawing.Point(278, 386);
+            this.lblLogInFindAvg.Name = "lblLogInFindAvg";
+            this.lblLogInFindAvg.Size = new System.Drawing.Size(35, 13);
+            this.lblLogInFindAvg.TabIndex = 4;
+            this.lblLogInFindAvg.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(278, 347);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "LogInFind";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 530);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1904, 1021);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblLogInFindAvg);
+            this.Controls.Add(this.lblLogInFindTotal);
+            this.Controls.Add(this.lblLogInFindCount);
+            this.Controls.Add(this.dgvBad);
+            this.Controls.Add(this.dgvGood);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBad)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvGood;
+        private System.Windows.Forms.DataGridView dgvBad;
+        private System.Windows.Forms.Label lblLogInFindCount;
+        private System.Windows.Forms.Label lblLogInFindTotal;
+        private System.Windows.Forms.Label lblLogInFindAvg;
+        private System.Windows.Forms.Label label4;
     }
 }
 

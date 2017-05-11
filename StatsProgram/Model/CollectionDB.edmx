@@ -5,7 +5,33 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="samlingsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="RespondentData">
+        <EntityType Name="RespondentDataBad">
+          <Key>
+            <PropertyRef Name="RespondentId" />
+          </Key>
+          <Property Name="RespondentId" Type="int" Nullable="false" />
+          <Property Name="Age" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Language" Type="nvarchar" MaxLength="50" />
+          <Property Name="InternetUse" Type="nvarchar" MaxLength="50" />
+          <Property Name="InternetUseSmart" Type="nvarchar" MaxLength="50" />
+          <Property Name="InternetUseComp" Type="nvarchar" MaxLength="50" />
+          <Property Name="WebDesign" Type="bit" />
+          <Property Name="LogInFind" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="LogInClick" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Qstart" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TimeFirstQ" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="RQRTime2" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="RQRTime3" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="RQRTime4" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="RQRTime5" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="RQRTime6" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TimeLastRQR" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="RQTTime1" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="RQTTime2" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="RQTTime3" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="RespondentDataGood">
           <Key>
             <PropertyRef Name="RespondentId" />
           </Key>
@@ -32,16 +58,44 @@
           <Property Name="RQTTime3" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityContainer Name="samlingsDBModelStoreContainer">
-          <EntitySet Name="RespondentData" EntityType="Self.RespondentData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RespondentDataBad" EntityType="Self.RespondentDataBad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RespondentDataGood" EntityType="Self.RespondentDataGood" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="samlingsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="CollectionDB" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="RespondentData" EntityType="samlingsDBModel.RespondentData" />
+          <EntitySet Name="RespondentDataBad" EntityType="samlingsDBModel.RespondentDataBad" />
+          <EntitySet Name="RespondentDataGood" EntityType="samlingsDBModel.RespondentDataGood" />
         </EntityContainer>
-        <EntityType Name="RespondentData">
+        <EntityType Name="RespondentDataBad">
+          <Key>
+            <PropertyRef Name="RespondentId" />
+          </Key>
+          <Property Name="RespondentId" Type="Int32" Nullable="false" />
+          <Property Name="Age" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InternetUse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InternetUseSmart" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InternetUseComp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WebDesign" Type="Boolean" />
+          <Property Name="LogInFind" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="LogInClick" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Qstart" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TimeFirstQ" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RQRTime2" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RQRTime3" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RQRTime4" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RQRTime5" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RQRTime6" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TimeLastRQR" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RQTTime1" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RQTTime2" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RQTTime3" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="RespondentDataGood">
           <Key>
             <PropertyRef Name="RespondentId" />
           </Key>
@@ -73,9 +127,36 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="samlingsDBModelStoreContainer" CdmEntityContainer="CollectionDB">
-          <EntitySetMapping Name="RespondentData">
-            <EntityTypeMapping TypeName="samlingsDBModel.RespondentData">
-              <MappingFragment StoreEntitySet="RespondentData">
+          <EntitySetMapping Name="RespondentDataBad">
+            <EntityTypeMapping TypeName="samlingsDBModel.RespondentDataBad">
+              <MappingFragment StoreEntitySet="RespondentDataBad">
+                <ScalarProperty Name="RQTTime3" ColumnName="RQTTime3" />
+                <ScalarProperty Name="RQTTime2" ColumnName="RQTTime2" />
+                <ScalarProperty Name="RQTTime1" ColumnName="RQTTime1" />
+                <ScalarProperty Name="TimeLastRQR" ColumnName="TimeLastRQR" />
+                <ScalarProperty Name="RQRTime6" ColumnName="RQRTime6" />
+                <ScalarProperty Name="RQRTime5" ColumnName="RQRTime5" />
+                <ScalarProperty Name="RQRTime4" ColumnName="RQRTime4" />
+                <ScalarProperty Name="RQRTime3" ColumnName="RQRTime3" />
+                <ScalarProperty Name="RQRTime2" ColumnName="RQRTime2" />
+                <ScalarProperty Name="TimeFirstQ" ColumnName="TimeFirstQ" />
+                <ScalarProperty Name="Qstart" ColumnName="Qstart" />
+                <ScalarProperty Name="LogInClick" ColumnName="LogInClick" />
+                <ScalarProperty Name="LogInFind" ColumnName="LogInFind" />
+                <ScalarProperty Name="WebDesign" ColumnName="WebDesign" />
+                <ScalarProperty Name="InternetUseComp" ColumnName="InternetUseComp" />
+                <ScalarProperty Name="InternetUseSmart" ColumnName="InternetUseSmart" />
+                <ScalarProperty Name="InternetUse" ColumnName="InternetUse" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="RespondentId" ColumnName="RespondentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RespondentDataGood">
+            <EntityTypeMapping TypeName="samlingsDBModel.RespondentDataGood">
+              <MappingFragment StoreEntitySet="RespondentDataGood">
                 <ScalarProperty Name="RQTTime3" ColumnName="RQTTime3" />
                 <ScalarProperty Name="RQTTime2" ColumnName="RQTTime2" />
                 <ScalarProperty Name="RQTTime1" ColumnName="RQTTime1" />
