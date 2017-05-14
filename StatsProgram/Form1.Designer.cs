@@ -134,8 +134,26 @@
             this.lblLogInFindAvgB = new System.Windows.Forms.Label();
             this.lblLogInFindTotalB = new System.Windows.Forms.Label();
             this.lblLogInFindCountB = new System.Windows.Forms.Label();
+            this.gbAge = new System.Windows.Forms.GroupBox();
+            this.rb5665 = new System.Windows.Forms.RadioButton();
+            this.rb4655 = new System.Windows.Forms.RadioButton();
+            this.rbOver65 = new System.Windows.Forms.RadioButton();
+            this.rb2635 = new System.Windows.Forms.RadioButton();
+            this.rb3645 = new System.Windows.Forms.RadioButton();
+            this.rb1625 = new System.Windows.Forms.RadioButton();
+            this.rbUnder16 = new System.Windows.Forms.RadioButton();
+            this.gbExp = new System.Windows.Forms.GroupBox();
+            this.rbMore5Hours = new System.Windows.Forms.RadioButton();
+            this.rbMore1Hour = new System.Windows.Forms.RadioButton();
+            this.rbLess1Hour = new System.Windows.Forms.RadioButton();
+            this.rbSeveralAWeek = new System.Windows.Forms.RadioButton();
+            this.rbSeveralAMonth = new System.Windows.Forms.RadioButton();
+            this.rbLessAMonth = new System.Windows.Forms.RadioButton();
+            this.btnFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBad)).BeginInit();
+            this.gbAge.SuspendLayout();
+            this.gbExp.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvGood
@@ -159,7 +177,7 @@
             // lblLogInFindCountG
             // 
             this.lblLogInFindCountG.AutoSize = true;
-            this.lblLogInFindCountG.Location = new System.Drawing.Point(278, 360);
+            this.lblLogInFindCountG.Location = new System.Drawing.Point(1014, 360);
             this.lblLogInFindCountG.Name = "lblLogInFindCountG";
             this.lblLogInFindCountG.Size = new System.Drawing.Size(35, 13);
             this.lblLogInFindCountG.TabIndex = 2;
@@ -168,7 +186,7 @@
             // lblLogInFindTotalG
             // 
             this.lblLogInFindTotalG.AutoSize = true;
-            this.lblLogInFindTotalG.Location = new System.Drawing.Point(278, 373);
+            this.lblLogInFindTotalG.Location = new System.Drawing.Point(1014, 373);
             this.lblLogInFindTotalG.Name = "lblLogInFindTotalG";
             this.lblLogInFindTotalG.Size = new System.Drawing.Size(35, 13);
             this.lblLogInFindTotalG.TabIndex = 3;
@@ -177,7 +195,7 @@
             // lblLogInFindAvgG
             // 
             this.lblLogInFindAvgG.AutoSize = true;
-            this.lblLogInFindAvgG.Location = new System.Drawing.Point(278, 386);
+            this.lblLogInFindAvgG.Location = new System.Drawing.Point(1014, 386);
             this.lblLogInFindAvgG.Name = "lblLogInFindAvgG";
             this.lblLogInFindAvgG.Size = new System.Drawing.Size(35, 13);
             this.lblLogInFindAvgG.TabIndex = 4;
@@ -186,7 +204,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(278, 347);
+            this.label4.Location = new System.Drawing.Point(1014, 347);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 5;
@@ -195,7 +213,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(347, 347);
+            this.label1.Location = new System.Drawing.Point(1083, 347);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 9;
@@ -204,7 +222,7 @@
             // lblLogInClickAvgG
             // 
             this.lblLogInClickAvgG.AutoSize = true;
-            this.lblLogInClickAvgG.Location = new System.Drawing.Point(347, 386);
+            this.lblLogInClickAvgG.Location = new System.Drawing.Point(1083, 386);
             this.lblLogInClickAvgG.Name = "lblLogInClickAvgG";
             this.lblLogInClickAvgG.Size = new System.Drawing.Size(35, 13);
             this.lblLogInClickAvgG.TabIndex = 8;
@@ -213,7 +231,7 @@
             // lblLogInClickTotalG
             // 
             this.lblLogInClickTotalG.AutoSize = true;
-            this.lblLogInClickTotalG.Location = new System.Drawing.Point(347, 373);
+            this.lblLogInClickTotalG.Location = new System.Drawing.Point(1083, 373);
             this.lblLogInClickTotalG.Name = "lblLogInClickTotalG";
             this.lblLogInClickTotalG.Size = new System.Drawing.Size(35, 13);
             this.lblLogInClickTotalG.TabIndex = 7;
@@ -222,7 +240,7 @@
             // lblLogInClickCountG
             // 
             this.lblLogInClickCountG.AutoSize = true;
-            this.lblLogInClickCountG.Location = new System.Drawing.Point(347, 360);
+            this.lblLogInClickCountG.Location = new System.Drawing.Point(1083, 360);
             this.lblLogInClickCountG.Name = "lblLogInClickCountG";
             this.lblLogInClickCountG.Size = new System.Drawing.Size(35, 13);
             this.lblLogInClickCountG.TabIndex = 6;
@@ -231,7 +249,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(414, 347);
+            this.label2.Location = new System.Drawing.Point(1150, 347);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 13;
@@ -240,7 +258,7 @@
             // lblQstartAvgG
             // 
             this.lblQstartAvgG.AutoSize = true;
-            this.lblQstartAvgG.Location = new System.Drawing.Point(414, 386);
+            this.lblQstartAvgG.Location = new System.Drawing.Point(1150, 386);
             this.lblQstartAvgG.Name = "lblQstartAvgG";
             this.lblQstartAvgG.Size = new System.Drawing.Size(35, 13);
             this.lblQstartAvgG.TabIndex = 12;
@@ -249,7 +267,7 @@
             // lblQstartTotalG
             // 
             this.lblQstartTotalG.AutoSize = true;
-            this.lblQstartTotalG.Location = new System.Drawing.Point(414, 373);
+            this.lblQstartTotalG.Location = new System.Drawing.Point(1150, 373);
             this.lblQstartTotalG.Name = "lblQstartTotalG";
             this.lblQstartTotalG.Size = new System.Drawing.Size(35, 13);
             this.lblQstartTotalG.TabIndex = 11;
@@ -258,7 +276,7 @@
             // lblQstartCountG
             // 
             this.lblQstartCountG.AutoSize = true;
-            this.lblQstartCountG.Location = new System.Drawing.Point(414, 360);
+            this.lblQstartCountG.Location = new System.Drawing.Point(1150, 360);
             this.lblQstartCountG.Name = "lblQstartCountG";
             this.lblQstartCountG.Size = new System.Drawing.Size(35, 13);
             this.lblQstartCountG.TabIndex = 10;
@@ -267,7 +285,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(465, 347);
+            this.label3.Location = new System.Drawing.Point(1201, 347);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 17;
@@ -276,7 +294,7 @@
             // lblFirstTimeQAvgG
             // 
             this.lblFirstTimeQAvgG.AutoSize = true;
-            this.lblFirstTimeQAvgG.Location = new System.Drawing.Point(465, 386);
+            this.lblFirstTimeQAvgG.Location = new System.Drawing.Point(1201, 386);
             this.lblFirstTimeQAvgG.Name = "lblFirstTimeQAvgG";
             this.lblFirstTimeQAvgG.Size = new System.Drawing.Size(35, 13);
             this.lblFirstTimeQAvgG.TabIndex = 16;
@@ -285,7 +303,7 @@
             // lblFirstTimeQTotalG
             // 
             this.lblFirstTimeQTotalG.AutoSize = true;
-            this.lblFirstTimeQTotalG.Location = new System.Drawing.Point(465, 373);
+            this.lblFirstTimeQTotalG.Location = new System.Drawing.Point(1201, 373);
             this.lblFirstTimeQTotalG.Name = "lblFirstTimeQTotalG";
             this.lblFirstTimeQTotalG.Size = new System.Drawing.Size(35, 13);
             this.lblFirstTimeQTotalG.TabIndex = 15;
@@ -294,7 +312,7 @@
             // lblFirstTimeQCountG
             // 
             this.lblFirstTimeQCountG.AutoSize = true;
-            this.lblFirstTimeQCountG.Location = new System.Drawing.Point(465, 360);
+            this.lblFirstTimeQCountG.Location = new System.Drawing.Point(1201, 360);
             this.lblFirstTimeQCountG.Name = "lblFirstTimeQCountG";
             this.lblFirstTimeQCountG.Size = new System.Drawing.Size(35, 13);
             this.lblFirstTimeQCountG.TabIndex = 14;
@@ -303,7 +321,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(528, 347);
+            this.label5.Location = new System.Drawing.Point(1264, 347);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 21;
@@ -312,7 +330,7 @@
             // lblRQRTime2AvgG
             // 
             this.lblRQRTime2AvgG.AutoSize = true;
-            this.lblRQRTime2AvgG.Location = new System.Drawing.Point(528, 386);
+            this.lblRQRTime2AvgG.Location = new System.Drawing.Point(1264, 386);
             this.lblRQRTime2AvgG.Name = "lblRQRTime2AvgG";
             this.lblRQRTime2AvgG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime2AvgG.TabIndex = 20;
@@ -321,7 +339,7 @@
             // lblRQRTime2TotalG
             // 
             this.lblRQRTime2TotalG.AutoSize = true;
-            this.lblRQRTime2TotalG.Location = new System.Drawing.Point(528, 373);
+            this.lblRQRTime2TotalG.Location = new System.Drawing.Point(1264, 373);
             this.lblRQRTime2TotalG.Name = "lblRQRTime2TotalG";
             this.lblRQRTime2TotalG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime2TotalG.TabIndex = 19;
@@ -330,7 +348,7 @@
             // lblRQRTime2CountG
             // 
             this.lblRQRTime2CountG.AutoSize = true;
-            this.lblRQRTime2CountG.Location = new System.Drawing.Point(528, 360);
+            this.lblRQRTime2CountG.Location = new System.Drawing.Point(1264, 360);
             this.lblRQRTime2CountG.Name = "lblRQRTime2CountG";
             this.lblRQRTime2CountG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime2CountG.TabIndex = 18;
@@ -339,7 +357,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(594, 347);
+            this.label6.Location = new System.Drawing.Point(1330, 347);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 25;
@@ -348,7 +366,7 @@
             // lblRQRTime3AvgG
             // 
             this.lblRQRTime3AvgG.AutoSize = true;
-            this.lblRQRTime3AvgG.Location = new System.Drawing.Point(594, 386);
+            this.lblRQRTime3AvgG.Location = new System.Drawing.Point(1330, 386);
             this.lblRQRTime3AvgG.Name = "lblRQRTime3AvgG";
             this.lblRQRTime3AvgG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime3AvgG.TabIndex = 24;
@@ -357,7 +375,7 @@
             // lblRQRTime3TotalG
             // 
             this.lblRQRTime3TotalG.AutoSize = true;
-            this.lblRQRTime3TotalG.Location = new System.Drawing.Point(594, 373);
+            this.lblRQRTime3TotalG.Location = new System.Drawing.Point(1330, 373);
             this.lblRQRTime3TotalG.Name = "lblRQRTime3TotalG";
             this.lblRQRTime3TotalG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime3TotalG.TabIndex = 23;
@@ -366,7 +384,7 @@
             // lblRQRTime3CountG
             // 
             this.lblRQRTime3CountG.AutoSize = true;
-            this.lblRQRTime3CountG.Location = new System.Drawing.Point(594, 360);
+            this.lblRQRTime3CountG.Location = new System.Drawing.Point(1330, 360);
             this.lblRQRTime3CountG.Name = "lblRQRTime3CountG";
             this.lblRQRTime3CountG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime3CountG.TabIndex = 22;
@@ -375,7 +393,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(660, 347);
+            this.label7.Location = new System.Drawing.Point(1396, 347);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 13);
             this.label7.TabIndex = 29;
@@ -384,7 +402,7 @@
             // lblRQRTime4AvgG
             // 
             this.lblRQRTime4AvgG.AutoSize = true;
-            this.lblRQRTime4AvgG.Location = new System.Drawing.Point(660, 386);
+            this.lblRQRTime4AvgG.Location = new System.Drawing.Point(1396, 386);
             this.lblRQRTime4AvgG.Name = "lblRQRTime4AvgG";
             this.lblRQRTime4AvgG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime4AvgG.TabIndex = 28;
@@ -393,7 +411,7 @@
             // lblRQRTime4TotalG
             // 
             this.lblRQRTime4TotalG.AutoSize = true;
-            this.lblRQRTime4TotalG.Location = new System.Drawing.Point(660, 373);
+            this.lblRQRTime4TotalG.Location = new System.Drawing.Point(1396, 373);
             this.lblRQRTime4TotalG.Name = "lblRQRTime4TotalG";
             this.lblRQRTime4TotalG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime4TotalG.TabIndex = 27;
@@ -402,7 +420,7 @@
             // lblRQRTime4CountG
             // 
             this.lblRQRTime4CountG.AutoSize = true;
-            this.lblRQRTime4CountG.Location = new System.Drawing.Point(660, 360);
+            this.lblRQRTime4CountG.Location = new System.Drawing.Point(1396, 360);
             this.lblRQRTime4CountG.Name = "lblRQRTime4CountG";
             this.lblRQRTime4CountG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime4CountG.TabIndex = 26;
@@ -411,7 +429,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(726, 347);
+            this.label8.Location = new System.Drawing.Point(1462, 347);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(60, 13);
             this.label8.TabIndex = 33;
@@ -420,7 +438,7 @@
             // lblRQRTime5AvgG
             // 
             this.lblRQRTime5AvgG.AutoSize = true;
-            this.lblRQRTime5AvgG.Location = new System.Drawing.Point(726, 386);
+            this.lblRQRTime5AvgG.Location = new System.Drawing.Point(1462, 386);
             this.lblRQRTime5AvgG.Name = "lblRQRTime5AvgG";
             this.lblRQRTime5AvgG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime5AvgG.TabIndex = 32;
@@ -429,7 +447,7 @@
             // lblRQRTime5TotalG
             // 
             this.lblRQRTime5TotalG.AutoSize = true;
-            this.lblRQRTime5TotalG.Location = new System.Drawing.Point(726, 373);
+            this.lblRQRTime5TotalG.Location = new System.Drawing.Point(1462, 373);
             this.lblRQRTime5TotalG.Name = "lblRQRTime5TotalG";
             this.lblRQRTime5TotalG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime5TotalG.TabIndex = 31;
@@ -438,7 +456,7 @@
             // lblRQRTime5CountG
             // 
             this.lblRQRTime5CountG.AutoSize = true;
-            this.lblRQRTime5CountG.Location = new System.Drawing.Point(726, 360);
+            this.lblRQRTime5CountG.Location = new System.Drawing.Point(1462, 360);
             this.lblRQRTime5CountG.Name = "lblRQRTime5CountG";
             this.lblRQRTime5CountG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime5CountG.TabIndex = 30;
@@ -447,7 +465,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(799, 347);
+            this.label9.Location = new System.Drawing.Point(1535, 347);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 13);
             this.label9.TabIndex = 37;
@@ -456,7 +474,7 @@
             // lblRQRTime6AvgG
             // 
             this.lblRQRTime6AvgG.AutoSize = true;
-            this.lblRQRTime6AvgG.Location = new System.Drawing.Point(799, 386);
+            this.lblRQRTime6AvgG.Location = new System.Drawing.Point(1535, 386);
             this.lblRQRTime6AvgG.Name = "lblRQRTime6AvgG";
             this.lblRQRTime6AvgG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime6AvgG.TabIndex = 36;
@@ -465,7 +483,7 @@
             // lblRQRTime6TotalG
             // 
             this.lblRQRTime6TotalG.AutoSize = true;
-            this.lblRQRTime6TotalG.Location = new System.Drawing.Point(799, 373);
+            this.lblRQRTime6TotalG.Location = new System.Drawing.Point(1535, 373);
             this.lblRQRTime6TotalG.Name = "lblRQRTime6TotalG";
             this.lblRQRTime6TotalG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime6TotalG.TabIndex = 35;
@@ -474,7 +492,7 @@
             // lblRQRTime6CountG
             // 
             this.lblRQRTime6CountG.AutoSize = true;
-            this.lblRQRTime6CountG.Location = new System.Drawing.Point(799, 360);
+            this.lblRQRTime6CountG.Location = new System.Drawing.Point(1535, 360);
             this.lblRQRTime6CountG.Name = "lblRQRTime6CountG";
             this.lblRQRTime6CountG.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime6CountG.TabIndex = 34;
@@ -483,7 +501,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(874, 347);
+            this.label10.Location = new System.Drawing.Point(1610, 347);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 13);
             this.label10.TabIndex = 41;
@@ -492,7 +510,7 @@
             // lblTimeLastRQRAvgG
             // 
             this.lblTimeLastRQRAvgG.AutoSize = true;
-            this.lblTimeLastRQRAvgG.Location = new System.Drawing.Point(874, 386);
+            this.lblTimeLastRQRAvgG.Location = new System.Drawing.Point(1610, 386);
             this.lblTimeLastRQRAvgG.Name = "lblTimeLastRQRAvgG";
             this.lblTimeLastRQRAvgG.Size = new System.Drawing.Size(35, 13);
             this.lblTimeLastRQRAvgG.TabIndex = 40;
@@ -501,7 +519,7 @@
             // lblTimeLastRQRTotalG
             // 
             this.lblTimeLastRQRTotalG.AutoSize = true;
-            this.lblTimeLastRQRTotalG.Location = new System.Drawing.Point(874, 373);
+            this.lblTimeLastRQRTotalG.Location = new System.Drawing.Point(1610, 373);
             this.lblTimeLastRQRTotalG.Name = "lblTimeLastRQRTotalG";
             this.lblTimeLastRQRTotalG.Size = new System.Drawing.Size(35, 13);
             this.lblTimeLastRQRTotalG.TabIndex = 39;
@@ -510,7 +528,7 @@
             // lblTimeLastRQRCountG
             // 
             this.lblTimeLastRQRCountG.AutoSize = true;
-            this.lblTimeLastRQRCountG.Location = new System.Drawing.Point(874, 360);
+            this.lblTimeLastRQRCountG.Location = new System.Drawing.Point(1610, 360);
             this.lblTimeLastRQRCountG.Name = "lblTimeLastRQRCountG";
             this.lblTimeLastRQRCountG.Size = new System.Drawing.Size(35, 13);
             this.lblTimeLastRQRCountG.TabIndex = 38;
@@ -519,7 +537,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(958, 347);
+            this.label11.Location = new System.Drawing.Point(1694, 347);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 13);
             this.label11.TabIndex = 45;
@@ -528,7 +546,7 @@
             // lblRQTTime1AvgG
             // 
             this.lblRQTTime1AvgG.AutoSize = true;
-            this.lblRQTTime1AvgG.Location = new System.Drawing.Point(958, 386);
+            this.lblRQTTime1AvgG.Location = new System.Drawing.Point(1694, 386);
             this.lblRQTTime1AvgG.Name = "lblRQTTime1AvgG";
             this.lblRQTTime1AvgG.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime1AvgG.TabIndex = 44;
@@ -537,7 +555,7 @@
             // lblRQTTime1TotalG
             // 
             this.lblRQTTime1TotalG.AutoSize = true;
-            this.lblRQTTime1TotalG.Location = new System.Drawing.Point(958, 373);
+            this.lblRQTTime1TotalG.Location = new System.Drawing.Point(1694, 373);
             this.lblRQTTime1TotalG.Name = "lblRQTTime1TotalG";
             this.lblRQTTime1TotalG.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime1TotalG.TabIndex = 43;
@@ -546,7 +564,7 @@
             // lblRQTTime1CountG
             // 
             this.lblRQTTime1CountG.AutoSize = true;
-            this.lblRQTTime1CountG.Location = new System.Drawing.Point(958, 360);
+            this.lblRQTTime1CountG.Location = new System.Drawing.Point(1694, 360);
             this.lblRQTTime1CountG.Name = "lblRQTTime1CountG";
             this.lblRQTTime1CountG.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime1CountG.TabIndex = 42;
@@ -555,7 +573,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1032, 347);
+            this.label12.Location = new System.Drawing.Point(1768, 347);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(59, 13);
             this.label12.TabIndex = 49;
@@ -564,7 +582,7 @@
             // lblRQTTime2AvgG
             // 
             this.lblRQTTime2AvgG.AutoSize = true;
-            this.lblRQTTime2AvgG.Location = new System.Drawing.Point(1032, 386);
+            this.lblRQTTime2AvgG.Location = new System.Drawing.Point(1768, 386);
             this.lblRQTTime2AvgG.Name = "lblRQTTime2AvgG";
             this.lblRQTTime2AvgG.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime2AvgG.TabIndex = 48;
@@ -573,7 +591,7 @@
             // lblRQTTime2TotalG
             // 
             this.lblRQTTime2TotalG.AutoSize = true;
-            this.lblRQTTime2TotalG.Location = new System.Drawing.Point(1032, 373);
+            this.lblRQTTime2TotalG.Location = new System.Drawing.Point(1768, 373);
             this.lblRQTTime2TotalG.Name = "lblRQTTime2TotalG";
             this.lblRQTTime2TotalG.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime2TotalG.TabIndex = 47;
@@ -582,7 +600,7 @@
             // lblRQTTime2CountG
             // 
             this.lblRQTTime2CountG.AutoSize = true;
-            this.lblRQTTime2CountG.Location = new System.Drawing.Point(1032, 360);
+            this.lblRQTTime2CountG.Location = new System.Drawing.Point(1768, 360);
             this.lblRQTTime2CountG.Name = "lblRQTTime2CountG";
             this.lblRQTTime2CountG.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime2CountG.TabIndex = 46;
@@ -591,7 +609,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1097, 347);
+            this.label13.Location = new System.Drawing.Point(1833, 347);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 13);
             this.label13.TabIndex = 53;
@@ -600,7 +618,7 @@
             // lblRQTTime3AvgG
             // 
             this.lblRQTTime3AvgG.AutoSize = true;
-            this.lblRQTTime3AvgG.Location = new System.Drawing.Point(1097, 386);
+            this.lblRQTTime3AvgG.Location = new System.Drawing.Point(1833, 386);
             this.lblRQTTime3AvgG.Name = "lblRQTTime3AvgG";
             this.lblRQTTime3AvgG.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime3AvgG.TabIndex = 52;
@@ -609,7 +627,7 @@
             // lblRQTTime3TotalG
             // 
             this.lblRQTTime3TotalG.AutoSize = true;
-            this.lblRQTTime3TotalG.Location = new System.Drawing.Point(1097, 373);
+            this.lblRQTTime3TotalG.Location = new System.Drawing.Point(1833, 373);
             this.lblRQTTime3TotalG.Name = "lblRQTTime3TotalG";
             this.lblRQTTime3TotalG.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime3TotalG.TabIndex = 51;
@@ -618,7 +636,7 @@
             // lblRQTTime3CountG
             // 
             this.lblRQTTime3CountG.AutoSize = true;
-            this.lblRQTTime3CountG.Location = new System.Drawing.Point(1097, 360);
+            this.lblRQTTime3CountG.Location = new System.Drawing.Point(1833, 360);
             this.lblRQTTime3CountG.Name = "lblRQTTime3CountG";
             this.lblRQTTime3CountG.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime3CountG.TabIndex = 50;
@@ -627,7 +645,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1097, 432);
+            this.label14.Location = new System.Drawing.Point(1833, 432);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(59, 13);
             this.label14.TabIndex = 105;
@@ -636,7 +654,7 @@
             // lblRQTTime3AvgB
             // 
             this.lblRQTTime3AvgB.AutoSize = true;
-            this.lblRQTTime3AvgB.Location = new System.Drawing.Point(1097, 471);
+            this.lblRQTTime3AvgB.Location = new System.Drawing.Point(1833, 471);
             this.lblRQTTime3AvgB.Name = "lblRQTTime3AvgB";
             this.lblRQTTime3AvgB.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime3AvgB.TabIndex = 104;
@@ -645,7 +663,7 @@
             // lblRQTTime3TotalB
             // 
             this.lblRQTTime3TotalB.AutoSize = true;
-            this.lblRQTTime3TotalB.Location = new System.Drawing.Point(1097, 458);
+            this.lblRQTTime3TotalB.Location = new System.Drawing.Point(1833, 458);
             this.lblRQTTime3TotalB.Name = "lblRQTTime3TotalB";
             this.lblRQTTime3TotalB.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime3TotalB.TabIndex = 103;
@@ -654,7 +672,7 @@
             // lblRQTTime3CountB
             // 
             this.lblRQTTime3CountB.AutoSize = true;
-            this.lblRQTTime3CountB.Location = new System.Drawing.Point(1097, 445);
+            this.lblRQTTime3CountB.Location = new System.Drawing.Point(1833, 445);
             this.lblRQTTime3CountB.Name = "lblRQTTime3CountB";
             this.lblRQTTime3CountB.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime3CountB.TabIndex = 102;
@@ -663,7 +681,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(1032, 432);
+            this.label18.Location = new System.Drawing.Point(1768, 432);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(59, 13);
             this.label18.TabIndex = 101;
@@ -672,7 +690,7 @@
             // lblRQTTime2AvgB
             // 
             this.lblRQTTime2AvgB.AutoSize = true;
-            this.lblRQTTime2AvgB.Location = new System.Drawing.Point(1032, 471);
+            this.lblRQTTime2AvgB.Location = new System.Drawing.Point(1768, 471);
             this.lblRQTTime2AvgB.Name = "lblRQTTime2AvgB";
             this.lblRQTTime2AvgB.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime2AvgB.TabIndex = 100;
@@ -681,7 +699,7 @@
             // lblRQTTime2TotalB
             // 
             this.lblRQTTime2TotalB.AutoSize = true;
-            this.lblRQTTime2TotalB.Location = new System.Drawing.Point(1032, 458);
+            this.lblRQTTime2TotalB.Location = new System.Drawing.Point(1768, 458);
             this.lblRQTTime2TotalB.Name = "lblRQTTime2TotalB";
             this.lblRQTTime2TotalB.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime2TotalB.TabIndex = 99;
@@ -690,7 +708,7 @@
             // lblRQTTime2CountB
             // 
             this.lblRQTTime2CountB.AutoSize = true;
-            this.lblRQTTime2CountB.Location = new System.Drawing.Point(1032, 445);
+            this.lblRQTTime2CountB.Location = new System.Drawing.Point(1768, 445);
             this.lblRQTTime2CountB.Name = "lblRQTTime2CountB";
             this.lblRQTTime2CountB.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime2CountB.TabIndex = 98;
@@ -699,7 +717,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(958, 432);
+            this.label22.Location = new System.Drawing.Point(1694, 432);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(59, 13);
             this.label22.TabIndex = 97;
@@ -708,7 +726,7 @@
             // lblRQTTime1AvgB
             // 
             this.lblRQTTime1AvgB.AutoSize = true;
-            this.lblRQTTime1AvgB.Location = new System.Drawing.Point(958, 471);
+            this.lblRQTTime1AvgB.Location = new System.Drawing.Point(1694, 471);
             this.lblRQTTime1AvgB.Name = "lblRQTTime1AvgB";
             this.lblRQTTime1AvgB.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime1AvgB.TabIndex = 96;
@@ -717,7 +735,7 @@
             // lblRQTTime1TotalB
             // 
             this.lblRQTTime1TotalB.AutoSize = true;
-            this.lblRQTTime1TotalB.Location = new System.Drawing.Point(958, 458);
+            this.lblRQTTime1TotalB.Location = new System.Drawing.Point(1694, 458);
             this.lblRQTTime1TotalB.Name = "lblRQTTime1TotalB";
             this.lblRQTTime1TotalB.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime1TotalB.TabIndex = 95;
@@ -726,7 +744,7 @@
             // lblRQTTime1CountB
             // 
             this.lblRQTTime1CountB.AutoSize = true;
-            this.lblRQTTime1CountB.Location = new System.Drawing.Point(958, 445);
+            this.lblRQTTime1CountB.Location = new System.Drawing.Point(1694, 445);
             this.lblRQTTime1CountB.Name = "lblRQTTime1CountB";
             this.lblRQTTime1CountB.Size = new System.Drawing.Size(35, 13);
             this.lblRQTTime1CountB.TabIndex = 94;
@@ -735,7 +753,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(874, 432);
+            this.label26.Location = new System.Drawing.Point(1610, 432);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(74, 13);
             this.label26.TabIndex = 93;
@@ -744,7 +762,7 @@
             // lblTimeLastRQRAvgB
             // 
             this.lblTimeLastRQRAvgB.AutoSize = true;
-            this.lblTimeLastRQRAvgB.Location = new System.Drawing.Point(874, 471);
+            this.lblTimeLastRQRAvgB.Location = new System.Drawing.Point(1610, 471);
             this.lblTimeLastRQRAvgB.Name = "lblTimeLastRQRAvgB";
             this.lblTimeLastRQRAvgB.Size = new System.Drawing.Size(35, 13);
             this.lblTimeLastRQRAvgB.TabIndex = 92;
@@ -753,7 +771,7 @@
             // lblTimeLastRQRTotalB
             // 
             this.lblTimeLastRQRTotalB.AutoSize = true;
-            this.lblTimeLastRQRTotalB.Location = new System.Drawing.Point(874, 458);
+            this.lblTimeLastRQRTotalB.Location = new System.Drawing.Point(1610, 458);
             this.lblTimeLastRQRTotalB.Name = "lblTimeLastRQRTotalB";
             this.lblTimeLastRQRTotalB.Size = new System.Drawing.Size(35, 13);
             this.lblTimeLastRQRTotalB.TabIndex = 91;
@@ -762,7 +780,7 @@
             // lblTimeLastRQRCountB
             // 
             this.lblTimeLastRQRCountB.AutoSize = true;
-            this.lblTimeLastRQRCountB.Location = new System.Drawing.Point(874, 445);
+            this.lblTimeLastRQRCountB.Location = new System.Drawing.Point(1610, 445);
             this.lblTimeLastRQRCountB.Name = "lblTimeLastRQRCountB";
             this.lblTimeLastRQRCountB.Size = new System.Drawing.Size(35, 13);
             this.lblTimeLastRQRCountB.TabIndex = 90;
@@ -771,7 +789,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(799, 432);
+            this.label30.Location = new System.Drawing.Point(1535, 432);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(60, 13);
             this.label30.TabIndex = 89;
@@ -780,7 +798,7 @@
             // lblRQRTime6AvgB
             // 
             this.lblRQRTime6AvgB.AutoSize = true;
-            this.lblRQRTime6AvgB.Location = new System.Drawing.Point(799, 471);
+            this.lblRQRTime6AvgB.Location = new System.Drawing.Point(1535, 471);
             this.lblRQRTime6AvgB.Name = "lblRQRTime6AvgB";
             this.lblRQRTime6AvgB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime6AvgB.TabIndex = 88;
@@ -789,7 +807,7 @@
             // lblRQRTime6TotalB
             // 
             this.lblRQRTime6TotalB.AutoSize = true;
-            this.lblRQRTime6TotalB.Location = new System.Drawing.Point(799, 458);
+            this.lblRQRTime6TotalB.Location = new System.Drawing.Point(1535, 458);
             this.lblRQRTime6TotalB.Name = "lblRQRTime6TotalB";
             this.lblRQRTime6TotalB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime6TotalB.TabIndex = 87;
@@ -798,7 +816,7 @@
             // lblRQRTime6CountB
             // 
             this.lblRQRTime6CountB.AutoSize = true;
-            this.lblRQRTime6CountB.Location = new System.Drawing.Point(799, 445);
+            this.lblRQRTime6CountB.Location = new System.Drawing.Point(1535, 445);
             this.lblRQRTime6CountB.Name = "lblRQRTime6CountB";
             this.lblRQRTime6CountB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime6CountB.TabIndex = 86;
@@ -807,7 +825,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(726, 432);
+            this.label34.Location = new System.Drawing.Point(1462, 432);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(60, 13);
             this.label34.TabIndex = 85;
@@ -816,7 +834,7 @@
             // lblRQRTime5AvgB
             // 
             this.lblRQRTime5AvgB.AutoSize = true;
-            this.lblRQRTime5AvgB.Location = new System.Drawing.Point(726, 471);
+            this.lblRQRTime5AvgB.Location = new System.Drawing.Point(1462, 471);
             this.lblRQRTime5AvgB.Name = "lblRQRTime5AvgB";
             this.lblRQRTime5AvgB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime5AvgB.TabIndex = 84;
@@ -825,7 +843,7 @@
             // lblRQRTime5TotalB
             // 
             this.lblRQRTime5TotalB.AutoSize = true;
-            this.lblRQRTime5TotalB.Location = new System.Drawing.Point(726, 458);
+            this.lblRQRTime5TotalB.Location = new System.Drawing.Point(1462, 458);
             this.lblRQRTime5TotalB.Name = "lblRQRTime5TotalB";
             this.lblRQRTime5TotalB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime5TotalB.TabIndex = 83;
@@ -834,7 +852,7 @@
             // lblRQRTime5CountB
             // 
             this.lblRQRTime5CountB.AutoSize = true;
-            this.lblRQRTime5CountB.Location = new System.Drawing.Point(726, 445);
+            this.lblRQRTime5CountB.Location = new System.Drawing.Point(1462, 445);
             this.lblRQRTime5CountB.Name = "lblRQRTime5CountB";
             this.lblRQRTime5CountB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime5CountB.TabIndex = 82;
@@ -843,7 +861,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(660, 432);
+            this.label38.Location = new System.Drawing.Point(1396, 432);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(60, 13);
             this.label38.TabIndex = 81;
@@ -852,7 +870,7 @@
             // lblRQRTime4AvgB
             // 
             this.lblRQRTime4AvgB.AutoSize = true;
-            this.lblRQRTime4AvgB.Location = new System.Drawing.Point(660, 471);
+            this.lblRQRTime4AvgB.Location = new System.Drawing.Point(1396, 471);
             this.lblRQRTime4AvgB.Name = "lblRQRTime4AvgB";
             this.lblRQRTime4AvgB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime4AvgB.TabIndex = 80;
@@ -861,7 +879,7 @@
             // lblRQRTime4TotalB
             // 
             this.lblRQRTime4TotalB.AutoSize = true;
-            this.lblRQRTime4TotalB.Location = new System.Drawing.Point(660, 458);
+            this.lblRQRTime4TotalB.Location = new System.Drawing.Point(1396, 458);
             this.lblRQRTime4TotalB.Name = "lblRQRTime4TotalB";
             this.lblRQRTime4TotalB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime4TotalB.TabIndex = 79;
@@ -870,7 +888,7 @@
             // lblRQRTime4CountB
             // 
             this.lblRQRTime4CountB.AutoSize = true;
-            this.lblRQRTime4CountB.Location = new System.Drawing.Point(660, 445);
+            this.lblRQRTime4CountB.Location = new System.Drawing.Point(1396, 445);
             this.lblRQRTime4CountB.Name = "lblRQRTime4CountB";
             this.lblRQRTime4CountB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime4CountB.TabIndex = 78;
@@ -879,7 +897,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(594, 432);
+            this.label42.Location = new System.Drawing.Point(1330, 432);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(60, 13);
             this.label42.TabIndex = 77;
@@ -888,7 +906,7 @@
             // lblRQRTime3AvgB
             // 
             this.lblRQRTime3AvgB.AutoSize = true;
-            this.lblRQRTime3AvgB.Location = new System.Drawing.Point(594, 471);
+            this.lblRQRTime3AvgB.Location = new System.Drawing.Point(1330, 471);
             this.lblRQRTime3AvgB.Name = "lblRQRTime3AvgB";
             this.lblRQRTime3AvgB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime3AvgB.TabIndex = 76;
@@ -897,7 +915,7 @@
             // lblRQRTime3TotalB
             // 
             this.lblRQRTime3TotalB.AutoSize = true;
-            this.lblRQRTime3TotalB.Location = new System.Drawing.Point(594, 458);
+            this.lblRQRTime3TotalB.Location = new System.Drawing.Point(1330, 458);
             this.lblRQRTime3TotalB.Name = "lblRQRTime3TotalB";
             this.lblRQRTime3TotalB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime3TotalB.TabIndex = 75;
@@ -906,7 +924,7 @@
             // lblRQRTime3CountB
             // 
             this.lblRQRTime3CountB.AutoSize = true;
-            this.lblRQRTime3CountB.Location = new System.Drawing.Point(594, 445);
+            this.lblRQRTime3CountB.Location = new System.Drawing.Point(1330, 445);
             this.lblRQRTime3CountB.Name = "lblRQRTime3CountB";
             this.lblRQRTime3CountB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime3CountB.TabIndex = 74;
@@ -915,7 +933,7 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(528, 432);
+            this.label46.Location = new System.Drawing.Point(1264, 432);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(60, 13);
             this.label46.TabIndex = 73;
@@ -924,7 +942,7 @@
             // lblRQRTime2AvgB
             // 
             this.lblRQRTime2AvgB.AutoSize = true;
-            this.lblRQRTime2AvgB.Location = new System.Drawing.Point(528, 471);
+            this.lblRQRTime2AvgB.Location = new System.Drawing.Point(1264, 471);
             this.lblRQRTime2AvgB.Name = "lblRQRTime2AvgB";
             this.lblRQRTime2AvgB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime2AvgB.TabIndex = 72;
@@ -933,7 +951,7 @@
             // lblRQRTime2TotalB
             // 
             this.lblRQRTime2TotalB.AutoSize = true;
-            this.lblRQRTime2TotalB.Location = new System.Drawing.Point(528, 458);
+            this.lblRQRTime2TotalB.Location = new System.Drawing.Point(1264, 458);
             this.lblRQRTime2TotalB.Name = "lblRQRTime2TotalB";
             this.lblRQRTime2TotalB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime2TotalB.TabIndex = 71;
@@ -942,7 +960,7 @@
             // lblRQRTime2CountB
             // 
             this.lblRQRTime2CountB.AutoSize = true;
-            this.lblRQRTime2CountB.Location = new System.Drawing.Point(528, 445);
+            this.lblRQRTime2CountB.Location = new System.Drawing.Point(1264, 445);
             this.lblRQRTime2CountB.Name = "lblRQRTime2CountB";
             this.lblRQRTime2CountB.Size = new System.Drawing.Size(35, 13);
             this.lblRQRTime2CountB.TabIndex = 70;
@@ -951,7 +969,7 @@
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(465, 432);
+            this.label50.Location = new System.Drawing.Point(1201, 432);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(57, 13);
             this.label50.TabIndex = 69;
@@ -960,7 +978,7 @@
             // lblFirstTimeQAvgB
             // 
             this.lblFirstTimeQAvgB.AutoSize = true;
-            this.lblFirstTimeQAvgB.Location = new System.Drawing.Point(465, 471);
+            this.lblFirstTimeQAvgB.Location = new System.Drawing.Point(1201, 471);
             this.lblFirstTimeQAvgB.Name = "lblFirstTimeQAvgB";
             this.lblFirstTimeQAvgB.Size = new System.Drawing.Size(35, 13);
             this.lblFirstTimeQAvgB.TabIndex = 68;
@@ -969,7 +987,7 @@
             // lblFirstTimeQTotalB
             // 
             this.lblFirstTimeQTotalB.AutoSize = true;
-            this.lblFirstTimeQTotalB.Location = new System.Drawing.Point(465, 458);
+            this.lblFirstTimeQTotalB.Location = new System.Drawing.Point(1201, 458);
             this.lblFirstTimeQTotalB.Name = "lblFirstTimeQTotalB";
             this.lblFirstTimeQTotalB.Size = new System.Drawing.Size(35, 13);
             this.lblFirstTimeQTotalB.TabIndex = 67;
@@ -978,7 +996,7 @@
             // lblFirstTimeQCountB
             // 
             this.lblFirstTimeQCountB.AutoSize = true;
-            this.lblFirstTimeQCountB.Location = new System.Drawing.Point(465, 445);
+            this.lblFirstTimeQCountB.Location = new System.Drawing.Point(1201, 445);
             this.lblFirstTimeQCountB.Name = "lblFirstTimeQCountB";
             this.lblFirstTimeQCountB.Size = new System.Drawing.Size(35, 13);
             this.lblFirstTimeQCountB.TabIndex = 66;
@@ -987,7 +1005,7 @@
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(414, 432);
+            this.label54.Location = new System.Drawing.Point(1150, 432);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(35, 13);
             this.label54.TabIndex = 65;
@@ -996,7 +1014,7 @@
             // lblQstartAvgB
             // 
             this.lblQstartAvgB.AutoSize = true;
-            this.lblQstartAvgB.Location = new System.Drawing.Point(414, 471);
+            this.lblQstartAvgB.Location = new System.Drawing.Point(1150, 471);
             this.lblQstartAvgB.Name = "lblQstartAvgB";
             this.lblQstartAvgB.Size = new System.Drawing.Size(35, 13);
             this.lblQstartAvgB.TabIndex = 64;
@@ -1005,7 +1023,7 @@
             // lblQstartTotalB
             // 
             this.lblQstartTotalB.AutoSize = true;
-            this.lblQstartTotalB.Location = new System.Drawing.Point(414, 458);
+            this.lblQstartTotalB.Location = new System.Drawing.Point(1150, 458);
             this.lblQstartTotalB.Name = "lblQstartTotalB";
             this.lblQstartTotalB.Size = new System.Drawing.Size(35, 13);
             this.lblQstartTotalB.TabIndex = 63;
@@ -1014,7 +1032,7 @@
             // lblQstartCountB
             // 
             this.lblQstartCountB.AutoSize = true;
-            this.lblQstartCountB.Location = new System.Drawing.Point(414, 445);
+            this.lblQstartCountB.Location = new System.Drawing.Point(1150, 445);
             this.lblQstartCountB.Name = "lblQstartCountB";
             this.lblQstartCountB.Size = new System.Drawing.Size(35, 13);
             this.lblQstartCountB.TabIndex = 62;
@@ -1023,7 +1041,7 @@
             // label58
             // 
             this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(347, 432);
+            this.label58.Location = new System.Drawing.Point(1083, 432);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(57, 13);
             this.label58.TabIndex = 61;
@@ -1032,7 +1050,7 @@
             // lblLogInClickAvgB
             // 
             this.lblLogInClickAvgB.AutoSize = true;
-            this.lblLogInClickAvgB.Location = new System.Drawing.Point(347, 471);
+            this.lblLogInClickAvgB.Location = new System.Drawing.Point(1083, 471);
             this.lblLogInClickAvgB.Name = "lblLogInClickAvgB";
             this.lblLogInClickAvgB.Size = new System.Drawing.Size(35, 13);
             this.lblLogInClickAvgB.TabIndex = 60;
@@ -1041,7 +1059,7 @@
             // lblLogInClickTotalB
             // 
             this.lblLogInClickTotalB.AutoSize = true;
-            this.lblLogInClickTotalB.Location = new System.Drawing.Point(347, 458);
+            this.lblLogInClickTotalB.Location = new System.Drawing.Point(1083, 458);
             this.lblLogInClickTotalB.Name = "lblLogInClickTotalB";
             this.lblLogInClickTotalB.Size = new System.Drawing.Size(35, 13);
             this.lblLogInClickTotalB.TabIndex = 59;
@@ -1050,7 +1068,7 @@
             // lblLogInClickCountB
             // 
             this.lblLogInClickCountB.AutoSize = true;
-            this.lblLogInClickCountB.Location = new System.Drawing.Point(347, 445);
+            this.lblLogInClickCountB.Location = new System.Drawing.Point(1083, 445);
             this.lblLogInClickCountB.Name = "lblLogInClickCountB";
             this.lblLogInClickCountB.Size = new System.Drawing.Size(35, 13);
             this.lblLogInClickCountB.TabIndex = 58;
@@ -1059,7 +1077,7 @@
             // label62
             // 
             this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(278, 432);
+            this.label62.Location = new System.Drawing.Point(1014, 432);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(54, 13);
             this.label62.TabIndex = 57;
@@ -1068,7 +1086,7 @@
             // lblLogInFindAvgB
             // 
             this.lblLogInFindAvgB.AutoSize = true;
-            this.lblLogInFindAvgB.Location = new System.Drawing.Point(278, 471);
+            this.lblLogInFindAvgB.Location = new System.Drawing.Point(1014, 471);
             this.lblLogInFindAvgB.Name = "lblLogInFindAvgB";
             this.lblLogInFindAvgB.Size = new System.Drawing.Size(35, 13);
             this.lblLogInFindAvgB.TabIndex = 56;
@@ -1077,7 +1095,7 @@
             // lblLogInFindTotalB
             // 
             this.lblLogInFindTotalB.AutoSize = true;
-            this.lblLogInFindTotalB.Location = new System.Drawing.Point(278, 458);
+            this.lblLogInFindTotalB.Location = new System.Drawing.Point(1014, 458);
             this.lblLogInFindTotalB.Name = "lblLogInFindTotalB";
             this.lblLogInFindTotalB.Size = new System.Drawing.Size(35, 13);
             this.lblLogInFindTotalB.TabIndex = 55;
@@ -1086,17 +1104,204 @@
             // lblLogInFindCountB
             // 
             this.lblLogInFindCountB.AutoSize = true;
-            this.lblLogInFindCountB.Location = new System.Drawing.Point(278, 445);
+            this.lblLogInFindCountB.Location = new System.Drawing.Point(1014, 445);
             this.lblLogInFindCountB.Name = "lblLogInFindCountB";
             this.lblLogInFindCountB.Size = new System.Drawing.Size(35, 13);
             this.lblLogInFindCountB.TabIndex = 54;
             this.lblLogInFindCountB.Text = "label1";
+            // 
+            // gbAge
+            // 
+            this.gbAge.Controls.Add(this.rb5665);
+            this.gbAge.Controls.Add(this.rb4655);
+            this.gbAge.Controls.Add(this.rbOver65);
+            this.gbAge.Controls.Add(this.rb2635);
+            this.gbAge.Controls.Add(this.rb3645);
+            this.gbAge.Controls.Add(this.rb1625);
+            this.gbAge.Controls.Add(this.rbUnder16);
+            this.gbAge.Location = new System.Drawing.Point(10, 342);
+            this.gbAge.Name = "gbAge";
+            this.gbAge.Size = new System.Drawing.Size(198, 142);
+            this.gbAge.TabIndex = 106;
+            this.gbAge.TabStop = false;
+            this.gbAge.Text = "Ålder";
+            // 
+            // rb5665
+            // 
+            this.rb5665.AutoSize = true;
+            this.rb5665.Location = new System.Drawing.Point(94, 62);
+            this.rb5665.Name = "rb5665";
+            this.rb5665.Size = new System.Drawing.Size(52, 17);
+            this.rb5665.TabIndex = 8;
+            this.rb5665.TabStop = true;
+            this.rb5665.Text = "56-65";
+            this.rb5665.UseVisualStyleBackColor = true;
+            // 
+            // rb4655
+            // 
+            this.rb4655.AutoSize = true;
+            this.rb4655.Location = new System.Drawing.Point(94, 39);
+            this.rb4655.Name = "rb4655";
+            this.rb4655.Size = new System.Drawing.Size(52, 17);
+            this.rb4655.TabIndex = 7;
+            this.rb4655.TabStop = true;
+            this.rb4655.Text = "46-55";
+            this.rb4655.UseVisualStyleBackColor = true;
+            // 
+            // rbOver65
+            // 
+            this.rbOver65.AutoSize = true;
+            this.rbOver65.Location = new System.Drawing.Point(38, 85);
+            this.rbOver65.Name = "rbOver65";
+            this.rbOver65.Size = new System.Drawing.Size(43, 17);
+            this.rbOver65.TabIndex = 3;
+            this.rbOver65.TabStop = true;
+            this.rbOver65.Text = ">65";
+            this.rbOver65.UseVisualStyleBackColor = true;
+            // 
+            // rb2635
+            // 
+            this.rb2635.AutoSize = true;
+            this.rb2635.Location = new System.Drawing.Point(3, 62);
+            this.rb2635.Name = "rb2635";
+            this.rb2635.Size = new System.Drawing.Size(52, 17);
+            this.rb2635.TabIndex = 2;
+            this.rb2635.TabStop = true;
+            this.rb2635.Text = "26-35";
+            this.rb2635.UseVisualStyleBackColor = true;
+            // 
+            // rb3645
+            // 
+            this.rb3645.AutoSize = true;
+            this.rb3645.Location = new System.Drawing.Point(94, 16);
+            this.rb3645.Name = "rb3645";
+            this.rb3645.Size = new System.Drawing.Size(52, 17);
+            this.rb3645.TabIndex = 6;
+            this.rb3645.TabStop = true;
+            this.rb3645.Text = "36-45";
+            this.rb3645.UseVisualStyleBackColor = true;
+            // 
+            // rb1625
+            // 
+            this.rb1625.AutoSize = true;
+            this.rb1625.Location = new System.Drawing.Point(3, 39);
+            this.rb1625.Name = "rb1625";
+            this.rb1625.Size = new System.Drawing.Size(52, 17);
+            this.rb1625.TabIndex = 1;
+            this.rb1625.TabStop = true;
+            this.rb1625.Text = "16-25";
+            this.rb1625.UseVisualStyleBackColor = true;
+            // 
+            // rbUnder16
+            // 
+            this.rbUnder16.AutoSize = true;
+            this.rbUnder16.Location = new System.Drawing.Point(3, 16);
+            this.rbUnder16.Name = "rbUnder16";
+            this.rbUnder16.Size = new System.Drawing.Size(43, 17);
+            this.rbUnder16.TabIndex = 0;
+            this.rbUnder16.TabStop = true;
+            this.rbUnder16.Text = "<16";
+            this.rbUnder16.UseVisualStyleBackColor = true;
+            // 
+            // gbExp
+            // 
+            this.gbExp.Controls.Add(this.rbMore5Hours);
+            this.gbExp.Controls.Add(this.rbMore1Hour);
+            this.gbExp.Controls.Add(this.rbLess1Hour);
+            this.gbExp.Controls.Add(this.rbSeveralAWeek);
+            this.gbExp.Controls.Add(this.rbSeveralAMonth);
+            this.gbExp.Controls.Add(this.rbLessAMonth);
+            this.gbExp.Location = new System.Drawing.Point(214, 342);
+            this.gbExp.Name = "gbExp";
+            this.gbExp.Size = new System.Drawing.Size(349, 142);
+            this.gbExp.TabIndex = 107;
+            this.gbExp.TabStop = false;
+            this.gbExp.Text = "Vana";
+            // 
+            // rbMore5Hours
+            // 
+            this.rbMore5Hours.AutoSize = true;
+            this.rbMore5Hours.Location = new System.Drawing.Point(187, 67);
+            this.rbMore5Hours.Name = "rbMore5Hours";
+            this.rbMore5Hours.Size = new System.Drawing.Size(150, 17);
+            this.rbMore5Hours.TabIndex = 9;
+            this.rbMore5Hours.TabStop = true;
+            this.rbMore5Hours.Text = "Varje dag, mer än 5 timmar";
+            this.rbMore5Hours.UseVisualStyleBackColor = true;
+            // 
+            // rbMore1Hour
+            // 
+            this.rbMore1Hour.AutoSize = true;
+            this.rbMore1Hour.Location = new System.Drawing.Point(187, 42);
+            this.rbMore1Hour.Name = "rbMore1Hour";
+            this.rbMore1Hour.Size = new System.Drawing.Size(147, 17);
+            this.rbMore1Hour.TabIndex = 8;
+            this.rbMore1Hour.TabStop = true;
+            this.rbMore1Hour.Text = "Varje dag, mer än 1 timme";
+            this.rbMore1Hour.UseVisualStyleBackColor = true;
+            // 
+            // rbLess1Hour
+            // 
+            this.rbLess1Hour.AutoSize = true;
+            this.rbLess1Hour.Location = new System.Drawing.Point(187, 19);
+            this.rbLess1Hour.Name = "rbLess1Hour";
+            this.rbLess1Hour.Size = new System.Drawing.Size(161, 17);
+            this.rbLess1Hour.TabIndex = 7;
+            this.rbLess1Hour.TabStop = true;
+            this.rbLess1Hour.Text = "Varje dag, mindre än 1 timme";
+            this.rbLess1Hour.UseVisualStyleBackColor = true;
+            // 
+            // rbSeveralAWeek
+            // 
+            this.rbSeveralAWeek.AutoSize = true;
+            this.rbSeveralAWeek.Location = new System.Drawing.Point(6, 67);
+            this.rbSeveralAWeek.Name = "rbSeveralAWeek";
+            this.rbSeveralAWeek.Size = new System.Drawing.Size(128, 17);
+            this.rbSeveralAWeek.TabIndex = 6;
+            this.rbSeveralAWeek.TabStop = true;
+            this.rbSeveralAWeek.Text = "Flera gånger i veckan";
+            this.rbSeveralAWeek.UseVisualStyleBackColor = true;
+            // 
+            // rbSeveralAMonth
+            // 
+            this.rbSeveralAMonth.AutoSize = true;
+            this.rbSeveralAMonth.Location = new System.Drawing.Point(6, 42);
+            this.rbSeveralAMonth.Name = "rbSeveralAMonth";
+            this.rbSeveralAMonth.Size = new System.Drawing.Size(136, 17);
+            this.rbSeveralAMonth.TabIndex = 5;
+            this.rbSeveralAMonth.TabStop = true;
+            this.rbSeveralAMonth.Text = "Flera gånger i månaden";
+            this.rbSeveralAMonth.UseVisualStyleBackColor = true;
+            // 
+            // rbLessAMonth
+            // 
+            this.rbLessAMonth.AutoSize = true;
+            this.rbLessAMonth.Location = new System.Drawing.Point(6, 19);
+            this.rbLessAMonth.Name = "rbLessAMonth";
+            this.rbLessAMonth.Size = new System.Drawing.Size(166, 17);
+            this.rbLessAMonth.TabIndex = 4;
+            this.rbLessAMonth.TabStop = true;
+            this.rbLessAMonth.Text = "Mindre än en gång i månaden";
+            this.rbLessAMonth.UseVisualStyleBackColor = true;
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Location = new System.Drawing.Point(569, 461);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnFilter.TabIndex = 108;
+            this.btnFilter.Text = "Filtrera";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1021);
+            this.Controls.Add(this.btnFilter);
+            this.Controls.Add(this.gbExp);
+            this.Controls.Add(this.gbAge);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.lblRQTTime3AvgB);
             this.Controls.Add(this.lblRQTTime3TotalB);
@@ -1207,6 +1412,10 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvGood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBad)).EndInit();
+            this.gbAge.ResumeLayout(false);
+            this.gbAge.PerformLayout();
+            this.gbExp.ResumeLayout(false);
+            this.gbExp.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1320,6 +1529,22 @@
         private System.Windows.Forms.Label lblLogInFindAvgB;
         private System.Windows.Forms.Label lblLogInFindTotalB;
         private System.Windows.Forms.Label lblLogInFindCountB;
+        private System.Windows.Forms.GroupBox gbAge;
+        private System.Windows.Forms.RadioButton rb2635;
+        private System.Windows.Forms.RadioButton rb1625;
+        private System.Windows.Forms.RadioButton rbUnder16;
+        private System.Windows.Forms.GroupBox gbExp;
+        private System.Windows.Forms.RadioButton rbSeveralAMonth;
+        private System.Windows.Forms.RadioButton rbLessAMonth;
+        private System.Windows.Forms.RadioButton rbOver65;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.RadioButton rb5665;
+        private System.Windows.Forms.RadioButton rb4655;
+        private System.Windows.Forms.RadioButton rb3645;
+        private System.Windows.Forms.RadioButton rbMore5Hours;
+        private System.Windows.Forms.RadioButton rbMore1Hour;
+        private System.Windows.Forms.RadioButton rbLess1Hour;
+        private System.Windows.Forms.RadioButton rbSeveralAWeek;
     }
 }
 

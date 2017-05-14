@@ -333,55 +333,68 @@ namespace StatsProgram
             
             lblLogInFindCountG.Text = Convert.ToInt64(countLoginFind).ToString();
             lblLogInFindTotalG.Text = Convert.ToInt64(totalLoginFind).ToString();
-            lblLogInFindAvgG.Text = Convert.ToInt64((totalLoginFind / countLoginFind)).ToString();
+            //lblLogInFindAvgG.Text = Convert.ToInt64((totalLoginFind / countLoginFind)).ToString();
+            lblLogInFindAvgG.Text = GetAverage(countLoginFind, totalLoginFind);
 
             lblLogInClickCountG.Text = Convert.ToInt64(countLoginClick).ToString();
             lblLogInClickTotalG.Text = Convert.ToInt64(totalLoginClick).ToString();
-            lblLogInClickAvgG.Text = Convert.ToInt64((totalLoginClick / countLoginClick)).ToString();
+            //lblLogInClickAvgG.Text = Convert.ToInt64((totalLoginClick / countLoginClick)).ToString();
+            lblLogInClickAvgG.Text = GetAverage(countLoginClick, totalLoginClick);
 
             lblQstartCountG.Text = Convert.ToInt64(countQstart).ToString();
             lblQstartTotalG.Text = Convert.ToInt64(totalQstart).ToString();
-            lblQstartAvgG.Text = Convert.ToInt64((totalQstart / countQstart)).ToString();
+            //lblQstartAvgG.Text = Convert.ToInt64((totalQstart / countQstart)).ToString();
+            lblQstartAvgG.Text = GetAverage(countQstart, totalQstart);
 
             lblFirstTimeQCountG.Text = Convert.ToInt64(countTimeFirstQ).ToString();
             lblFirstTimeQTotalG.Text = Convert.ToInt64(totalTimeFirstQ).ToString();
-            lblFirstTimeQAvgG.Text = Convert.ToInt64((totalTimeFirstQ / countTimeFirstQ)).ToString();
+            //lblFirstTimeQAvgG.Text = Convert.ToInt64((totalTimeFirstQ / countTimeFirstQ)).ToString();
+            lblFirstTimeQAvgG.Text = GetAverage(countTimeFirstQ, totalTimeFirstQ);
 
             lblRQRTime2CountG.Text = Convert.ToInt64(countRQRTime2).ToString();
             lblRQRTime2TotalG.Text = Convert.ToInt64(totalRQRTime2).ToString();
-            lblRQRTime2AvgG.Text = Convert.ToInt64((totalRQRTime2 / countRQRTime2)).ToString();
+            //lblRQRTime2AvgG.Text = Convert.ToInt64((totalRQRTime2 / countRQRTime2)).ToString();
+            lblRQRTime2AvgG.Text = GetAverage(countRQRTime2, totalRQRTime2);
 
             lblRQRTime3CountG.Text = Convert.ToInt64(countRQRTime3).ToString();
             lblRQRTime3TotalG.Text = Convert.ToInt64(totalRQRTime3).ToString();
-            lblRQRTime3AvgG.Text = Convert.ToInt64((totalRQRTime3 / countRQRTime3)).ToString();
+            //lblRQRTime3AvgG.Text = Convert.ToInt64((totalRQRTime3 / countRQRTime3)).ToString();
+            lblRQRTime3AvgG.Text = GetAverage(countRQRTime3, totalRQRTime3);
 
             lblRQRTime4CountG.Text = Convert.ToInt64(countRQRTime4).ToString();
             lblRQRTime4TotalG.Text = Convert.ToInt64(totalRQRTime4).ToString();
-            lblRQRTime4AvgG.Text = Convert.ToInt64((totalRQRTime4 / countRQRTime4)).ToString();
+            //lblRQRTime4AvgG.Text = Convert.ToInt64((totalRQRTime4 / countRQRTime4)).ToString();
+            lblRQRTime4AvgG.Text = GetAverage(countRQRTime4, totalRQRTime4);
 
             lblRQRTime5CountG.Text = Convert.ToInt64(countRQRTime5).ToString();
             lblRQRTime5TotalG.Text = Convert.ToInt64(totalRQRTime5).ToString();
-            lblRQRTime5AvgG.Text = Convert.ToInt64((totalRQRTime5 / countRQRTime5)).ToString();
+            //lblRQRTime5AvgG.Text = Convert.ToInt64((totalRQRTime5 / countRQRTime5)).ToString();
+            lblRQRTime5AvgG.Text = GetAverage(countRQRTime5, totalRQRTime5);
 
             lblRQRTime6CountG.Text = Convert.ToInt64(countRQRTime6).ToString();
             lblRQRTime6TotalG.Text = Convert.ToInt64(totalRQRTime6).ToString();
-            lblRQRTime6AvgG.Text = Convert.ToInt64((totalRQRTime6 / countRQRTime6)).ToString();
+            //lblRQRTime6AvgG.Text = Convert.ToInt64((totalRQRTime6 / countRQRTime6)).ToString();
+            lblRQRTime6AvgG.Text = GetAverage(countRQRTime6, totalRQRTime6);
 
             lblTimeLastRQRCountG.Text = Convert.ToInt64(countTimeLastRQR).ToString();
             lblTimeLastRQRTotalG.Text = Convert.ToInt64(totalTimeLastRQR).ToString();
-            lblTimeLastRQRAvgG.Text = Convert.ToInt64((totalTimeLastRQR / countTimeLastRQR)).ToString();
+            //lblTimeLastRQRAvgG.Text = Convert.ToInt64((totalTimeLastRQR / countTimeLastRQR)).ToString();
+            lblTimeLastRQRAvgG.Text = GetAverage(countTimeLastRQR, totalTimeLastRQR);
 
             lblRQTTime1CountG.Text = Convert.ToInt64(countRQTTime1).ToString();
             lblRQTTime1TotalG.Text = Convert.ToInt64(totalRQTTime1).ToString();
-            lblRQTTime1AvgG.Text = Convert.ToInt64((totalRQTTime1 / countRQTTime1)).ToString();
+            //lblRQTTime1AvgG.Text = Convert.ToInt64((totalRQTTime1 / countRQTTime1)).ToString();
+            lblRQTTime1AvgG.Text = GetAverage(countRQTTime1, totalRQTTime1);
 
             lblRQTTime2CountG.Text = Convert.ToInt64(countRQTTime2).ToString();
             lblRQTTime2TotalG.Text = Convert.ToInt64(totalRQTTime2).ToString();
-            lblRQTTime2AvgG.Text = Convert.ToInt64((totalRQTTime2 / countRQTTime2)).ToString();
+            //lblRQTTime2AvgG.Text = Convert.ToInt64((totalRQTTime2 / countRQTTime2)).ToString();
+            lblRQTTime2AvgG.Text = GetAverage(countRQTTime2, totalRQTTime2);
 
             lblRQTTime3CountG.Text = Convert.ToInt64(countRQTTime3).ToString();
             lblRQTTime3TotalG.Text = Convert.ToInt64(totalRQTTime3).ToString();
-            lblRQTTime3AvgG.Text = Convert.ToInt64((totalRQTTime3 / countRQTTime3)).ToString();
+            //lblRQTTime3AvgG.Text = Convert.ToInt64((totalRQTTime3 / countRQTTime3)).ToString();
+            lblRQTTime3AvgG.Text = GetAverage(countRQTTime3, totalRQTTime3);
         }
 
         public void VariableDataBad(List<RespondentDataBad> fullList)
@@ -485,58 +498,157 @@ namespace StatsProgram
 
             lblLogInFindCountB.Text = Convert.ToInt64(countLoginFind).ToString();
             lblLogInFindTotalB.Text = Convert.ToInt64(totalLoginFind).ToString();
-            lblLogInFindAvgB.Text = Convert.ToInt64((totalLoginFind / countLoginFind)).ToString();
+            //lblLogInFindAvgB.Text = Convert.ToInt64((totalLoginFind / countLoginFind)).ToString();
+            lblLogInFindAvgB.Text = GetAverage(countLoginFind, totalLoginFind);
 
             lblLogInClickCountB.Text = Convert.ToInt64(countLoginClick).ToString();
             lblLogInClickTotalB.Text = Convert.ToInt64(totalLoginClick).ToString();
-            lblLogInClickAvgB.Text = Convert.ToInt64((totalLoginClick / countLoginClick)).ToString();
+            //lblLogInClickAvgB.Text = Convert.ToInt64((totalLoginClick / countLoginClick)).ToString();
+            lblLogInClickAvgB.Text = GetAverage(countLoginClick, totalLoginClick);
 
             lblQstartCountB.Text = Convert.ToInt64(countQstart).ToString();
             lblQstartTotalB.Text = Convert.ToInt64(totalQstart).ToString();
-            lblQstartAvgB.Text = Convert.ToInt64((totalQstart / countQstart)).ToString();
+            //lblQstartAvgB.Text = Convert.ToInt64((totalQstart / countQstart)).ToString();
+            lblQstartAvgB.Text = GetAverage(countQstart, totalQstart);
 
             lblFirstTimeQCountB.Text = Convert.ToInt64(countTimeFirstQ).ToString();
             lblFirstTimeQTotalB.Text = Convert.ToInt64(totalTimeFirstQ).ToString();
-            lblFirstTimeQAvgB.Text = Convert.ToInt64((totalTimeFirstQ / countTimeFirstQ)).ToString();
+            //lblFirstTimeQAvgB.Text = Convert.ToInt64((totalTimeFirstQ / countTimeFirstQ)).ToString();
+            lblFirstTimeQAvgB.Text = GetAverage(countTimeFirstQ, totalTimeFirstQ);
 
             lblRQRTime2CountB.Text = Convert.ToInt64(countRQRTime2).ToString();
             lblRQRTime2TotalB.Text = Convert.ToInt64(totalRQRTime2).ToString();
-            lblRQRTime2AvgB.Text = Convert.ToInt64((totalRQRTime2 / countRQRTime2)).ToString();
+            //lblRQRTime2AvgB.Text = Convert.ToInt64((totalRQRTime2 / countRQRTime2)).ToString();
+            lblRQRTime2AvgB.Text = GetAverage(countRQRTime2, totalRQRTime2);
 
             lblRQRTime3CountB.Text = Convert.ToInt64(countRQRTime3).ToString();
             lblRQRTime3TotalB.Text = Convert.ToInt64(totalRQRTime3).ToString();
-            lblRQRTime3AvgB.Text = Convert.ToInt64((totalRQRTime3 / countRQRTime3)).ToString();
+            //lblRQRTime3AvgB.Text = Convert.ToInt64((totalRQRTime3 / countRQRTime3)).ToString();
+            lblRQRTime3AvgB.Text = GetAverage(countRQRTime3, totalRQRTime3);
 
             lblRQRTime4CountB.Text = Convert.ToInt64(countRQRTime4).ToString();
             lblRQRTime4TotalB.Text = Convert.ToInt64(totalRQRTime4).ToString();
-            lblRQRTime4AvgB.Text = Convert.ToInt64((totalRQRTime4 / countRQRTime4)).ToString();
+            //lblRQRTime4AvgB.Text = Convert.ToInt64((totalRQRTime4 / countRQRTime4)).ToString();
+            lblRQRTime4AvgB.Text = GetAverage(countRQRTime4, totalRQRTime4);
 
             lblRQRTime5CountB.Text = Convert.ToInt64(countRQRTime5).ToString();
             lblRQRTime5TotalB.Text = Convert.ToInt64(totalRQRTime5).ToString();
-            lblRQRTime5AvgB.Text = Convert.ToInt64((totalRQRTime5 / countRQRTime5)).ToString();
+            //lblRQRTime5AvgB.Text = Convert.ToInt64((totalRQRTime5 / countRQRTime5)).ToString();
+            lblRQRTime5AvgB.Text = GetAverage(countRQRTime5, totalRQRTime5);
 
             lblRQRTime6CountB.Text = Convert.ToInt64(countRQRTime6).ToString();
             lblRQRTime6TotalB.Text = Convert.ToInt64(totalRQRTime6).ToString();
-            lblRQRTime6AvgB.Text = Convert.ToInt64((totalRQRTime6 / countRQRTime6)).ToString();
+            //lblRQRTime6AvgB.Text = Convert.ToInt64((totalRQRTime6 / countRQRTime6)).ToString();
+            lblRQRTime6AvgB.Text = GetAverage(countRQRTime6, totalRQRTime6);
 
             lblTimeLastRQRCountB.Text = Convert.ToInt64(countTimeLastRQR).ToString();
             lblTimeLastRQRTotalB.Text = Convert.ToInt64(totalTimeLastRQR).ToString();
-            lblTimeLastRQRAvgB.Text = Convert.ToInt64((totalTimeLastRQR / countTimeLastRQR)).ToString();
+            //lblTimeLastRQRAvgB.Text = Convert.ToInt64((totalTimeLastRQR / countTimeLastRQR)).ToString();
+            lblTimeLastRQRAvgB.Text = GetAverage(countTimeLastRQR, totalTimeLastRQR);
 
             lblRQTTime1CountB.Text = Convert.ToInt64(countRQTTime1).ToString();
             lblRQTTime1TotalB.Text = Convert.ToInt64(totalRQTTime1).ToString();
-            lblRQTTime1AvgB.Text = Convert.ToInt64((totalRQTTime1 / countRQTTime1)).ToString();
+            //lblRQTTime1AvgB.Text = Convert.ToInt64((totalRQTTime1 / countRQTTime1)).ToString();,
+            lblRQTTime1AvgB.Text = GetAverage(countRQTTime1, totalRQTTime1);
 
             lblRQTTime2CountB.Text = Convert.ToInt64(countRQTTime2).ToString();
             lblRQTTime2TotalB.Text = Convert.ToInt64(totalRQTTime2).ToString();
-            lblRQTTime2AvgB.Text = Convert.ToInt64((totalRQTTime2 / countRQTTime2)).ToString();
+            //lblRQTTime2AvgB.Text = Convert.ToInt64((totalRQTTime2 / countRQTTime2)).ToString();
+            lblRQTTime2AvgB.Text = GetAverage(countRQTTime2, totalRQTTime2);
 
             lblRQTTime3CountB.Text = Convert.ToInt64(countRQTTime3).ToString();
             lblRQTTime3TotalB.Text = Convert.ToInt64(totalRQTTime3).ToString();
-            lblRQTTime3AvgB.Text = Convert.ToInt64((totalRQTTime3 / countRQTTime3)).ToString();
+            //lblRQTTime3AvgB.Text = Convert.ToInt64((totalRQTTime3 / countRQTTime3)).ToString();
+            lblRQTTime3AvgB.Text = GetAverage(countRQTTime3, totalRQTTime3);
         }
 
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            string result = "";
+            string ageResult = "";
+            string expResult = "";
 
+            bool ageFilter = false;
+            bool expFilter = false;
+            
+            List<RespondentDataGood> RDGList = new List<RespondentDataGood>();
+            List<RespondentDataBad> RDBList = new List<RespondentDataBad>();
+
+
+
+            foreach (RadioButton rb in gbAge.Controls)
+            {
+                if (rb.Checked)
+                {
+                    ageResult = rb.Text;
+                    ageFilter = true;
+                    MessageBox.Show(ageResult);
+                    break;
+                }
+                else
+                {
+                    ageFilter = false;
+                }
+            }
+
+            foreach (RadioButton rb in gbExp.Controls)
+            {
+                if (rb.Checked)
+                {
+                    expResult = rb.Text;
+                    expFilter = true;
+                    MessageBox.Show(expResult);
+                    break;
+                }
+                else
+                {
+                    expFilter = false;
+                }
+            }
+
+            if (ageFilter == true && expFilter == true)
+            {
+                foreach (RespondentDataGood rdg in RDGood.Where(x => x.Age == ageResult && x.InternetUse == expResult))
+                {
+                    RDGList.Add(rdg);
+                }
+                foreach (RespondentDataBad rdb in RDBad.Where(x => x.Age == ageResult && x.InternetUse == expResult))
+                {
+                    RDBList.Add(rdb);
+                }
+            }
+            else if (ageFilter == true)
+            {
+                foreach (RespondentDataGood rdg in RDGood.Where(x => x.Age == ageResult))
+                {
+                    RDGList.Add(rdg);
+                }
+                foreach (RespondentDataBad rdb in RDBad.Where(x => x.Age == ageResult))
+                {
+                    RDBList.Add(rdb);
+                }
+            }
+            else if (expFilter == true)
+            {
+                foreach (RespondentDataGood rdg in RDGood.Where(x => x.InternetUse == expResult))
+                {
+                    RDGList.Add(rdg);
+                }
+                foreach (RespondentDataBad rdb in RDBad.Where(x => x.InternetUse == expResult))
+                {
+                    RDBList.Add(rdb);
+                }
+            }
+            
+            DeleteGoodNulls(RDGList);
+            DeleteBadNulls(RDBList);
+        }
+
+        public string GetAverage(decimal count, decimal total)
+        {
+            string average = (count != 0 ? Convert.ToInt64((total / count)).ToString() : "0");
+            return average;
+        }
 
     }
 }
