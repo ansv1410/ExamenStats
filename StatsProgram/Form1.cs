@@ -45,6 +45,7 @@ namespace StatsProgram
                         rd.InternetUseComp = ad.GetAnswer(18);
                         rd.InternetUseSmart = ad.GetAnswer(19);
                         rd.BrowserType = r.BrowserType;
+                        rd.UnitType = CompOrMobile(r.BrowserType);
 
                         var webDesignAnswer = ad.GetAnswer(16);
                         if (webDesignAnswer == "Ja")
@@ -96,6 +97,7 @@ namespace StatsProgram
                         rd.InternetUseComp = ad.GetAnswer(18);
                         rd.InternetUseSmart = ad.GetAnswer(19);
                         rd.BrowserType = r.BrowserType;
+                        rd.UnitType = CompOrMobile(r.BrowserType);
 
                         var webDesignAnswer = ad.GetAnswer(16);
                         if (webDesignAnswer == "Ja")
@@ -230,6 +232,29 @@ namespace StatsProgram
             count = theList.Count;
 
             return total;
+        }
+        public string CompOrMobile(string userAgent)
+        {
+            string unit = "Computer";
+            string[] mobileDevices = new string[] {"iphone","ppc",
+                                                      "windows ce","blackberry",
+                                                      "opera mini","mobile","palm",
+                                                      "portable","opera mobi","android","phone" };
+            
+            if (userAgent != null)
+            {
+                userAgent = userAgent.ToLower();
+                if (mobileDevices.Any(x => userAgent.Contains(x)))
+                {
+                    unit = "Mobile";
+                }
+            }
+            else
+            {
+                unit = "0";
+            }
+
+            return unit;
         }
 
         public void VariableDataGood(List<RespondentDataGood> fullList)

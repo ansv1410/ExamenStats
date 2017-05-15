@@ -30,6 +30,7 @@
           <Property Name="RQTTime1" Type="decimal" Precision="18" Scale="0" />
           <Property Name="RQTTime2" Type="decimal" Precision="18" Scale="0" />
           <Property Name="RQTTime3" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="UnitType" Type="nvarchar(max)" />
           <Property Name="BrowserType" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="RespondentDataGood">
@@ -57,6 +58,7 @@
           <Property Name="RQTTime1" Type="decimal" Precision="18" Scale="0" />
           <Property Name="RQTTime2" Type="decimal" Precision="18" Scale="0" />
           <Property Name="RQTTime3" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="UnitType" Type="nvarchar(max)" />
           <Property Name="BrowserType" Type="nvarchar(max)" />
         </EntityType>
         <EntityContainer Name="samlingsDBModelStoreContainer">
@@ -97,6 +99,7 @@
           <Property Name="RQTTime2" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="RQTTime3" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="BrowserType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UnitType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="RespondentDataGood">
           <Key>
@@ -124,6 +127,7 @@
           <Property Name="RQTTime2" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="RQTTime3" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="BrowserType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UnitType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -134,6 +138,7 @@
           <EntitySetMapping Name="RespondentDataBad">
             <EntityTypeMapping TypeName="samlingsDBModel.RespondentDataBad">
               <MappingFragment StoreEntitySet="RespondentDataBad">
+                <ScalarProperty Name="UnitType" ColumnName="UnitType" />
                 <ScalarProperty Name="BrowserType" ColumnName="BrowserType" />
                 <ScalarProperty Name="RQTTime3" ColumnName="RQTTime3" />
                 <ScalarProperty Name="RQTTime2" ColumnName="RQTTime2" />
@@ -162,6 +167,7 @@
           <EntitySetMapping Name="RespondentDataGood">
             <EntityTypeMapping TypeName="samlingsDBModel.RespondentDataGood">
               <MappingFragment StoreEntitySet="RespondentDataGood">
+                <ScalarProperty Name="UnitType" ColumnName="UnitType" />
                 <ScalarProperty Name="BrowserType" ColumnName="BrowserType" />
                 <ScalarProperty Name="RQTTime3" ColumnName="RQTTime3" />
                 <ScalarProperty Name="RQTTime2" ColumnName="RQTTime2" />

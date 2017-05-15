@@ -36,5 +36,6 @@ namespace StatsProgram.Model
         public Nullable<decimal> RQTTime2 { get; set; }
         public Nullable<decimal> RQTTime3 { get; set; }
         public string BrowserType { get; set; }
+        public string UnitType { get; set; }
     }
 }
