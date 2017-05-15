@@ -567,9 +567,11 @@ namespace StatsProgram
             string result = "";
             string ageResult = "";
             string expResult = "";
+            string unitResult = "";
 
             bool ageFilter = false;
             bool expFilter = false;
+            bool unitFilter = false;
             
             List<RespondentDataGood> RDGList = new List<RespondentDataGood>();
             List<RespondentDataBad> RDBList = new List<RespondentDataBad>();
@@ -606,6 +608,23 @@ namespace StatsProgram
                 }
             }
 
+            foreach (RadioButton rb in gbUnit.Controls)
+            {
+                if (rb.Checked)
+                {
+                    unitResult = rb.Text;
+                    unitFilter = true;
+                    MessageBox.Show(unitResult);
+                    break;
+                }
+                else
+                {
+                    unitFilter = false;
+                }
+            }
+
+
+
             if (ageFilter == true && expFilter == true)
             {
                 foreach (RespondentDataGood rdg in RDGood.Where(x => x.Age == ageResult && x.InternetUse == expResult))
@@ -638,6 +657,10 @@ namespace StatsProgram
                 {
                     RDBList.Add(rdb);
                 }
+            }
+            else if (unitFilter == true)
+            {
+                //foreach(RespondentDataGood rdg in RDGood.Where(x =>))
             }
             
             DeleteGoodNulls(RDGList);

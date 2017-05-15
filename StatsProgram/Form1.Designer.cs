@@ -150,10 +150,14 @@
             this.rbSeveralAMonth = new System.Windows.Forms.RadioButton();
             this.rbLessAMonth = new System.Windows.Forms.RadioButton();
             this.btnFilter = new System.Windows.Forms.Button();
+            this.gbUnit = new System.Windows.Forms.GroupBox();
+            this.rbComputer = new System.Windows.Forms.RadioButton();
+            this.rbMobile = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBad)).BeginInit();
             this.gbAge.SuspendLayout();
             this.gbExp.SuspendLayout();
+            this.gbUnit.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvGood
@@ -1286,7 +1290,7 @@
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(569, 461);
+            this.btnFilter.Location = new System.Drawing.Point(761, 461);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(75, 23);
             this.btnFilter.TabIndex = 108;
@@ -1294,11 +1298,45 @@
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
+            // gbUnit
+            // 
+            this.gbUnit.Controls.Add(this.rbComputer);
+            this.gbUnit.Controls.Add(this.rbMobile);
+            this.gbUnit.Location = new System.Drawing.Point(569, 341);
+            this.gbUnit.Name = "gbUnit";
+            this.gbUnit.Size = new System.Drawing.Size(186, 142);
+            this.gbUnit.TabIndex = 108;
+            this.gbUnit.TabStop = false;
+            this.gbUnit.Text = "Enhet";
+            // 
+            // rbComputer
+            // 
+            this.rbComputer.AutoSize = true;
+            this.rbComputer.Location = new System.Drawing.Point(6, 42);
+            this.rbComputer.Name = "rbComputer";
+            this.rbComputer.Size = new System.Drawing.Size(70, 17);
+            this.rbComputer.TabIndex = 5;
+            this.rbComputer.TabStop = true;
+            this.rbComputer.Text = "Computer";
+            this.rbComputer.UseVisualStyleBackColor = true;
+            // 
+            // rbMobile
+            // 
+            this.rbMobile.AutoSize = true;
+            this.rbMobile.Location = new System.Drawing.Point(6, 19);
+            this.rbMobile.Name = "rbMobile";
+            this.rbMobile.Size = new System.Drawing.Size(56, 17);
+            this.rbMobile.TabIndex = 4;
+            this.rbMobile.TabStop = true;
+            this.rbMobile.Text = "Mobile";
+            this.rbMobile.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1021);
+            this.Controls.Add(this.gbUnit);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.gbExp);
             this.Controls.Add(this.gbAge);
@@ -1416,6 +1454,8 @@
             this.gbAge.PerformLayout();
             this.gbExp.ResumeLayout(false);
             this.gbExp.PerformLayout();
+            this.gbUnit.ResumeLayout(false);
+            this.gbUnit.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1545,6 +1585,9 @@
         private System.Windows.Forms.RadioButton rbMore1Hour;
         private System.Windows.Forms.RadioButton rbLess1Hour;
         private System.Windows.Forms.RadioButton rbSeveralAWeek;
+        private System.Windows.Forms.GroupBox gbUnit;
+        private System.Windows.Forms.RadioButton rbComputer;
+        private System.Windows.Forms.RadioButton rbMobile;
     }
 }
 
