@@ -609,7 +609,6 @@ namespace StatsProgram
                 {
                     ageResult = rb.Text;
                     ageFilter = true;
-                    MessageBox.Show(ageResult);
                     break;
                 }
                 else
@@ -624,7 +623,6 @@ namespace StatsProgram
                 {
                     expResult = rb.Text;
                     expFilter = true;
-                    MessageBox.Show(expResult);
                     break;
                 }
                 else
@@ -639,7 +637,6 @@ namespace StatsProgram
                 {
                     unitResult = rb.Text;
                     unitFilter = true;
-                    MessageBox.Show(unitResult);
                     break;
                 }
                 else
@@ -648,9 +645,19 @@ namespace StatsProgram
                 }
             }
 
+            if (ageFilter == true && expFilter == true && unitFilter == true)
+            {
+                foreach (RespondentDataGood rdg in RDGood.Where(x => x.Age == ageResult && x.InternetUse == expResult && x.UnitType == unitResult))
+                {
+                    RDGList.Add(rdg);
+                }
+                foreach (RespondentDataBad rdb in RDBad.Where(x => x.Age == ageResult && x.InternetUse == expResult && x.UnitType == unitResult))
+                {
+                    RDBList.Add(rdb);
+                }
+            }
 
-
-            if (ageFilter == true && expFilter == true)
+            else if (ageFilter == true && expFilter == true)
             {
                 foreach (RespondentDataGood rdg in RDGood.Where(x => x.Age == ageResult && x.InternetUse == expResult))
                 {
@@ -661,6 +668,33 @@ namespace StatsProgram
                     RDBList.Add(rdb);
                 }
             }
+
+            else if (ageFilter == true && unitFilter == true)
+            {
+                foreach (RespondentDataGood rdg in RDGood.Where(x => x.Age == ageResult && x.UnitType == unitResult))
+                {
+                    RDGList.Add(rdg);
+                }
+                foreach (RespondentDataBad rdb in RDBad.Where(x => x.Age == ageResult && x.UnitType == unitResult))
+                {
+                    RDBList.Add(rdb);
+                }
+            }
+
+            else if (unitFilter == true && expFilter == true)
+            {
+                foreach (RespondentDataGood rdg in RDGood.Where(x => x.UnitType == unitResult && x.InternetUse == expResult))
+                {
+                    RDGList.Add(rdg);
+                }
+                foreach (RespondentDataBad rdb in RDBad.Where(x => x.UnitType == unitResult && x.InternetUse == expResult))
+                {
+                    RDBList.Add(rdb);
+                }
+            }
+
+
+            //SINGLAR
             else if (ageFilter == true)
             {
                 foreach (RespondentDataGood rdg in RDGood.Where(x => x.Age == ageResult))
@@ -685,7 +719,19 @@ namespace StatsProgram
             }
             else if (unitFilter == true)
             {
-                //foreach(RespondentDataGood rdg in RDGood.Where(x =>))
+                foreach (RespondentDataGood rdg in RDGood.Where(x => x.UnitType == unitResult))
+                {
+                    RDGList.Add(rdg);
+                }
+                foreach (RespondentDataBad rdb in RDBad.Where(x => x.UnitType == unitResult))
+                {
+                    RDBList.Add(rdb);
+                }
+            }
+
+            else
+            {
+                GetDefaultLists();
             }
             
             DeleteGoodNulls(RDGList);
@@ -696,6 +742,33 @@ namespace StatsProgram
         {
             string average = (count != 0 ? Convert.ToInt64((total / count)).ToString() : "0");
             return average;
+        }
+
+        public void GetDefaultLists()
+        {
+            DeleteGoodNulls(RDGood);
+            DeleteBadNulls(RDBad);
+        }
+
+
+        private void btnClearRBs_Click(object sender, EventArgs e)
+        {
+            foreach (RadioButton rb in gbAge.Controls)
+            {
+                rb.Checked = false;
+            }
+
+            foreach (RadioButton rb in gbExp.Controls)
+            {
+                rb.Checked = false;
+            }
+
+            foreach (RadioButton rb in gbUnit.Controls)
+            {
+                rb.Checked = false;
+            }
+
+            GetDefaultLists();
         }
 
     }

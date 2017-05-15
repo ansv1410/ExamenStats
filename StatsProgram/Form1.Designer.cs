@@ -153,6 +153,7 @@
             this.gbUnit = new System.Windows.Forms.GroupBox();
             this.rbComputer = new System.Windows.Forms.RadioButton();
             this.rbMobile = new System.Windows.Forms.RadioButton();
+            this.btnClearRBs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBad)).BeginInit();
             this.gbAge.SuspendLayout();
@@ -1290,7 +1291,7 @@
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(761, 461);
+            this.btnFilter.Location = new System.Drawing.Point(663, 458);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(75, 23);
             this.btnFilter.TabIndex = 108;
@@ -1304,7 +1305,7 @@
             this.gbUnit.Controls.Add(this.rbMobile);
             this.gbUnit.Location = new System.Drawing.Point(569, 341);
             this.gbUnit.Name = "gbUnit";
-            this.gbUnit.Size = new System.Drawing.Size(186, 142);
+            this.gbUnit.Size = new System.Drawing.Size(88, 142);
             this.gbUnit.TabIndex = 108;
             this.gbUnit.TabStop = false;
             this.gbUnit.Text = "Enhet";
@@ -1331,11 +1332,23 @@
             this.rbMobile.Text = "Mobile";
             this.rbMobile.UseVisualStyleBackColor = true;
             // 
+            // btnClearRBs
+            // 
+            this.btnClearRBs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnClearRBs.Location = new System.Drawing.Point(663, 347);
+            this.btnClearRBs.Name = "btnClearRBs";
+            this.btnClearRBs.Size = new System.Drawing.Size(46, 23);
+            this.btnClearRBs.TabIndex = 109;
+            this.btnClearRBs.Text = "Clear";
+            this.btnClearRBs.UseVisualStyleBackColor = false;
+            this.btnClearRBs.Click += new System.EventHandler(this.btnClearRBs_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1021);
+            this.Controls.Add(this.btnClearRBs);
             this.Controls.Add(this.gbUnit);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.gbExp);
@@ -1588,6 +1601,7 @@
         private System.Windows.Forms.GroupBox gbUnit;
         private System.Windows.Forms.RadioButton rbComputer;
         private System.Windows.Forms.RadioButton rbMobile;
+        private System.Windows.Forms.Button btnClearRBs;
     }
 }
 
