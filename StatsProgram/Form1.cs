@@ -152,6 +152,27 @@ namespace StatsProgram
             }
         }
 
+        public void ToDataGridG(List<RespondentDataGood> theList)
+        {
+            DataTable dtGood = new DataTable();
+
+            dtGood = ToDataTable(DeleteGoodNulls(theList));
+            
+
+            dgvGood.DataSource = dtGood;
+
+        }
+        public void ToDataGridB(List<RespondentDataBad> theList)
+        {
+            DataTable dtBad = new DataTable();
+
+            dtBad = ToDataTable(DeleteBadNulls(theList));
+
+            dgvBad.DataSource = dtBad;
+
+        }
+
+
         public static DataTable ToDataTable<T>(List<T> items)
         {
             DataTable dataTable = new DataTable(typeof(T).Name);
@@ -736,6 +757,10 @@ namespace StatsProgram
             
             DeleteGoodNulls(RDGList);
             DeleteBadNulls(RDBList);
+
+            ToDataGridG(RDGList);
+            ToDataGridB(RDBList);
+
         }
 
         public string GetAverage(decimal count, decimal total)
