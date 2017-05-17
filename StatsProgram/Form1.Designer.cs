@@ -154,6 +154,10 @@
             this.rbComputer = new System.Windows.Forms.RadioButton();
             this.rbMobile = new System.Windows.Forms.RadioButton();
             this.btnClearRBs = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lbGood = new System.Windows.Forms.ListBox();
+            this.lbBad = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBad)).BeginInit();
             this.gbAge.SuspendLayout();
@@ -214,6 +218,7 @@
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "LogInFind";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label1
             // 
@@ -223,6 +228,7 @@
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "LogInClick";
+            this.label1.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblLogInClickAvgG
             // 
@@ -259,6 +265,7 @@
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 13;
             this.label2.Text = "Qstart";
+            this.label2.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblQstartAvgG
             // 
@@ -295,6 +302,7 @@
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 17;
             this.label3.Text = "FirstTimeQ";
+            this.label3.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblFirstTimeQAvgG
             // 
@@ -331,6 +339,7 @@
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 21;
             this.label5.Text = "RQRTime2";
+            this.label5.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblRQRTime2AvgG
             // 
@@ -367,6 +376,7 @@
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 25;
             this.label6.Text = "RQRTime3";
+            this.label6.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblRQRTime3AvgG
             // 
@@ -403,6 +413,7 @@
             this.label7.Size = new System.Drawing.Size(60, 13);
             this.label7.TabIndex = 29;
             this.label7.Text = "RQRTime4";
+            this.label7.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblRQRTime4AvgG
             // 
@@ -439,6 +450,7 @@
             this.label8.Size = new System.Drawing.Size(60, 13);
             this.label8.TabIndex = 33;
             this.label8.Text = "RQRTime5";
+            this.label8.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblRQRTime5AvgG
             // 
@@ -475,6 +487,7 @@
             this.label9.Size = new System.Drawing.Size(60, 13);
             this.label9.TabIndex = 37;
             this.label9.Text = "RQRTime6";
+            this.label9.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblRQRTime6AvgG
             // 
@@ -511,6 +524,7 @@
             this.label10.Size = new System.Drawing.Size(74, 13);
             this.label10.TabIndex = 41;
             this.label10.Text = "TimeLastRQR";
+            this.label10.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblTimeLastRQRAvgG
             // 
@@ -547,6 +561,7 @@
             this.label11.Size = new System.Drawing.Size(59, 13);
             this.label11.TabIndex = 45;
             this.label11.Text = "RQTTime1";
+            this.label11.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblRQTTime1AvgG
             // 
@@ -583,6 +598,7 @@
             this.label12.Size = new System.Drawing.Size(59, 13);
             this.label12.TabIndex = 49;
             this.label12.Text = "RQTTime2";
+            this.label12.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblRQTTime2AvgG
             // 
@@ -619,6 +635,7 @@
             this.label13.Size = new System.Drawing.Size(59, 13);
             this.label13.TabIndex = 53;
             this.label13.Text = "RQTTime3";
+            this.label13.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblRQTTime3AvgG
             // 
@@ -1343,11 +1360,49 @@
             this.btnClearRBs.UseVisualStyleBackColor = false;
             this.btnClearRBs.Click += new System.EventHandler(this.btnClearRBs_Click);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(935, 347);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(39, 13);
+            this.label15.TabIndex = 110;
+            this.label15.Text = "GOOD";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(935, 432);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(29, 13);
+            this.label16.TabIndex = 111;
+            this.label16.Text = "BAD";
+            // 
+            // lbGood
+            // 
+            this.lbGood.FormattingEnabled = true;
+            this.lbGood.Location = new System.Drawing.Point(745, 341);
+            this.lbGood.Name = "lbGood";
+            this.lbGood.Size = new System.Drawing.Size(75, 95);
+            this.lbGood.TabIndex = 112;
+            // 
+            // lbBad
+            // 
+            this.lbBad.FormattingEnabled = true;
+            this.lbBad.Location = new System.Drawing.Point(841, 394);
+            this.lbBad.Name = "lbBad";
+            this.lbBad.Size = new System.Drawing.Size(75, 95);
+            this.lbBad.TabIndex = 113;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1021);
+            this.Controls.Add(this.lbBad);
+            this.Controls.Add(this.lbGood);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.btnClearRBs);
             this.Controls.Add(this.gbUnit);
             this.Controls.Add(this.btnFilter);
@@ -1602,6 +1657,10 @@
         private System.Windows.Forms.RadioButton rbComputer;
         private System.Windows.Forms.RadioButton rbMobile;
         private System.Windows.Forms.Button btnClearRBs;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ListBox lbGood;
+        private System.Windows.Forms.ListBox lbBad;
     }
 }
 

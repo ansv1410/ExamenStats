@@ -610,6 +610,7 @@ namespace StatsProgram
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
+            
             string result = "";
             string ageResult = "";
             string expResult = "";
@@ -795,6 +796,174 @@ namespace StatsProgram
 
             GetDefaultLists();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Label l = (Label)sender;
+            string labelText = l.Text;
+            List<decimal> variableListG = new List<decimal>();
+            List<decimal> variableListB = new List<decimal>();
+
+            switch(labelText)
+            {
+                case "LogInFind":
+                    foreach (RespondentDataGood rd in RDGood)
+                    {
+                        if (rd.LogInFind != 0)
+                        {
+                            variableListG.Add(Convert.ToDecimal(rd.LogInFind));
+                            
+                        }
+                    }
+
+                    foreach (RespondentDataBad rd in RDBad)
+                    {
+                        if (rd.LogInFind != 0)
+                        {
+                            variableListB.Add(Convert.ToDecimal(rd.LogInFind));
+
+                        }
+                    }
+
+                    break;
+                case "LogInClick":
+                    foreach (RespondentDataGood rd in RDGood)
+                    {
+                        if (rd.LogInClick != 0)
+                        {
+                            variableListG.Add(Convert.ToDecimal(rd.LogInClick));
+
+                        }
+                    }
+
+                    foreach (RespondentDataBad rd in RDBad)
+                    {
+                        if (rd.LogInClick != 0)
+                        {
+                            variableListB.Add(Convert.ToDecimal(rd.LogInClick));
+
+                        }
+                    }
+
+                    break;
+
+                case "Qstart":
+                    foreach (RespondentDataGood rd in RDGood)
+                    {
+                        if (rd.Qstart != 0)
+                        {
+                            variableListG.Add(Convert.ToDecimal(rd.Qstart));
+
+                        }
+                    }
+
+                    foreach (RespondentDataBad rd in RDBad)
+                    {
+                        if (rd.Qstart != 0)
+                        {
+                            variableListB.Add(Convert.ToDecimal(rd.Qstart));
+
+                        }
+                    }
+
+                    break;
+
+                case "FirstTimeQ":
+                    foreach (RespondentDataGood rd in RDGood)
+                    {
+                        if (rd.TimeFirstQ != 0)
+                        {
+                            variableListG.Add(Convert.ToDecimal(rd.TimeFirstQ));
+
+                        }
+                    }
+
+                    foreach (RespondentDataBad rd in RDBad)
+                    {
+                        if (rd.TimeFirstQ != 0)
+                        {
+                            variableListB.Add(Convert.ToDecimal(rd.TimeFirstQ));
+
+                        }
+                    }
+                    break;
+
+                case "TimeLastRQR":
+                    foreach (RespondentDataGood rd in RDGood)
+                    {
+                        if (rd.TimeLastRQR != 0)
+                        {
+                            variableListG.Add(Convert.ToDecimal(rd.TimeLastRQR));
+
+                        }
+                    }
+
+                    foreach (RespondentDataBad rd in RDBad)
+                    {
+                        if (rd.TimeLastRQR != 0)
+                        {
+                            variableListB.Add(Convert.ToDecimal(rd.TimeLastRQR));
+
+                        }
+                    }
+                    break;
+
+                case "RQTTime1":
+                    foreach (RespondentDataGood rd in RDGood)
+                    {
+                        if (rd.RQTTime1 != 0)
+                        {
+                            variableListG.Add(Convert.ToDecimal(rd.RQTTime1));
+
+                        }
+                    }
+
+                    foreach (RespondentDataBad rd in RDBad)
+                    {
+                        if (rd.RQTTime1 != 0)
+                        {
+                            variableListB.Add(Convert.ToDecimal(rd.RQTTime1));
+
+                        }
+                    }
+                    break;
+            }
+
+            lbGood.DataSource = SortAndTrimLists(variableListG);
+            lbBad.DataSource = SortAndTrimLists(variableListB);
+        }
+
+        public List<decimal> SortAndTrimLists(List<decimal> toTrimList)
+        {
+            List<decimal> trimmedList = toTrimList;
+
+            trimmedList.Sort();
+
+            int noToRemove = Convert.ToInt16(trimmedList.Count * 0.06);
+
+            trimmedList.RemoveRange(0, noToRemove);
+            trimmedList.RemoveRange(trimmedList.Count - noToRemove, noToRemove);
+
+            MessageBox.Show(trimmedList.Count.ToString());
+            return trimmedList;
+            
+        }
+
+        //public List<decimal> getDecimalList(string variable)
+        //{
+
+        //    List<decimal> listName = new List<decimal>();
+
+
+        //    foreach (RespondentDataGood rd in fullList)
+        //    {
+        //        if (rd.LogInFind != 0)
+        //        {
+        //            loginFindList.Add(Convert.ToDecimal(rd.LogInFind));
+        //        }
+        //    }
+        //}
+
 
     }
 }
