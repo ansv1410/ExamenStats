@@ -241,19 +241,7 @@ namespace StatsProgram
             return rb;
         }
 
-        public decimal getStats(List<decimal> theList, out decimal count)
-        {
-            theList.Sort();
-            int noToRemove = Convert.ToInt16(theList.Count * 0.05);
-
-            theList.RemoveRange(0, noToRemove);
-            theList.RemoveRange(theList.Count - noToRemove, noToRemove);
-
-            decimal total = theList.Sum();
-            count = theList.Count;
-
-            return total;
-        }
+ 
         public string CompOrMobile(string userAgent)
         {
             string unit = "Computer";
@@ -294,6 +282,8 @@ namespace StatsProgram
             List<decimal> RQTTime1List = new List<decimal>();
             List<decimal> RQTTime2List = new List<decimal>();
             List<decimal> RQTTime3List = new List<decimal>();
+
+            decimal previous = 0;
 
             foreach(RespondentDataGood rd in fullList){
                 if (rd.LogInFind != 0)
@@ -351,31 +341,31 @@ namespace StatsProgram
             }
 
             decimal countLoginFind = 0;
-            decimal totalLoginFind = getStats(loginFindList, out countLoginFind);
+            decimal totalLoginFind = getStats(loginFindList, out countLoginFind, 5);
             decimal countLoginClick = 0;
-            decimal totalLoginClick = getStats(loginClickList, out countLoginClick);
+            decimal totalLoginClick = getStats(loginClickList, out countLoginClick, 4);///Alternativt 6
             decimal countQstart = 0;
-            decimal totalQstart = getStats(QstartList, out countQstart);
+            decimal totalQstart = getStats(QstartList, out countQstart, 4);
             decimal countTimeFirstQ = 0;
-            decimal totalTimeFirstQ = getStats(TimeFirstQList, out countTimeFirstQ);
+            decimal totalTimeFirstQ = getStats(TimeFirstQList, out countTimeFirstQ, 3);
             decimal countRQRTime2 = 0;
-            decimal totalRQRTime2 = getStats(RQRTime2List, out countRQRTime2);
+            decimal totalRQRTime2 = getStats(RQRTime2List, out countRQRTime2, 0);
             decimal countRQRTime3 = 0;
-            decimal totalRQRTime3 = getStats(RQRTime3List, out countRQRTime3);
+            decimal totalRQRTime3 = getStats(RQRTime3List, out countRQRTime3, 0);
             decimal countRQRTime4 = 0;
-            decimal totalRQRTime4 = getStats(RQRTime4List, out countRQRTime4);
+            decimal totalRQRTime4 = getStats(RQRTime4List, out countRQRTime4, 0);
             decimal countRQRTime5 = 0;
-            decimal totalRQRTime5 = getStats(RQRTime5List, out countRQRTime5);
+            decimal totalRQRTime5 = getStats(RQRTime5List, out countRQRTime5, 0);
             decimal countRQRTime6 = 0;
-            decimal totalRQRTime6 = getStats(RQRTime6List, out countRQRTime6);
+            decimal totalRQRTime6 = getStats(RQRTime6List, out countRQRTime6, 0);
             decimal countTimeLastRQR = 0;
-            decimal totalTimeLastRQR = getStats(TimeLastRQRList, out countTimeLastRQR);
+            decimal totalTimeLastRQR = getStats(TimeLastRQRList, out countTimeLastRQR, 4);
             decimal countRQTTime1 = 0;
-            decimal totalRQTTime1 = getStats(RQTTime1List, out countRQTTime1);
+            decimal totalRQTTime1 = getStats(RQTTime1List, out countRQTTime1, 1);
             decimal countRQTTime2 = 0;
-            decimal totalRQTTime2 = getStats(RQTTime2List, out countRQTTime2);
+            decimal totalRQTTime2 = getStats(RQTTime2List, out countRQTTime2, 0);
             decimal countRQTTime3 = 0;
-            decimal totalRQTTime3 = getStats(RQTTime3List, out countRQTTime3);
+            decimal totalRQTTime3 = getStats(RQTTime3List, out countRQTTime3, 1);
             
             lblLogInFindCountG.Text = Convert.ToInt64(countLoginFind).ToString();
             lblLogInFindTotalG.Text = Convert.ToInt64(totalLoginFind).ToString();
@@ -516,31 +506,31 @@ namespace StatsProgram
             }
 
             decimal countLoginFind = 0;
-            decimal totalLoginFind = getStats(loginFindList, out countLoginFind);
+            decimal totalLoginFind = getStats(loginFindList, out countLoginFind, 4);
             decimal countLoginClick = 0;
-            decimal totalLoginClick = getStats(loginClickList, out countLoginClick);
+            decimal totalLoginClick = getStats(loginClickList, out countLoginClick, 2);
             decimal countQstart = 0;
-            decimal totalQstart = getStats(QstartList, out countQstart);
+            decimal totalQstart = getStats(QstartList, out countQstart, 1);
             decimal countTimeFirstQ = 0;
-            decimal totalTimeFirstQ = getStats(TimeFirstQList, out countTimeFirstQ);
+            decimal totalTimeFirstQ = getStats(TimeFirstQList, out countTimeFirstQ, 1);
             decimal countRQRTime2 = 0;
-            decimal totalRQRTime2 = getStats(RQRTime2List, out countRQRTime2);
+            decimal totalRQRTime2 = getStats(RQRTime2List, out countRQRTime2, 0);
             decimal countRQRTime3 = 0;
-            decimal totalRQRTime3 = getStats(RQRTime3List, out countRQRTime3);
+            decimal totalRQRTime3 = getStats(RQRTime3List, out countRQRTime3, 0);
             decimal countRQRTime4 = 0;
-            decimal totalRQRTime4 = getStats(RQRTime4List, out countRQRTime4);
+            decimal totalRQRTime4 = getStats(RQRTime4List, out countRQRTime4, 0);
             decimal countRQRTime5 = 0;
-            decimal totalRQRTime5 = getStats(RQRTime5List, out countRQRTime5);
+            decimal totalRQRTime5 = getStats(RQRTime5List, out countRQRTime5, 0);
             decimal countRQRTime6 = 0;
-            decimal totalRQRTime6 = getStats(RQRTime6List, out countRQRTime6);
+            decimal totalRQRTime6 = getStats(RQRTime6List, out countRQRTime6, 0);
             decimal countTimeLastRQR = 0;
-            decimal totalTimeLastRQR = getStats(TimeLastRQRList, out countTimeLastRQR);
+            decimal totalTimeLastRQR = getStats(TimeLastRQRList, out countTimeLastRQR, 1);
             decimal countRQTTime1 = 0;
-            decimal totalRQTTime1 = getStats(RQTTime1List, out countRQTTime1);
+            decimal totalRQTTime1 = getStats(RQTTime1List, out countRQTTime1, 2);
             decimal countRQTTime2 = 0;
-            decimal totalRQTTime2 = getStats(RQTTime2List, out countRQTTime2);
+            decimal totalRQTTime2 = getStats(RQTTime2List, out countRQTTime2, 0);
             decimal countRQTTime3 = 0;
-            decimal totalRQTTime3 = getStats(RQTTime3List, out countRQTTime3);
+            decimal totalRQTTime3 = getStats(RQTTime3List, out countRQTTime3, 1);
 
             lblLogInFindCountB.Text = Convert.ToInt64(countLoginFind).ToString();
             lblLogInFindTotalB.Text = Convert.ToInt64(totalLoginFind).ToString();
@@ -933,18 +923,55 @@ namespace StatsProgram
             lbBad.DataSource = SortAndTrimLists(variableListB);
         }
 
-        public List<decimal> SortAndTrimLists(List<decimal> toTrimList)
+        public decimal getStats(List<decimal> theList, out decimal count, int removeFromBottom)
+        {
+            //theList.Sort();
+            //int noToRemove = Convert.ToInt16(theList.Count * 0.05);
+
+            ////theList.RemoveRange(0, noToRemove);
+            //theList.RemoveRange(theList.Count - noToRemove, noToRemove);
+
+            //decimal previous = 0;
+            //List<decimal> newList = new List<decimal>();
+            //foreach (decimal d in theList)
+            //{
+            //    if ((!(d > previous * (decimal)1.69)) || (previous == 0))
+            //    {
+            //        newList.Add(d);
+            //        previous = d;
+            //    }
+
+            //}
+
+            //string mean = (newList.Sum() / newList.Count).ToString();
+
+            //List<decimal> newerList = new List<decimal>();
+
+            //foreach (decimal d in newList)
+            //{
+            //    if (d.ToString().Length < mean.Length + 2 && d.ToString().Length < 6)
+            //    {
+            //        newerList.Add(d);
+
+            //    }
+
+
+            //}
+
+            decimal total = SortAndTrimLists(theList, removeFromBottom).Sum();
+            count = SortAndTrimLists(theList, removeFromBottom).Count;
+
+            return total;
+        }
+
+        public List<decimal> SortAndTrimLists(List<decimal> toTrimList, int removeFromBottom)
         {
             List<decimal> trimmedList = toTrimList;
 
             trimmedList.Sort();
 
-            int noToRemove = Convert.ToInt16(trimmedList.Count * 0.05);
+            trimmedList.RemoveRange(trimmedList.Count - removeFromBottom, removeFromBottom);
 
-            trimmedList.RemoveRange(0, noToRemove);
-            trimmedList.RemoveRange(trimmedList.Count - noToRemove, noToRemove);
-
-            MessageBox.Show(trimmedList.Count.ToString());
             return trimmedList;
             
         }
