@@ -939,7 +939,7 @@ namespace StatsProgram
 
             trimmedList.Sort();
 
-            int noToRemove = Convert.ToInt16(trimmedList.Count * 0.06);
+            int noToRemove = Convert.ToInt16(trimmedList.Count * 0.05);
 
             trimmedList.RemoveRange(0, noToRemove);
             trimmedList.RemoveRange(trimmedList.Count - noToRemove, noToRemove);
