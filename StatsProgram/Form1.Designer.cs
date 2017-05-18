@@ -1308,7 +1308,7 @@
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(663, 458);
+            this.btnFilter.Location = new System.Drawing.Point(663, 378);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(75, 23);
             this.btnFilter.TabIndex = 108;

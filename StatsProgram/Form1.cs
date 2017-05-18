@@ -20,145 +20,157 @@ namespace StatsProgram
         {
             InitializeComponent();
 
-
-            using (informatikexamenEntities db = new informatikexamenEntities())
+            using (CollectionDB db = new CollectionDB())
             {
-                List<Respondent> RespondentList = db.Respondent.ToList();
-
-                AllData AllData = new AllData();
-
-
-
-                foreach (Respondent r in RespondentList)
-                {
-
-                    AllData ad = new AllData(r, AllData);
-
-                    if (r.UITypeID == 8 && ad.GetAnswer(15) != "Annat")
-                    {
-                        RespondentDataGood rd = new RespondentDataGood();
-                        rd.RespondentId = r.Id;
-                        rd.Age = ad.GetAnswer(14);
-                        rd.Gender = ad.GetAnswer(13);
-                        rd.Language = ad.GetAnswer(15);
-                        rd.InternetUse = ad.GetAnswer(17);
-                        rd.InternetUseComp = ad.GetAnswer(18);
-                        rd.InternetUseSmart = ad.GetAnswer(19);
-                        rd.BrowserType = r.BrowserType;
-                        rd.UnitType = CompOrMobile(r.BrowserType);
-
-                        var webDesignAnswer = ad.GetAnswer(16);
-                        if (webDesignAnswer == "Ja")
-                        {
-                            rd.WebDesign = true;
-                        }
-                        else if (webDesignAnswer == "Nej")
-                        {
-                            rd.WebDesign = false;
-                        }
-
-                        rd.LogInFind = 0;
-                        rd.LogInClick = 0;
-                        rd.Qstart = 0;
-                        if(r.LogInFind != null)
-                        {
-                            rd.LogInFind = r.LogInFind;
-                        }
-                        if (r.LogInClick != null)
-                        {
-                            rd.LogInClick = r.LogInClick;
-                        }
-                        if (r.QStart != null)
-                        {
-                            rd.Qstart = r.QStart;
-                        }
-                        rd.TimeFirstQ = ad.GetTime(13);
-                        rd.RQRTime2 = ad.GetTime(14);
-                        rd.RQRTime3 = ad.GetTime(15);
-                        rd.RQRTime4 = ad.GetTime(16);
-                        rd.RQRTime5 = ad.GetTime(17);
-                        rd.RQRTime6 = ad.GetTime(18);
-                        rd.TimeLastRQR = ad.GetTime(19);
-                        rd.RQTTime1 = ad.GetTextTime(8);
-                        rd.RQTTime2 = ad.GetTextTime(9);
-                        rd.RQTTime3 = ad.GetTextTime(11);
-
-                        RDGood.Add(rd);
-                    }
-
-                    else if (r.UITypeID == 9 && ad.GetAnswer(15) != "Annat")
-                    {
-                        RespondentDataBad rd = new RespondentDataBad();
-                        rd.RespondentId = r.Id;
-                        rd.Age = ad.GetAnswer(14);
-                        rd.Gender = ad.GetAnswer(13);
-                        rd.Language = ad.GetAnswer(15);
-                        rd.InternetUse = ad.GetAnswer(17);
-                        rd.InternetUseComp = ad.GetAnswer(18);
-                        rd.InternetUseSmart = ad.GetAnswer(19);
-                        rd.BrowserType = r.BrowserType;
-                        rd.UnitType = CompOrMobile(r.BrowserType);
-
-                        var webDesignAnswer = ad.GetAnswer(16);
-                        if (webDesignAnswer == "Ja")
-                        {
-                            rd.WebDesign = true;
-                        }
-                        else if (webDesignAnswer == "Nej")
-                        {
-                            rd.WebDesign = false;
-                        }
-                        rd.LogInFind = 0;
-                        rd.LogInClick = 0;
-                        rd.Qstart = 0;
-                        if (r.LogInFind != null)
-                        {
-                            rd.LogInFind = r.LogInFind;
-                        }
-                        if (r.LogInClick != null)
-                        {
-                            rd.LogInClick = r.LogInClick;
-                        }
-                        if (r.QStart != null)
-                        {
-                            rd.Qstart = r.QStart;
-                        }
-                        rd.TimeFirstQ = ad.GetTime(13);
-                        rd.RQRTime2 = ad.GetTime(14);
-                        rd.RQRTime3 = ad.GetTime(15);
-                        rd.RQRTime4 = ad.GetTime(16);
-                        rd.RQRTime5 = ad.GetTime(17);
-                        rd.RQRTime6 = ad.GetTime(18);
-                        rd.TimeLastRQR = ad.GetTime(19);
-                        rd.RQTTime1 = ad.GetTextTime(8);
-                        rd.RQTTime2 = ad.GetTextTime(9);
-                        rd.RQTTime3 = ad.GetTextTime(11);
-
-                        RDBad.Add(rd);
-                    }
-                }
-
-                DataTable dtGood = new DataTable();
-                DataTable dtBad = new DataTable();
-
-
-                dtGood = ToDataTable(DeleteGoodNulls(RDGood));
-                dtBad = ToDataTable(DeleteBadNulls(RDBad));
-
-                dgvGood.DataSource = dtGood;
-                dgvBad.DataSource = dtBad;
-
-
+                RDGood = db.RespondentDataGood.ToList();
+                RDBad = db.RespondentDataBad.ToList();
             }
+
+            ToDataGridG(RDGood);
+            ToDataGridB(RDBad);
+
+            VariableDataGood(RDGood);
+            VariableDataBad(RDBad);
+
+            #region
+            //using (informatikexamenEntities db = new informatikexamenEntities())
+            //{
+            //    List<Respondent> RespondentList = db.Respondent.ToList();
+
+            //    AllData AllData = new AllData();
+
+
+
+            //    foreach (Respondent r in RespondentList)
+            //    {
+
+            //        AllData ad = new AllData(r, AllData);
+
+            //        if (r.UITypeID == 8 && ad.GetAnswer(15) != "Annat")
+            //        {
+            //            RespondentDataGood rd = new RespondentDataGood();
+            //            rd.RespondentId = r.Id;
+            //            rd.Age = ad.GetAnswer(14);
+            //            rd.Gender = ad.GetAnswer(13);
+            //            rd.Language = ad.GetAnswer(15);
+            //            rd.InternetUse = ad.GetAnswer(17);
+            //            rd.InternetUseComp = ad.GetAnswer(18);
+            //            rd.InternetUseSmart = ad.GetAnswer(19);
+            //            rd.BrowserType = r.BrowserType;
+            //            rd.UnitType = CompOrMobile(r.BrowserType);
+
+            //            var webDesignAnswer = ad.GetAnswer(16);
+            //            if (webDesignAnswer == "Ja")
+            //            {
+            //                rd.WebDesign = true;
+            //            }
+            //            else if (webDesignAnswer == "Nej")
+            //            {
+            //                rd.WebDesign = false;
+            //            }
+
+            //            rd.LogInFind = 0;
+            //            rd.LogInClick = 0;
+            //            rd.Qstart = 0;
+            //            if(r.LogInFind != null)
+            //            {
+            //                rd.LogInFind = r.LogInFind;
+            //            }
+            //            if (r.LogInClick != null)
+            //            {
+            //                rd.LogInClick = r.LogInClick;
+            //            }
+            //            if (r.QStart != null)
+            //            {
+            //                rd.Qstart = r.QStart;
+            //            }
+            //            rd.TimeFirstQ = ad.GetTime(13);
+            //            rd.RQRTime2 = ad.GetTime(14);
+            //            rd.RQRTime3 = ad.GetTime(15);
+            //            rd.RQRTime4 = ad.GetTime(16);
+            //            rd.RQRTime5 = ad.GetTime(17);
+            //            rd.RQRTime6 = ad.GetTime(18);
+            //            rd.TimeLastRQR = ad.GetTime(19);
+            //            rd.RQTTime1 = ad.GetTextTime(8);
+            //            rd.RQTTime2 = ad.GetTextTime(9);
+            //            rd.RQTTime3 = ad.GetTextTime(11);
+
+            //            RDGood.Add(rd);
+            //        }
+
+            //        else if (r.UITypeID == 9 && ad.GetAnswer(15) != "Annat")
+            //        {
+            //            RespondentDataBad rd = new RespondentDataBad();
+            //            rd.RespondentId = r.Id;
+            //            rd.Age = ad.GetAnswer(14);
+            //            rd.Gender = ad.GetAnswer(13);
+            //            rd.Language = ad.GetAnswer(15);
+            //            rd.InternetUse = ad.GetAnswer(17);
+            //            rd.InternetUseComp = ad.GetAnswer(18);
+            //            rd.InternetUseSmart = ad.GetAnswer(19);
+            //            rd.BrowserType = r.BrowserType;
+            //            rd.UnitType = CompOrMobile(r.BrowserType);
+
+            //            var webDesignAnswer = ad.GetAnswer(16);
+            //            if (webDesignAnswer == "Ja")
+            //            {
+            //                rd.WebDesign = true;
+            //            }
+            //            else if (webDesignAnswer == "Nej")
+            //            {
+            //                rd.WebDesign = false;
+            //            }
+            //            rd.LogInFind = 0;
+            //            rd.LogInClick = 0;
+            //            rd.Qstart = 0;
+            //            if (r.LogInFind != null)
+            //            {
+            //                rd.LogInFind = r.LogInFind;
+            //            }
+            //            if (r.LogInClick != null)
+            //            {
+            //                rd.LogInClick = r.LogInClick;
+            //            }
+            //            if (r.QStart != null)
+            //            {
+            //                rd.Qstart = r.QStart;
+            //            }
+            //            rd.TimeFirstQ = ad.GetTime(13);
+            //            rd.RQRTime2 = ad.GetTime(14);
+            //            rd.RQRTime3 = ad.GetTime(15);
+            //            rd.RQRTime4 = ad.GetTime(16);
+            //            rd.RQRTime5 = ad.GetTime(17);
+            //            rd.RQRTime6 = ad.GetTime(18);
+            //            rd.TimeLastRQR = ad.GetTime(19);
+            //            rd.RQTTime1 = ad.GetTextTime(8);
+            //            rd.RQTTime2 = ad.GetTextTime(9);
+            //            rd.RQTTime3 = ad.GetTextTime(11);
+
+            //            RDBad.Add(rd);
+            //        }
+            //    }
+
+            //    DataTable dtGood = new DataTable();
+            //    DataTable dtBad = new DataTable();
+
+
+            //    dtGood = ToDataTable(DeleteGoodNulls(RDGood));
+            //    dtBad = ToDataTable(DeleteBadNulls(RDBad));
+
+            //    dgvGood.DataSource = dtGood;
+            //    dgvBad.DataSource = dtBad;
+
+            //}
+            #endregion
         }
 
         public void ToDataGridG(List<RespondentDataGood> theList)
         {
             DataTable dtGood = new DataTable();
 
-            dtGood = ToDataTable(DeleteGoodNulls(theList));
+            //dtGood = ToDataTable(DeleteGoodNulls(theList));
+            dtGood = ToDataTable(theList);
             
-
             dgvGood.DataSource = dtGood;
 
         }
@@ -166,7 +178,8 @@ namespace StatsProgram
         {
             DataTable dtBad = new DataTable();
 
-            dtBad = ToDataTable(DeleteBadNulls(theList));
+            //dtBad = ToDataTable(DeleteBadNulls(theList));
+            dtBad = ToDataTable(theList);
 
             dgvBad.DataSource = dtBad;
 
@@ -201,70 +214,70 @@ namespace StatsProgram
         }
 
 
-        public List<RespondentDataGood> DeleteGoodNulls(List<RespondentDataGood> goodData) ///INPUT TILL DENNA FRÅN FILTERKNAPPAR
-        {
-            List<RespondentDataGood> rg = new List<RespondentDataGood>();
+        //public List<RespondentDataGood> DeleteGoodNulls(List<RespondentDataGood> goodData) ///INPUT TILL DENNA FRÅN FILTERKNAPPAR
+        //{
+        //    List<RespondentDataGood> rg = new List<RespondentDataGood>();
 
-            decimal LfGood = 0;
+        //    decimal LfGood = 0;
 
-            foreach (RespondentDataGood rdg in goodData)
-            {
-                if (!(rdg.LogInClick == 0 && rdg.LogInFind == 0 && rdg.Qstart == 0 &&
-                    rdg.TimeFirstQ == 0 && rdg.RQRTime2 == 0 && rdg.RQRTime3 == 0 && rdg.RQRTime4 == 0 && rdg.RQRTime5 == 0 && rdg.RQRTime6 == 0 &&
-                    rdg.TimeLastRQR == 0 && rdg.RQTTime1 == 0 && rdg.RQTTime2 == 0 && rdg.RQTTime3 == 0))
-                {
-                    rg.Add(rdg);
-                }
-            }
+        //    foreach (RespondentDataGood rdg in goodData)
+        //    {
+        //        if (!(rdg.LogInClick == 0 && rdg.LogInFind == 0 && rdg.Qstart == 0 &&
+        //            rdg.TimeFirstQ == 0 && rdg.RQRTime2 == 0 && rdg.RQRTime3 == 0 && rdg.RQRTime4 == 0 && rdg.RQRTime5 == 0 && rdg.RQRTime6 == 0 &&
+        //            rdg.TimeLastRQR == 0 && rdg.RQTTime1 == 0 && rdg.RQTTime2 == 0 && rdg.RQTTime3 == 0))
+        //        {
+        //            rg.Add(rdg);
+        //        }
+        //    }
             
-            VariableDataGood(rg);
-            return rg;
-        }
+        //    VariableDataGood(rg);
+        //    return rg;
+        //}
 
-        public List<RespondentDataBad> DeleteBadNulls(List<RespondentDataBad> badData)  ///INPUT TILL DENNA FRÅN FILTERKNAPPAR
-        {
-            List<RespondentDataBad> rb = new List<RespondentDataBad>();
+        //public List<RespondentDataBad> DeleteBadNulls(List<RespondentDataBad> badData)  ///INPUT TILL DENNA FRÅN FILTERKNAPPAR
+        //{
+        //    List<RespondentDataBad> rb = new List<RespondentDataBad>();
 
-            decimal LfBad = 0;
+        //    decimal LfBad = 0;
 
-            foreach (RespondentDataBad rdb in badData)
-            {
-                if (!(rdb.LogInClick == 0 && rdb.LogInFind == 0 && rdb.Qstart == 0 &&
-                    rdb.TimeFirstQ == 0 && rdb.RQRTime2 == 0 && rdb.RQRTime3 == 0 && rdb.RQRTime4 == 0 && rdb.RQRTime5 == 0 && rdb.RQRTime6 == 0 &&
-                    rdb.TimeLastRQR == 0 && rdb.RQTTime1 == 0 && rdb.RQTTime2 == 0 && rdb.RQTTime3 == 0))
-                {
-                    rb.Add(rdb);
-                }
-            }
+        //    foreach (RespondentDataBad rdb in badData)
+        //    {
+        //        if (!(rdb.LogInClick == 0 && rdb.LogInFind == 0 && rdb.Qstart == 0 &&
+        //            rdb.TimeFirstQ == 0 && rdb.RQRTime2 == 0 && rdb.RQRTime3 == 0 && rdb.RQRTime4 == 0 && rdb.RQRTime5 == 0 && rdb.RQRTime6 == 0 &&
+        //            rdb.TimeLastRQR == 0 && rdb.RQTTime1 == 0 && rdb.RQTTime2 == 0 && rdb.RQTTime3 == 0))
+        //        {
+        //            rb.Add(rdb);
+        //        }
+        //    }
             
-            VariableDataBad(rb);
-            return rb;
-        }
+        //    VariableDataBad(rb);
+        //    return rb;
+        //}
 
  
-        public string CompOrMobile(string userAgent)
-        {
-            string unit = "Computer";
-            string[] mobileDevices = new string[] {"iphone","ppc",
-                                                      "windows ce","blackberry",
-                                                      "opera mini","mobile","palm",
-                                                      "portable","opera mobi","android","phone" };
+        //public string CompOrMobile(string userAgent)
+        //{
+        //    string unit = "Computer";
+        //    string[] mobileDevices = new string[] {"iphone","ppc",
+        //                                              "windows ce","blackberry",
+        //                                              "opera mini","mobile","palm",
+        //                                              "portable","opera mobi","android","phone" };
             
-            if (userAgent != null)
-            {
-                userAgent = userAgent.ToLower();
-                if (mobileDevices.Any(x => userAgent.Contains(x)))
-                {
-                    unit = "Mobile";
-                }
-            }
-            else
-            {
-                unit = "0";
-            }
+        //    if (userAgent != null)
+        //    {
+        //        userAgent = userAgent.ToLower();
+        //        if (mobileDevices.Any(x => userAgent.Contains(x)))
+        //        {
+        //            unit = "Mobile";
+        //        }
+        //    }
+        //    else
+        //    {
+        //        unit = "0";
+        //    }
 
-            return unit;
-        }
+        //    return unit;
+        //}
 
         public void VariableDataGood(List<RespondentDataGood> fullList)
         {
@@ -341,31 +354,31 @@ namespace StatsProgram
             }
 
             decimal countLoginFind = 0;
-            decimal totalLoginFind = getStats(loginFindList, out countLoginFind, 5);
+            decimal totalLoginFind = getStats(loginFindList, out countLoginFind);
             decimal countLoginClick = 0;
-            decimal totalLoginClick = getStats(loginClickList, out countLoginClick, 4);///Alternativt 6
+            decimal totalLoginClick = getStats(loginClickList, out countLoginClick);///Alternativt 6
             decimal countQstart = 0;
-            decimal totalQstart = getStats(QstartList, out countQstart, 4);
+            decimal totalQstart = getStats(QstartList, out countQstart);
             decimal countTimeFirstQ = 0;
-            decimal totalTimeFirstQ = getStats(TimeFirstQList, out countTimeFirstQ, 3);
+            decimal totalTimeFirstQ = getStats(TimeFirstQList, out countTimeFirstQ);
             decimal countRQRTime2 = 0;
-            decimal totalRQRTime2 = getStats(RQRTime2List, out countRQRTime2, 0);
+            decimal totalRQRTime2 = getStats(RQRTime2List, out countRQRTime2);
             decimal countRQRTime3 = 0;
-            decimal totalRQRTime3 = getStats(RQRTime3List, out countRQRTime3, 0);
+            decimal totalRQRTime3 = getStats(RQRTime3List, out countRQRTime3);
             decimal countRQRTime4 = 0;
-            decimal totalRQRTime4 = getStats(RQRTime4List, out countRQRTime4, 0);
+            decimal totalRQRTime4 = getStats(RQRTime4List, out countRQRTime4);
             decimal countRQRTime5 = 0;
-            decimal totalRQRTime5 = getStats(RQRTime5List, out countRQRTime5, 0);
+            decimal totalRQRTime5 = getStats(RQRTime5List, out countRQRTime5);
             decimal countRQRTime6 = 0;
-            decimal totalRQRTime6 = getStats(RQRTime6List, out countRQRTime6, 0);
+            decimal totalRQRTime6 = getStats(RQRTime6List, out countRQRTime6);
             decimal countTimeLastRQR = 0;
-            decimal totalTimeLastRQR = getStats(TimeLastRQRList, out countTimeLastRQR, 4);
+            decimal totalTimeLastRQR = getStats(TimeLastRQRList, out countTimeLastRQR);
             decimal countRQTTime1 = 0;
-            decimal totalRQTTime1 = getStats(RQTTime1List, out countRQTTime1, 1);
+            decimal totalRQTTime1 = getStats(RQTTime1List, out countRQTTime1);
             decimal countRQTTime2 = 0;
-            decimal totalRQTTime2 = getStats(RQTTime2List, out countRQTTime2, 0);
+            decimal totalRQTTime2 = getStats(RQTTime2List, out countRQTTime2);
             decimal countRQTTime3 = 0;
-            decimal totalRQTTime3 = getStats(RQTTime3List, out countRQTTime3, 1);
+            decimal totalRQTTime3 = getStats(RQTTime3List, out countRQTTime3);
             
             lblLogInFindCountG.Text = Convert.ToInt64(countLoginFind).ToString();
             lblLogInFindTotalG.Text = Convert.ToInt64(totalLoginFind).ToString();
@@ -506,31 +519,31 @@ namespace StatsProgram
             }
 
             decimal countLoginFind = 0;
-            decimal totalLoginFind = getStats(loginFindList, out countLoginFind, 4);
+            decimal totalLoginFind = getStats(loginFindList, out countLoginFind);
             decimal countLoginClick = 0;
-            decimal totalLoginClick = getStats(loginClickList, out countLoginClick, 2);
+            decimal totalLoginClick = getStats(loginClickList, out countLoginClick);
             decimal countQstart = 0;
-            decimal totalQstart = getStats(QstartList, out countQstart, 1);
+            decimal totalQstart = getStats(QstartList, out countQstart);
             decimal countTimeFirstQ = 0;
-            decimal totalTimeFirstQ = getStats(TimeFirstQList, out countTimeFirstQ, 1);
+            decimal totalTimeFirstQ = getStats(TimeFirstQList, out countTimeFirstQ);
             decimal countRQRTime2 = 0;
-            decimal totalRQRTime2 = getStats(RQRTime2List, out countRQRTime2, 0);
+            decimal totalRQRTime2 = getStats(RQRTime2List, out countRQRTime2);
             decimal countRQRTime3 = 0;
-            decimal totalRQRTime3 = getStats(RQRTime3List, out countRQRTime3, 0);
+            decimal totalRQRTime3 = getStats(RQRTime3List, out countRQRTime3);
             decimal countRQRTime4 = 0;
-            decimal totalRQRTime4 = getStats(RQRTime4List, out countRQRTime4, 0);
+            decimal totalRQRTime4 = getStats(RQRTime4List, out countRQRTime4);
             decimal countRQRTime5 = 0;
-            decimal totalRQRTime5 = getStats(RQRTime5List, out countRQRTime5, 0);
+            decimal totalRQRTime5 = getStats(RQRTime5List, out countRQRTime5);
             decimal countRQRTime6 = 0;
-            decimal totalRQRTime6 = getStats(RQRTime6List, out countRQRTime6, 0);
+            decimal totalRQRTime6 = getStats(RQRTime6List, out countRQRTime6);
             decimal countTimeLastRQR = 0;
-            decimal totalTimeLastRQR = getStats(TimeLastRQRList, out countTimeLastRQR, 1);
+            decimal totalTimeLastRQR = getStats(TimeLastRQRList, out countTimeLastRQR);
             decimal countRQTTime1 = 0;
-            decimal totalRQTTime1 = getStats(RQTTime1List, out countRQTTime1, 2);
+            decimal totalRQTTime1 = getStats(RQTTime1List, out countRQTTime1);
             decimal countRQTTime2 = 0;
-            decimal totalRQTTime2 = getStats(RQTTime2List, out countRQTTime2, 0);
+            decimal totalRQTTime2 = getStats(RQTTime2List, out countRQTTime2);
             decimal countRQTTime3 = 0;
-            decimal totalRQTTime3 = getStats(RQTTime3List, out countRQTTime3, 1);
+            decimal totalRQTTime3 = getStats(RQTTime3List, out countRQTTime3);
 
             lblLogInFindCountB.Text = Convert.ToInt64(countLoginFind).ToString();
             lblLogInFindTotalB.Text = Convert.ToInt64(totalLoginFind).ToString();
@@ -609,6 +622,7 @@ namespace StatsProgram
             bool ageFilter = false;
             bool expFilter = false;
             bool unitFilter = false;
+            bool noFilter = false;
             
             List<RespondentDataGood> RDGList = new List<RespondentDataGood>();
             List<RespondentDataBad> RDBList = new List<RespondentDataBad>();
@@ -743,15 +757,21 @@ namespace StatsProgram
 
             else
             {
+                noFilter = true;
                 GetDefaultLists();
             }
             
-            DeleteGoodNulls(RDGList);
-            DeleteBadNulls(RDBList);
+            //DeleteGoodNulls(RDGList);
+            //DeleteBadNulls(RDBList);
 
-            ToDataGridG(RDGList);
-            ToDataGridB(RDBList);
+            if(noFilter == false)
+            {
+                ToDataGridG(RDGList);
+                ToDataGridB(RDBList);
 
+                VariableDataGood(RDGList);
+                VariableDataBad(RDBList);
+            }
         }
 
         public string GetAverage(decimal count, decimal total)
@@ -762,8 +782,13 @@ namespace StatsProgram
 
         public void GetDefaultLists()
         {
-            DeleteGoodNulls(RDGood);
-            DeleteBadNulls(RDBad);
+            ToDataGridG(RDGood);
+            ToDataGridB(RDBad);
+
+            VariableDataGood(RDGood);
+            VariableDataBad(RDBad);
+            //DeleteGoodNulls(RDGood);
+            //DeleteBadNulls(RDBad);
         }
 
 
@@ -793,6 +818,9 @@ namespace StatsProgram
             string labelText = l.Text;
             List<decimal> variableListG = new List<decimal>();
             List<decimal> variableListB = new List<decimal>();
+            //int removeGood = 0;
+            //int removeBad = 0;
+
 
             switch(labelText)
             {
@@ -802,7 +830,7 @@ namespace StatsProgram
                         if (rd.LogInFind != 0)
                         {
                             variableListG.Add(Convert.ToDecimal(rd.LogInFind));
-                            
+                            //removeGood = 5;
                         }
                     }
 
@@ -811,7 +839,7 @@ namespace StatsProgram
                         if (rd.LogInFind != 0)
                         {
                             variableListB.Add(Convert.ToDecimal(rd.LogInFind));
-
+                            //removeBad = 4;
                         }
                     }
 
@@ -822,7 +850,7 @@ namespace StatsProgram
                         if (rd.LogInClick != 0)
                         {
                             variableListG.Add(Convert.ToDecimal(rd.LogInClick));
-
+                            //removeGood = 4;
                         }
                     }
 
@@ -831,7 +859,7 @@ namespace StatsProgram
                         if (rd.LogInClick != 0)
                         {
                             variableListB.Add(Convert.ToDecimal(rd.LogInClick));
-
+                            //removeBad = 2;
                         }
                     }
 
@@ -843,7 +871,7 @@ namespace StatsProgram
                         if (rd.Qstart != 0)
                         {
                             variableListG.Add(Convert.ToDecimal(rd.Qstart));
-
+                            //removeGood = 4;
                         }
                     }
 
@@ -852,7 +880,7 @@ namespace StatsProgram
                         if (rd.Qstart != 0)
                         {
                             variableListB.Add(Convert.ToDecimal(rd.Qstart));
-
+                            //removeBad = 1;
                         }
                     }
 
@@ -864,7 +892,7 @@ namespace StatsProgram
                         if (rd.TimeFirstQ != 0)
                         {
                             variableListG.Add(Convert.ToDecimal(rd.TimeFirstQ));
-
+                            //removeGood = 3;
                         }
                     }
 
@@ -873,7 +901,7 @@ namespace StatsProgram
                         if (rd.TimeFirstQ != 0)
                         {
                             variableListB.Add(Convert.ToDecimal(rd.TimeFirstQ));
-
+                            //removeBad = 1;
                         }
                     }
                     break;
@@ -884,7 +912,7 @@ namespace StatsProgram
                         if (rd.TimeLastRQR != 0)
                         {
                             variableListG.Add(Convert.ToDecimal(rd.TimeLastRQR));
-
+                            //removeGood = 4;
                         }
                     }
 
@@ -893,7 +921,7 @@ namespace StatsProgram
                         if (rd.TimeLastRQR != 0)
                         {
                             variableListB.Add(Convert.ToDecimal(rd.TimeLastRQR));
-
+                            //removeBad = 1;
                         }
                     }
                     break;
@@ -904,7 +932,7 @@ namespace StatsProgram
                         if (rd.RQTTime1 != 0)
                         {
                             variableListG.Add(Convert.ToDecimal(rd.RQTTime1));
-
+                            //removeGood = 1;
                         }
                     }
 
@@ -913,17 +941,44 @@ namespace StatsProgram
                         if (rd.RQTTime1 != 0)
                         {
                             variableListB.Add(Convert.ToDecimal(rd.RQTTime1));
+                            //removeBad = 2;
+                        }
+                    }
+                    break;
 
+                case "RQTTime3":
+                    foreach (RespondentDataGood rd in RDGood)
+                    {
+                        if (rd.RQTTime3 != 0)
+                        {
+                            variableListG.Add(Convert.ToDecimal(rd.RQTTime3));
+                            //removeGood = 1;
+                        }
+                    }
+
+                    foreach (RespondentDataBad rd in RDBad)
+                    {
+                        if (rd.RQTTime3 != 0)
+                        {
+                            variableListB.Add(Convert.ToDecimal(rd.RQTTime3));
+                            //removeBad = 1;
                         }
                     }
                     break;
             }
 
-            lbGood.DataSource = SortAndTrimLists(variableListG);
-            lbBad.DataSource = SortAndTrimLists(variableListB);
+            //lbGood.DataSource = SortAndTrimLists(variableListG, removeGood);
+            //lbBad.DataSource = SortAndTrimLists(variableListB, removeBad);
+            
+            
+            variableListG.Sort();
+            variableListB.Sort();
+            
+            lbGood.DataSource = variableListG;
+            lbBad.DataSource = variableListB;
         }
 
-        public decimal getStats(List<decimal> theList, out decimal count, int removeFromBottom)
+        public decimal getStats(List<decimal> theList, out decimal count)
         {
             //theList.Sort();
             //int noToRemove = Convert.ToInt16(theList.Count * 0.05);
@@ -958,22 +1013,58 @@ namespace StatsProgram
 
             //}
 
-            decimal total = SortAndTrimLists(theList, removeFromBottom).Sum();
-            count = SortAndTrimLists(theList, removeFromBottom).Count;
+            decimal total = theList.Sum();
+            count = theList.Count;
 
             return total;
         }
 
-        public List<decimal> SortAndTrimLists(List<decimal> toTrimList, int removeFromBottom)
-        {
-            List<decimal> trimmedList = toTrimList;
+        //public List<decimal> SortAndTrimLists(List<decimal> toTrimList, int removeFromBottom)
+        //{
+        //    List<decimal> trimmedList = toTrimList;
 
-            trimmedList.Sort();
+        //    trimmedList.Sort();
 
-            trimmedList.RemoveRange(trimmedList.Count - removeFromBottom, removeFromBottom);
+        //    trimmedList.RemoveRange(trimmedList.Count - removeFromBottom, removeFromBottom);
 
-            return trimmedList;
+        //    return trimmedList;
             
+        //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<RespondentDataGood> RG = new List<RespondentDataGood>();
+            List<RespondentDataBad> RB = new List<RespondentDataBad>();
+
+            RG = RDGood;
+            RB = RDBad;
+
+
+            using (CollectionDB db = new CollectionDB())
+            {
+                //db.RespondentDataGood.AddRange(DeleteGoodNulls(RG));
+                //db.RespondentDataBad.AddRange(DeleteBadNulls(RB));
+
+                //db.SaveChanges();
+            }
+
         }
 
         //public List<decimal> getDecimalList(string variable)
